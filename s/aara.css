@@ -1,0 +1,198 @@
+/*	AA/RA/Topics top-level pages only.
+
+
+
+	Full styles for standards-compliant browsers
+
+	All image files needed for this style sheet are saved
+
+	in the folder "i/" (same directory as style sheet). 
+
+	This sheet overwrites some rules in epa.css, with
+
+	a few extra rules for styling top-level pages. */
+
+	
+
+/* Date: 17 April 2008 */
+
+/* Version: 3.1.1 */
+
+
+
+/* =Misc -- Site-wide stuff
+
+----------------------------------------------- */
+
+
+
+/* =Layout -- Positioning of major page blocks
+
+----------------------------------------------- */
+
+
+
+/* The sidebar moves down because of the larger logo. */
+
+#area-nav {	top: 160px; }
+
+
+
+
+
+/* =Header elements (top of page)
+
+----------------------------------------------- */
+
+body#aara #header div#logo { left: 2px; top: 4px;  }
+
+	
+
+body#aara #areaname { text-align: center; margin: 0 0 0 144px; padding: 3px 0 0 0; }
+
+
+
+body#aara img#banner { margin: 0; padding:0; }
+
+
+
+	body#aara #areaname p { background: none; margin: -4px 0; padding: 0; }
+
+	body#aara #areaname p#tagline { background: url(http://www.epa.gov/epafiles/images/epafiles_ban_endbottom.gif) no-repeat 100% 100%; margin: 0; padding: 0; font-size: 0.90em; line-height: 1.5; color: #fff; }
+
+
+
+
+
+/* =Content -- The white space for web owners
+
+----------------------------------------------- */
+
+/* DOES ANYBODY USE THESE?! */
+
+	/* =Quickfinder -- AA/RA pages
+
+	----------------------------------------------- */
+
+#content div#quickfinder { font: 90%/1.1em Arial, Helvetica, sans-serif; width: 100%; position: relative; padding: 0; margin: 0; } 
+
+	* html #content div#quickfinder {height: 1%;}
+
+
+
+		/*  =Rounded Box Corners
+
+		---------------------------------------------------------------------- */
+
+		body#aara #content #quickfinder b.cn { position: absolute;	height: 10px; width: 10px;	margin: 0; padding: 0;	background: url(http://www.epa.gov/epafiles/s/i/white.png) no-repeat;	line-height: 1px; font-size: 1px; }
+
+		* html body#aara #content #quickfinder b.cn { background: url(http://www.epa.gov/epafiles/s/i/white.gif) no-repeat; }
+
+		body#aara #content #quickfinder h3 b.tl { top: -1px; left: -1px; background-position: top left; } 
+
+		body#aara #content #quickfinder h3 b.tr { top: -1px; right: -1px; background-position: top right; }
+
+
+
+	#content #quickfinder h3 { margin: 0; padding: 0; width: 100%; }
+
+	
+
+	#content #quickfinder h3 a { display: block; margin: 0; padding: 3px 1px 3px 10px; font-size: 0.9em; color: #fff; text-decoration: none; background: #5c9261; }
+
+
+
+/* The arrow bullet for the More... link */
+
+#content ul#qflist li a.more, #content #quickfinder div.wrapper ul.quickfinder2 li a.more,
+
+#content ul#qfinderlist li a.more
+
+{	list-style: none;	background: url(http://www.epa.gov/epahome/images/more_topic.gif) 0 3px no-repeat;	padding: 0 0 0 10px;	width: 90px; }
+
+
+
+/*  =Quick Finder 1
+
+---------------------------------------------------------------------- */
+
+#content ul#qflist { float: left;	width: 100%;	margin: 0.1em 0 0; padding: 0 0 2px;	list-style: none;	border-bottom: 1px solid #5c9261; }
+
+	#content ul#qflist li { float: left;	width: 19%;	margin: 0; padding: 0 .2em 0 0;	list-style: none; }
+
+		#content ul#qflist li a { font-size: 0.90em;	margin: 0; padding: 0;	text-decoration: none;	display: block; }
+
+		#content ul#qflist li a:hover { background-color: #f1f1f1;	text-decoration: none; }
+
+
+
+/*  =Quick Finder 2
+
+---------------------------------------------------------------------- */
+
+#content #quickfinder div.wrapper { float: left; width: 20%; }
+
+	#content #quickfinder div.wrapper ul.quickfinder2 { margin: 0.1em 2px 0 0; padding: 0 0 2px;  }
+
+		#content #quickfinder div.wrapper ul.quickfinder2 li { margin: 0; padding: 0 0.2em 0 0; list-style: none; list-style-image: none; }
+
+			#content #quickfinder div.wrapper ul.quickfinder2 li a { font-size: 0.90em;	margin: 0; padding: 0 0 0 1px;	text-decoration: none;	display: block; }
+
+			#content #quickfinder div.wrapper ul.quickfinder2 li a:hover { background-color: #f1f1f1;	text-decoration: none; }
+
+
+
+/*  =Quick Finder 3
+
+---------------------------------------------------------------------- */
+
+#content ul#qfinderlist { margin: 0 0 1em .5em; padding: 0; font-size: 10px; }
+
+	#content ul#qfinderlist li { position: relative; margin: 0;  padding: 0; list-style: none; list-style-image: none; line-height: 1.1em; }
+
+
+
+	#content ul#qfinderlist li.column1 { margin-left: 0; width: 7.5em; }
+
+	#content ul#qfinderlist li.column2 { margin-left: 8em; width: 7.5em; }
+
+	#content ul#qfinderlist li.column3 { width: 5.5em; margin-left: 16em; }
+
+	#content ul#qfinderlist li.column4 { width: 11.5em; margin-left: 22em; }
+
+	#content ul#qfinderlist li.column5 { width: 9.5em; margin-left: 34em; }
+
+
+
+	#content ul#qfinderlist li.reset { margin-top: -4.4em; }
+
+	* html #content ul#qfinderlist li.reset { margin-top: -5.1em; }
+
+
+
+/* anchor styling */
+
+	#content ul#qfinderlist li a { display: block; text-decoration: none; }
+
+	#content ul#qfinderlist li a:hover { background-color: #f1f1f1; }
+
+
+
+	#content div.clearer {clear: left; line-height: 0; height: 0;}
+
+
+
+
+
+/* =Area Navigation -- Left sidebar
+
+----------------------------------------------- */
+
+
+
+
+
+/* =Footer elements
+
+----------------------------------------------- */
+

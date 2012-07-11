@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><!-- InstanceBegin template="/Templates/redesign.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- EPA Template version 3.2.2, 05 August 2010 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Form Styles, Template 3 | EPA Web Design | US EPA</title>
+<meta name="DC.title" content="Forms and their styles" />
+<meta name="DC.description" content="These pages describe EPA's style guide for its web site." />
+<meta name="keywords" content="" />
+<!-- InstanceEndEditable -->
+<meta name="DC.language" content="en" />
+<meta name="DC.creator" content="US EPA, Office of Web Communications and Office of Environmental Information" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="meta" href="http://www.epa.gov/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<style type="text/css" media="screen">@import 'http://www.epa.gov/epafiles/s/epa.css';</style>
+<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/s/ie.css" /><![endif]-->
+<script type="text/javascript" src="http://www.epa.gov/epafiles/js/epa-core.js"></script>
+<script type="text/javascript" src="http://www.epa.gov/epafiles/js/extra.js"></script>
+</head>
+<body>
+<!--googleoff: index-->
+<p class="skip"><a id="skiptop" href="#content" title="Jump to main content.">Jump to main content.</a></p>
+<div id="header">
+  <!-- START EPA HEADER -->
+  <div id="logo"><a href="http://www.epa.gov/" title="US EPA home page"><img src="http://www.epa.gov/epafiles/images/logo_epaseal.gif" alt="[logo] US EPA" width="100" height="111" /></a></div>
+  <div id="areaname">
+    <!-- START AREA NAME -->
+    <p>EPA Web Design</p>
+  </div>
+  <!-- END AREA NAME -->
+  <!-- START SEARCH CONTROLS -->
+  <form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+    <p><a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Contact Us</a> <span class="search"><strong>Search:</strong>
+      <input name="querytext" id="searchbox" value="" />
+      <input name="submit" id="searchbutton" type="submit" value="Go" />
+      <input type="hidden" name="fld" value="adminweb|epafiles" />
+      <input type="hidden" name="areaname" value="EPA Web Design" />
+      <input type="hidden" name="areacontacts" value="http://www.epa.gov/epafiles/auxfiles/contactus.htm" />
+      <input type="hidden" name="areasearchurl" value="" />
+      <input type="hidden" name="result_template" value="epafiles_default.xsl" />
+      <input type="hidden" name="filter" value="sample4filt.hts" />
+      </span> </p>
+  </form>
+  <!-- END SEARCH CONTROLS -->
+  <ul>
+    <!-- BEGIN BREADCRUMBS -->
+    <li class="first">You are here: <a href="http://www.epa.gov/">EPA Home</a></li>
+    <!-- InstanceBeginEditable name="breadcrumbs" -->
+    <li><a href="http://www.epa.gov/epafiles/index.html">EPA Web Design</a></li>
+    <li><a href="index.html">Available Styles</a></li>
+    <li>Styles for Forms, Template 3</li>
+    <!-- InstanceEndEditable -->
+  </ul>
+  <!-- END BREADCRUMBS -->
+</div>
+<!-- END EPA HEADER -->
+<hr class="skip" />
+<div id="content">
+  <!-- BEGIN CONTENT -->
+  <!-- EPA SITE-WIDE ANNOUNCEMENTS -->
+  <p id="sitewidec"></p>
+  <!-- BEGIN PAGE NAME -->
+<!--googleon: index-->
+  <h1><!-- InstanceBeginEditable name="PageName" -->Forms, Template 3<!-- InstanceEndEditable --></h1>
+  <!-- END PAGE NAME -->
+  <!-- BEGIN CONTENT AREA -->
+  <!-- InstanceBeginEditable name="content" -->
+  <div class="boxmulti">
+    <h5>Other Links</h5>
+    <ul>
+      <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/contactus">Contact Us Links and Page</a></li>
+    </ul>
+  </div>
+  <p><strong>Note:</strong> These styles apply to Template 3 pages. Here's a page showing <a href="forms.html">how form elements look in Template 4</a>.</p>
+  <p>Use this style of form to create nice simple forms with <acronym title="Cascading Style Sheets">CSS</acronym>. Using this method is not required, but may come in handy.</p>
+  <form class="form" action="#">
+    <fieldset>
+      <p><label for="name">Name:</label>
+      <input type="text" tabindex="1" id="name" name="Name: " /></p>
+      <p><label for="org">Organization:</label>
+      <input type="text" tabindex="2" id="org" name="Org: " /></p>
+      <p><label for="email">Email:</label>
+      <input type="text" tabindex="3" id="email" name="Email: " /></p>
+      <p><label for="message">Message:</label>
+      <textarea tabindex="4" id="message" name="Message: " cols="50" rows="5"></textarea></p>
+      <input id="formsubmit" tabindex="5" type="submit" value="Send Comments" />
+    </fieldset>
+  </form>
+  <hr />
+  <h2>How-To</h2>
+  <ol>
+    <li>The styles are dependent upon several elements and one class:
+      <ul>
+        <li>&#60;label&#62;</li>
+        <li>&#60;input&#62;</li>
+        <li>class="form"</li>
+      </ul>
+    </li>
+    <li>The label element, additionally, improves accessibility. Try clicking on the words next to the boxes&mdash;note that the boxes get selected and are ready for your input.</li>
+  </ol>
+  <h2>Code</h2>
+  <pre>&#60;form method=&quot;post&quot; action=&quot;/cgi-bin/mail.cgi&quot; name=&quot;sampleform&quot; class=&quot;form&quot;&#62;
+	&#60;p>&#60;label for=&quot;name&quot;&#62;Name:&#60;/label&#62;
+		&#60;input type=&quot;text&quot; tabindex=&quot;1&quot; id=&quot;name&quot; name=&quot;Name: &quot; /&#62;&#60;/p>
+	&#60;p>&#60;label for=&quot;org&quot;&#62;Organization:&#60;/label&#62;
+		&#60;input type=&quot;text&quot; tabindex=&quot;2&quot; id=&quot;org&quot; name=&quot;Org: &quot; /&#62;&#60;/p>
+	&#60;p>&#60;label for=&quot;email&quot;&#62;Email:&#60;/label&#62;
+		&#60;input type=&quot;text&quot; tabindex=&quot;3&quot; id=&quot;email&quot; name=&quot;Email: &quot; /&#62;&#60;/p>
+	&#60;p>&#60;label for=&quot;message&quot;&#62;Message:&#60;/label&#62;
+		&#60;textarea tabindex=&quot;4&quot; id=&quot;message&quot; name=&quot;Message: &quot; cols=&quot;50&quot; rows=&quot;5&quot;&#62;&#60;/textarea&#62;&#60;/p>
+	&#60;p>&#60;input id=&quot;formsubmit&quot; tabindex=&quot;5&quot; type=&quot;submit&quot; value=&quot;Send Comments&quot; /&#62;
+	&#60;input type=&quot;hidden&quot; name=&quot;tssms&quot; value=&quot;your tssms account here&quot; /&#62;
+	&#60;input type=&quot;hidden&quot; name=&quot;mailtofile&quot; value=&quot;name of mailto file&quot; /&#62;
+	&#60;input type=&quot;hidden&quot; name=&quot;Subject&quot; value=&quot;Comments form the web site&quot; /&#62;
+	&#60;input type=&quot;hidden&quot; name=&quot;Next&quot; value=&quot;link to 'next' page&quot; /&#62;&#60;/p>
+&#60;/form&#62;</pre>
+  <!-- InstanceEndEditable -->
+<!--googleoff: index-->
+  <!-- BEGIN AREA FOOTER -->
+  <p id="areafooter">For help with these pages, contact the <a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Web Redesign Workgroup</a>.</p>
+  <!-- END AREA FOOTER -->
+</div>
+<!-- END CONTENT -->
+<hr class="skip" />
+<div id="area-nav">
+  <!-- BEGIN AREA MAIN NAVIGATION -->
+  <h3 class="skip">Local Navigation</h3>
+  <ul>
+    <li><a href="http://www.epa.gov/epafiles/">EPA Web Design Home</a>
+      <hr />
+    </li>
+    <li><a href="http://www.epa.gov/epafiles/v4/">Template 4 Home</a></li>
+    <li><a href="http://www.epa.gov/epafiles/docs/faq.html">Frequent Questions</a></li>
+    <li><a href="http://www.epa.gov/epafiles/templates/">HTML Templates</a></li>
+    <li><a href="http://www.epa.gov/epafiles/docs/">Updating &amp; Creating your Web Pages</a></li>
+    <li><a href="http://www.epa.gov/epafiles/s/">Styling your Templates</a></li>
+    <li><a href="http://www.epa.gov/check_template/">Track your Conversions</a></li>
+    <li><a href="http://yosemite.epa.gov/oei/webguide.nsf/standards-guidance">EPA Web Standards</a></li>
+  </ul>
+</div>
+<!-- END AREA MAIN NAVIGATION -->
+<hr class="skip" />
+<div id="footer">
+  <!-- BEGIN FOOTER -->
+  <ul id="globalfooter">
+    <li><a href="http://www.epa.gov/">EPA Home</a></li>
+    <li><a href="http://www.epa.gov/epahome/usenotice.htm">Privacy and Security Notice</a></li>
+    <li class="last"><a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Contact Us</a></li>
+  </ul>
+</div>
+<!-- END FOOTER -->
+<p class="skip"><a id="skipbot" href="#content" title="Jump to main content.">Jump to main content.</a></p>
+</body>
+<!-- InstanceEnd --></html>

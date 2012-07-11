@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Testing JQuery, #14</title>
+  <style>
+  /* CSS goes here */
+  </style>
+</head>
+<body>
+  <!-- HTML goes here -->
+    <div id="content">
+        <dl>
+            <dt>Question number one</dt>
+            <dd>Answer to first question</dd>
+            <dt>Question number two</dt>
+            <dd>Answer to second question</dd>
+            <dt>Question number three</dt>
+            <dd>Answer to third question</dd>
+        </dl>
+    </div>
+  <!-- JS goes at end of body -->
+  <script type="text/javascript" src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+  <script type="text/javascript">
+	$(function(){
+    // JavaScript goes here
+		$("#content").prepend('<a href="#" id="show">Expand all</a>');
+		$("dd").hide();
+		$("dt").css({ cursor: "pointer", color: "#4298aa" }).click(function(){
+		  $(this).next().toggle();
+		});
+		$("#show").click(function(){
+			$("dd").show();
+		});
+	});
+  </script>
+</body>
+</html>

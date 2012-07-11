@@ -1,0 +1,43 @@
+/* homepage_styles.css */
+
+/* version 1.0 07/28/05 */
+
+/* THE FOLLOWING STYLE DECLARATIONS ARE USED ON THE EPA HOME PAGE AND ON AA/RA HOME PAGES */
+
+/* The styles are VERY sensitive to changes in syntax */
+
+/* Do not edit; to suggest new or different styles, write to Dick Stapleton (stapleton.richard@epa.gov) */
+
+.outage { font-family: Arial, sans-serif; font-size:8pt; color:#ff0000;}
+
+.highlight { color: #FFFFFF;}
+
+.bold { font-weight: bold;}
+
+.small { font-size: 8pt;}
+
+.red { color: #FF0000;}
+
+.green {font-family: Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold; color: #FFFFFF;}
+
+.bigger { font-family: Arial, Helvetica, sans-serif; font-size: 16px;}
+
+.colorbar1 { font-family: Arial, Helvetica, sans-serif; font-size: 7pt; font-weight: bold; color: #000000;}
+
+.colorbar2 { font-family: Arial, Helvetica, sans-serif; font-size: 7pt; font-weight: bold; color: #FFFFFF;}
+
+.small_white_bold {  font-family: Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #FFFFFF;}
+
+.large_white { font-weight: normal; font-size: 11pt; color: #ffffff; font-family: Arial, Helvetica, sans-serif;}
+
+.large_white_bold { font-weight: bold; font-size: 11pt; color: #ffffff; font-family: Arial, Helvetica, sans-serif;}
+
+.large_black_bold { font-weight: bold; font-size: 11pt; color: #000000; font-family: Arial, Helvetica, sans-serif;}
+
+.qwkfinderhd {FONT-WEIGHT: bold; FONT-SIZE: 11pt; COLOR: #ffffff; BACKGROUND-COLOR: #339933; TEXT-DECORATION: none}
+
+A.qwkfinderhd:hover {COLOR: #90f0ff}
+
+.qwkfinder {FONT-WEIGHT: 100; FONT-SIZE: 8pt; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none; padding-left: 3px; padding-right: 3px}
+	
+.qwkfinderspc {border-left: #AAAAAA 1px solid; width:1px; padding-left: 3px;padding-right:3px}

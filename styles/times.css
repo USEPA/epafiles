@@ -1,0 +1,161 @@
+th{ ;}
+
+th{ ;font-family: "Times New Roman", Times, serif}
+
+
+
+H1 { ;} 
+
+
+
+H2 { ;}
+
+
+
+H3 { ;}
+
+
+
+H4 { ;}
+
+
+
+H5 { }
+
+
+
+H6 { }
+
+
+
+A:visited { color: #009900;}
+
+
+
+.epaSideBarLinks { color: #FFFFFF; font-weight: bold; text-decoration: none;; font-family: "Times New Roman", Times, serif}
+
+
+
+.epaSideBarLinks:visited { color: #FFFFFF;}
+
+
+
+.epaSideBarLinks:hover { color: #D2FFF0;}
+
+
+
+.epaLtSans { font-size: small; font-family: "Times New Roman", Times, serif}
+
+
+
+.epaSideNavCell { background-color: #336699}
+
+
+
+.epaHighlightBox { background-color: #E1EBF4}
+
+
+
+.epaBodyAttributes { background-image:url(http://www.epa.gov/epafiles/images/epafiles_misc_bg.gif)}
+
+
+
+.epaAreaName { color: #FFFFFF; background-color: #000066; font-size: x-large; font-weight: bold; font-family: "Times New Roman", Times, serif}
+
+
+
+
+
+
+
+/* STYLES USED BY AA AND RA HOMEPAGES */
+
+
+
+.epaAARAAreaName { color: #FFFFFF; background-color: #000066; font-size: large; font-weight: bold; font-family: "Times New Roman", Times, serif}
+
+
+
+.raStates { font-size: small; font-family: "Times New Roman", Times, serif}
+
+
+
+
+
+
+
+/* STYLES USED BY EPA TOP LEVEL PAGES */
+
+
+
+.epaPageHeaders { font-size: large; color: #FFFFFF; font-weight: bold; font-family: "Times New Roman", Times, serif}
+
+
+
+.epaPageHeaders2 { font-size: x-large; color: #000066; font-weight: bold; font-family: "Times New Roman", Times, serif}
+
+
+
+.epaBodyText { font-family: "Times New Roman", Times, serif}
+
+
+
+.epaSubHead { font-weight: bold;; font-family: "Times New Roman", Times, serif}
+
+
+
+.epaSubHeadBig { font-size: large; font-weight: bold;; font-family: "Times New Roman", Times, serif}
+
+
+
+
+
+
+
+/* END EPA STYLES */
+
+
+
+
+
+
+
+/* If you want to add additional styles, do so below this comment */
+
+
+
+
+
+
+
+/* epafiles_epastyles.css */
+
+
+
+/* version 1.2 1/28/02 */
+
+
+
+/* THE FOLLOWING STYLE DECLARATIONS ARE MANDATED FOR ALL EPA INTERNET SITES */
+
+
+
+/* The styles are VERY sensitive to changes in syntax */
+
+
+
+/* Do not edit the EPA styles */
+
+
+
+/* BEGIN EPA STYLES */
+
+
+
+/* STYLES USED BY ALL EPA PAGES */
+
+
+
+H1 { ; } H2 { ; } H3 { ; } H4 { ; } H5 { ; } H6 { ; } P { ; } 
+
+P { ; font-family: "Times New Roman", Times, serif} blockquote { ; } blockquote { ; font-family: "Times New Roman", Times, serif} li  { ; } li  { ; font-family: "Times New Roman", Times, serif} td { ; } td { ; font-family: "Times New Roman", Times, serif} 

@@ -1,0 +1,169 @@
+-- EPA Oracle Template version 4.1.1, 05 August 2010 --
+	htp.p('<!DOCTYPE html>');
+	htp.p('<html lang="en">');
+	htp.p('<!-- EPA Template version 4.1.1, 05 August 2010 -->');
+	htp.p('<head>');
+	htp.p('<meta charset="utf-8" />');
+-- Enter Page Title --
+	htp.p('<title>Page Title | Area Name | US EPA</title>');
+-- Begin Place Metadata & Keywords --
+-- Required Metadata, direction on how to complete are in the Web Guide --
+	htp.p('<meta name="DC.description" content="" />');
+	htp.p('<meta name="keywords" content="" />');
+	htp.p('<meta name="DC.title" content="Page Name" />');
+	htp.p('<meta name="DC.type" content="" />');
+	htp.p('<meta name="DC.Subject.epachannel" content="" />');
+	htp.p('<meta name="DC.creator" content="" />');
+
+-- Begin optional fields. Terms come from controlled vocabulary.  You can't use your own terms. --
+	htp.p('<meta name="DC.Subject.epacat" content="" />');
+	htp.p('<meta name="DC.Subject.epaect" content="" />');
+	htp.p('<meta name="DC.Subject.epaemt" content="" />');
+	htp.p('<meta name="DC.Subject.epahealth" content="" />');
+	htp.p('<meta name="DC.Subject.eparit" content="" />');
+	htp.p('<meta name="DC.Subject.eparat" content="" />');
+	htp.p('<meta name="DC.Subject.epaopt" content="" />');
+	htp.p('<meta name="DC.Subject.epappt" content="" />');
+	htp.p('<meta name="DC.Subject.epabrm" content="" />');
+	htp.p('<meta name="DC.Subject.eparegulation" content="" />');
+	htp.p('<meta name="DC.Subject.epasubstance" content="" />');
+	htp.p('<meta name="DC.Subject.epaindustry" content="" />');
+	htp.p('<meta name="DC.audience" content="" />');
+	htp.p('<meta name="DC.coverage" content="" />');
+	htp.p('<meta name="DC.date.created" content="" />');
+	htp.p('<meta name="DC.date.published" content="" />');
+	htp.p('<meta name="DC.date.modified" content="" />');
+	htp.p('<meta name="DC.date.reviewed" content="" />');
+	htp.p('<meta name="DC.date.archiveDate" content="" />');
+	htp.p('<meta name="DC.language" content="en" />');
+-- End Optional --
+-- End Place Metadata & Keywords --
+
+	htp.p('<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />');
+	htp.p('<link rel="meta" href="http://www.epa.gov/labels.rdf" type="application/rdf+xml" title="ICRA labels" />');
+
+-- Begin EPA Style Sheet Information --
+	htp.p('<link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/css/epa-core.css" />');
+	htp.p('<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/css/ie8.css" /><![endif]-->');
+	htp.p('<!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/css/ie7.css" /><![endif]-->');
+	htp.p('<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/css/ie6.css" /><![endif]-->');
+-- End EPA Style Sheet Information --
+	htp.p('</head>');
+-- BEGIN BODY --
+-- APPLY A CLASS TO BODY ELEMENT TO CHANGE LAYOUT --
+	htp.p('<body>');
+	htp.p('<!--googleoff: index-->');
+-- BEGIN EPA SITE WIDE ANNOUNCEMENTS --
+	htp.p('<p id="sitewidec"></p>');
+-- END EPA SITE WIDE ANNOUNCEMENTS --
+	htp.p('<p class="skip">Jump to <a href="#main" title="Jump to main content">main content</a> or <a href="#areanav" title="Jump to area navigation.">area navigation</a>.</p>');
+
+-- START EPA HEADER --
+	htp.p('<div id="header">');
+	htp.p('<p><a href="http://www.epa.gov/" title="US EPA Home Page"><img src="http://www.epa.gov/epafiles/css/i/print-epa-logo.gif" alt="US Environmental Protection Agency logo" /></a></p>');
+-- START SEARCH CONTROLS --
+	htp.p('<form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">');
+	htp.p('<fieldset>');
+	htp.p('<ol>');
+	htp.p('<li><a href="http://www.epa.gov/search.html">Advanced Search</a></li>');
+	htp.p('<li>');
+	htp.p('<fieldset id="search">');
+	htp.p('<legend>What are you looking for?</legend>');
+	htp.p('<input name="querytext" id="searchbox" value="" />');
+	htp.p('<button id="searchbutton" type="submit" title="Search"></button>');
+	htp.p('</fieldset>');
+	htp.p('</li>');
+	htp.p('</ol>');
+	htp.p('<input type="hidden" name="fld" value="" />');
+	htp.p('<input type="hidden" name="areaname" value="" />');
+	htp.p('<input type="hidden" name="areacontacts" value="Area contact us page URL here" />');
+	htp.p('<input type="hidden" name="areasearchurl" value="" />');
+	htp.p('<input type="hidden" name="result_template" value="epafiles_default.xsl" />');
+	htp.p('<input type="hidden" name="filter" value="sample4filt.hts" />');
+	htp.p('</fieldset>');
+	htp.p('</form>');
+-- END SEARCH CONTROLS --
+-- START IA Channels --
+	htp.p('<ul>');
+	htp.p('<li id="learn"><a href="http://www.epa.gov/epahome/learn.htm" title="Learn the Issues">Learn the Issues</a></li>');
+	htp.p('<li id="scitech"><a href="http://www.epa.gov/epahome/scitech.htm" title="Science and Technology">Science & Technology</a></li>');
+	htp.p('<li id="laws"><a href="http://www.epa.gov/lawsregs/" title="Laws and Regulations">Laws & Regulations</a></li>');
+	htp.p('<li id="about"><a href="http://www.epa.gov/aboutepa/" title="About EPA">About EPA</a></li>');
+	htp.p('</ul>');
+-- END IA Channels --
+	htp.p('</div>');
+-- END EPA HEADER --
+	htp.p('<div id="content">');
+	htp.p('<div id="area">');
+	htp.p('<p><a href="#">Contact Us</a></p>');
+	htp.p('<p>Page Title</p>');
+	htp.p('<p id="tagline">Space for regional taglines (only for Regions): Serving these states, etc.</p>');
+	htp.p('</div> <!-- /area -->');
+	htp.p('<div id="page">');
+	htp.p('<div id="main">');
+-- BEGIN BREADCRUMBS --
+	htp.p('<ul id="breadcrumbs"> <!-- BEGIN BREADCRUMBS -->');
+		htp.p('<li class="first">You are here: <a href="http://www.epa.gov/">EPA Home</a></li>');
+		htp.p('<li><a href="#">Area Name</a></li>');
+		htp.p('<li>Page Title</li>');
+	htp.p('</ul> <!-- END BREADCRUMBS -->');
+-- END BREADCRUMBS --
+	htp.p('<!--googleon: index-->');
+-- BEGIN PAGE NAME --
+	htp.p('<h1>{Page title here}</h1>');
+-- END PAGE NAME --
+-- BEGIN CONTENT AREA: This is where you put in PL/SQL script(s) and content(s) --
+	htp.p('<!-- BEGIN CONTENT AREA -->');
+	htp.p('<!--googleoff: index-->');
+-- BEGIN AREA FOOTER, add text and links within paragraph tags --
+	htp.p('<p id="areafooter">If there is an Area footer, put it here.</p>');
+-- END AREA FOOTER --
+	htp.p('</div> <!-- END CONTENT --><!-- /main -->');
+-- END CONTENTS --
+-- BEGIN LEFT SIDEBAR NAVIGATION --
+	htp.p('<div id="areanav">');
+	htp.p('<h4 class="skip">Area Navigation</h4>');
+	htp.p('<ul>');
+	htp.p('<li><a href="#">Area Home</a></li>');
+	htp.p('<li><a href="#">Basic Information</a></li>');
+	htp.p('<li><a href="#">Where You Live</a></li>');
+	htp.p('<li class="separator"><a href="#">Recent Additions</a><hr /></li>');
+	htp.p('<li><a href="#">Link #5</a></li>');
+	htp.p('<li><a href="#">Link #6</a>');
+	htp.p('<ul>');
+	htp.p('<li><a href="#">Sub-link #1</a></li>');
+	htp.p('</ul>');
+	htp.p('</li>');
+	htp.p('<li><a href="#">Link #7</a></li>');
+	htp.p('</ul>');
+	htp.p('</div> <!-- /area-nav -->');
+-- END LEFT SIDEBAR NAVIGATION --
+	htp.p('</div> <!-- /page -->');
+	htp.p('</div> <!-- /content -->');
+-- BEGIN FOOTER --
+	htp.p('<div id="footer">');
+	htp.p('<ul id="goodies">');
+	htp.p('<li id="rss-news"><a href="http://www.epa.gov/newsroom/rssfeeds.htm">News Feeds</a></li>');
+	htp.p('<li id="podcasts"><a href="http://www.epa.gov/epahome/podcasts.htm">Podcasts</a></li>');
+	htp.p('<li id="mobile"><a href="http://m.epa.gov/">EPA Mobile</a></li>');
+	htp.p('<li id="email-news"><a href="http://www.epa.gov/newsroom/email_signups.htm">News by Email</a></li>');
+	htp.p('<li id="widgets"><a href="http://www.epa.gov/widgets/">Widgets</a></li>');
+	htp.p('<li id="students"><a href="http://www.epa.gov/epahome/students.htm">Students</a></li>');
+	htp.p('</ul>');
+	htp.p('<ul id="globalfooter">');
+	htp.p('<li><a href="http://www.epa.gov/">EPA Home</a></li>');
+	htp.p('<li><a href="http://www.epa.gov/epahome/usenotice.htm">Privacy and Security Notice</a></li>');
+-- Change link to point to your own contact page --
+	htp.p('<li class="last"><a href="#">Contact Us</a></li>');
+	htp.p('</ul>');
+	htp.p('</div> <!-- /footer -->');
+-- END FOOTER --
+	htp.p('<p class="skip"><a href="#content" title="Jump to main content.">Jump to main content.</a></p>');
+
+-- Begin EPA JavaScript Information --
+	htp.p('<script type="text/javascript" src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>');
+	htp.p('<script type="text/javascript" src="http://www.epa.gov/epafiles/js/epa-core-v4.js"></script>');
+-- End EPA JavaScript Information --
+	htp.p('</body>');
+	htp.p('</html>');
+-- END OF JOB--

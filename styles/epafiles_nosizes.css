@@ -1,0 +1,81 @@
+th{ font-family: Arial, Helvetica, sans-serif;}
+
+th{ ;}
+
+H1 { ;} 
+
+H2 { ;}
+
+H3 { ;}
+
+H4 { ;}
+
+H5 { }
+
+H6 { }
+
+A:link { color: #0000FF}
+
+A:visited { color: #009900;}
+
+A.epaSideBarLinks { font-family: Arial, Helvetica, sans-serif; line-height: 10pt; color: #FFFFFF; font-weight: bold; text-decoration: none;}
+
+A.epaSideBarLinks:link { color: #FFFFFF;}
+
+A.epaSideBarLinks:visited { color: #FFFFFF;}
+
+A.epaSideBarLinks:hover { color: #90F0FF;}
+
+TD#epaSideBar DIV { padding-bottom: 6pt;}
+
+.epaPageName { font-family: Arial, Helvetica, sans-serif; color: #000000}
+
+.epaLtSans { font-family: Arial, Helvetica, sans-serif}
+
+.epaBodyText { font-family: Arial, Helvetica, sans-serif}
+
+.epaSideNavCell { background-color: #336699}
+
+.epaHighlightBox { background-color: #E1EBF4}
+
+.epaBodyAttributes { background-image:url(http://www.epa.gov/epafiles/images/epafiles_misc_bg.gif)}
+
+.epaAreaName { font-family: Arial, Helvetica, sans-serif; color: #FFFFFF; background-color: #000066; font-weight: bold}
+
+.epaSubHeadBig { font-family: Arial, Helvetica, sans-serif; font-weight: bold;}
+
+
+
+/* STYLES USED BY AA AND RA HOMEPAGES */
+
+.epaAARAAreaName { color: #FFFFFF; background-color: #000066; font-weight: bold}
+
+.raStates { font-family: Verdana, Arial, Helvetica, sans-serif}
+
+
+
+/* END EPA STYLES */
+
+
+
+/* If you want to add additional styles, do so below this comment */
+
+
+
+/* epafiles_epastyles.css */
+
+/* version 2.0 02/27/02 */
+
+/* THE FOLLOWING STYLE DECLARATIONS ARE MANDATED FOR ALL EPA INTERNET SITES */
+
+/* The styles are VERY sensitive to changes in syntax */
+
+/* Do not edit the EPA styles */
+
+/* BEGIN EPA STYLES */
+
+/* STYLES USED BY ALL EPA PAGES */
+
+H1 { font-family: Arial, Helvetica, sans-serif; } H2 { font-family: Arial, Helvetica, sans-serif; } H3 { font-family: Arial, Helvetica, sans-serif; } H4 { font-family: Arial, Helvetica, sans-serif; } H5 { font-family: Arial, Helvetica, sans-serif; } H6 { font-family: Arial, Helvetica, sans-serif; } P { font-family: Arial, Helvetica, sans-serif; } 
+
+P { ; } blockquote { font-family: Arial, Helvetica, sans-serif; } blockquote { ; } dd { font-family: Arial, Helvetica, sans-serif; } dd { ; } dl { font-family: Arial, Helvetica, sans-serif; } dl { ; } dt { font-family: Arial, Helvetica, sans-serif; } dt { ; } li  { font-family: Arial, Helvetica, sans-serif; } li  { ; } ol { font-family: Arial, Helvetica, sans-serif; } ol { ; } td { font-family: Arial, Helvetica, sans-serif; } td { ; } ul { font-family: Arial, Helvetica, sans-serif; } ul { ; } 

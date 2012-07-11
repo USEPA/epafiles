@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/t4.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- EPA Template, OneEPA Web, 17 November 2010 -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Getting Started with jQuery | EPA Web Design | US EPA</title>
+<!--Required Metadata, direction on how to complete are in the Web Guide -->
+<meta name="DC.description" content="These pages describe EPA's style guide for its web site." />
+<meta name="Keywords" content="" />
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="metaElements" -->
+<meta name="DC.title" content="" />
+<!-- InstanceEndEditable -->
+<meta name="DC.type" content="" />
+<meta name="DC.Subject.epachannel" content="" />
+<meta name="DC.Subject.epabrm" content="" />
+<meta name="DC.Subject.epacat" content="" />
+<meta name="DC.Subject.epaect" content="" />
+<meta name="DC.Subject.epaemt" content="" />
+<meta name="DC.Subject.epahealth" content="" />
+<meta name="DC.Subject.epaindustry" content="" />
+<meta name="DC.Subject.epaopt" content="" />
+<meta name="DC.Subject.epappt" content="" />
+<meta name="DC.Subject.eparat" content="" />
+<meta name="DC.Subject.eparegulation" content="" />
+<meta name="DC.Subject.eparit" content="" />
+<meta name="DC.Subject.epasubstance" content="" />
+<meta name="DC.audience" content="" />
+<meta name="DC.coverage" content="" />
+<meta name="DC.date.created" content="" />
+<meta name="DC.date.modified" content="" />
+<meta name="DC.date.archivedate" content="" />
+<meta name="DC.creator" content="US EPA" />
+<meta name="DC.language" content="en" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="meta" href="/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<!--RSS Feeds -->
+<link rel="alternate" type="application/atom+xml" title="EPA.gov News" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSRecentNews" />
+<link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSByLocation?open&location=Headquarters" />
+<link rel="alternate" type="application/atom+xml" title="Greenversations, EPA's Blog" href="http://blog.epa.gov/blog/feed/" />
+
+<!-- ALL PAGE STYLES BELOW THIS LINE -->
+<link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/epa.css" />
+<!--[if IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie7.css"/><![endif]-->
+<!--[if lt IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie6.css"/><![endif]-->
+<!-- InstanceBeginEditable name="styles" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="bodyClass" type="text" value="basic" -->
+</head>
+<body class="basic">
+<!--googleoff: index-->
+<p id="sitewidec"></p>
+<p class="skip">Jump to <a href="#main" title="Jump to main content">main content</a> or <a href="#areanav" title="Jump to area navigation.">area navigation</a>.</p>
+<div id="header">
+  <p><a href="/" title="US EPA Home Page"><img src="/epafiles/templates/webcms/css/i/print-epa-logo.gif" alt="US Environmental Protection Agency logo" /></a></p>
+  <form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+    <fieldset>
+      <ol>
+        <li id="azindex"><a href="/epahome/quickfinder.htm" title="Alphabetical list of top EPA topics">A-Z Index</a></li>
+        <li><a href="/search.html">Advanced Search</a></li>
+        <li>
+          <fieldset id="search">
+            <legend>What are you looking for?</legend>
+            <input name="querytext" id="searchbox" value=""/>
+            <button id="searchbutton" type="submit" title="Search"></button>
+          </fieldset>
+        </li>
+      </ol>
+      <input type="hidden" name="fld" value="" />
+      <input type="hidden" name="areaname" value="" />
+      <input type="hidden" name="areacontacts" value="" />
+      <input type="hidden" name="areasearchurl" value="" />
+      <input type="hidden" name="result_template" value="epafiles_default.xsl" />
+      <input type="hidden" name="filter" value="sample4filt.hts" />
+    </fieldset>
+  </form><!-- /search -->
+  <ul>
+    <li id="learn"><a href="/gateway/learn/" title="Learn the Issues">Learn the Issues</a></li>
+    <li id="scitech"><a href="/gateway/science/" title="Science and Technology">Science &amp; Technology</a></li>
+    <li id="laws"><a href="/lawsregs/" title="Laws and Regulations">Laws &amp; Regulations</a></li>
+    <li id="about"><a href="/aboutepa/" title="About EPA">About EPA</a></li>
+  </ul><!-- /IA Buckets -->
+</div><!-- /header -->
+<div id="content">
+  <div id="area">
+    <p><a href="/epafiles/auxfiles/contactus.htm">Contact Us</a></p>
+    <p>EPAFiles: Web Design</p>
+  </div><!-- /area -->
+  <div id="page">
+    <div id="main">
+      <ul id="breadcrumbs">
+        <li class="first"><b>You are here:</b> <a href="/">EPA Home</a></li>
+        <!-- InstanceBeginEditable name="breadcrumbs" -->
+        <li><a href="http://www.epa.gov/epafiles/">EPA Web Design</a></li>
+        <li><a href="index.html">Templates</a></li>
+        <li><a href="js.html">JavaScript</a></li>
+        <li>Get Started With jQuery</li>
+        <!-- InstanceEndEditable -->
+      </ul>
+<!--googleon: index-->
+      <h1><!-- InstanceBeginEditable name="PageName" -->Getting Started With jQuery<!-- InstanceEndEditable --></h1>
+      <!-- InstanceBeginEditable name="content" -->
+      <div class="boxmulti">
+        <h5>Note</h5>
+        <p>This tutorial adapted from <a href="http://www.webmonkey.com/2010/02/get_started_with_jquery/">a jQuery tutorial from webmonkey</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a>.</p>
+        <h5>Scripting Links of Note</h5>
+        <ul>
+          <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/newicon">"New!" icon</a> <img src="../images/new-en.gif" height="16" width="34" alt="New!" /></li>
+          <li><a href="../docs/jstest.html">Writing Good JavaScript</a></li>
+          <li><a href="js.html">Using jQuery at EPA</a></li>
+          <li><a href="http://yosemite.epa.gov/oei%5Cwebguide.nsf/approved_cat?openView&RestrictToCategory=Scripts%20and%20Codes">Other "Scripts and Codes"</a></li>
+        </ul>
+      </div>
+      <p>Using jQuery isn't difficult: it's actually considerably easier than writing your own JavaScript code. But it does take some practice. </p>
+      <p>By the end of this tutorial, we will have written a decent jQuery-powered expandable FAQ template.</p>
+      <h2>What You'll Need</h2>
+      <ul>
+        <li>Good understanding of HTML and CSS</li>
+        <li>Very basic knowledge of JavaScript</li>
+        <li>Willingness to have your mind blown away (or not)</li>
+      </ul>
+      <ol>
+        <li><a href="#Your_Basic_HTML_Sets_the_Stage">Your Basic HTML Sets the Stage</a>
+            <ul>
+                <li><a href="#jQuerys_ready_Function">jQuery's "ready()" Function</a></li>
+            </ul>
+        </li>
+        <li><a href="#You_Can_Get_Anything_With_jQuery">You Can Get Anything With jQuery</a>
+          <ul>
+            <li><a href="#Get_An_Object_By_ID">Get An Object By ID</a></li>
+            <li><a href="#Get_Objects_By_Class">Get Objects By Class</a></li>
+            <li><a href="#Get_Objects_By_Tag">Get Objects By Tag</a></li>
+            <li><a href="#Get_Objects_By_Attribute">Get Objects By Attribute</a></li>
+            <li><a href="#Filtering_Objects">Filtering Objects</a></li>
+          </ul>
+        </li>
+        <li><a href="#Change_Things_Up_With_jQuery">Change Things Up With jQuery</a>
+          <ul>
+            <li><a href="#Change_CSS_Classes">Change CSS Classes</a></li>
+            <li><a href="#Change_An_Objects_Inner_Text">Change An Object's Inner Text</a></li>
+            <li><a href="#Change_Your_Appearances:_Show_and_Hide">Change Your Appearances: Show and Hide</a></li>
+          </ul>
+        </li>
+        <li><a href="#Create_An_Expandable_FAQ_With_jQuery">Create An Expandable FAQ With jQuery</a>
+          <ul>
+            <li><a href="#Set_Up_The_HTML">Set Up The HTML</a></li>
+            <li><a href="#Hide_the_Questions">Hide the Questions</a></li>
+            <li><a href="#Make_Your_Questions_Clickable">Make Your Questions Clickable</a></li>
+            <li><a href="#Add_Expand_All_Option_to_FAQ">Add "Expand All" Option to FAQ</a></li>
+            <li><a href="#A_Slicker_FAQ">A Slicker FAQ</a></li>
+          </ul>
+        </li>
+        <li><a href="#Become_a_jQuery_Master">Become a jQuery Master</a></li>
+      </ol>
+      <hr />
+      <h2 id="Your_Basic_HTML_Sets_the_Stage">Your Basic HTML Sets the Stage</h2>
+      <p>First, let's write some testing HTML. Copy the code below into an empty document:</p>
+      <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;title&gt;Testing jQuery&lt;/title&gt;
+  &lt;style&gt;
+  /* CSS goes here */
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- HTML goes here -->
+  &lt;!-- JS goes at end of body -->
+  &lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    // JavaScript goes here
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      <p>Opened in a browser, the <a href="../js/training/index.html">above HTML doesn't show anything</a>. That's because it's a starting place for the code we'll be adding into it. </p>
+      <p>Before we start writing code, here's something interesting about the script tags. They're at the bottom of the HTML document, just before the closing <code>&lt;/body></code> tag. Weird? You bet. Good coding practice? You bet!</p>
+      <p>Also note that you can link to EPA's shared jQuery file. We've minimized and gzipped the file, so it's actually only 26 KB, instead of over 100 KB. You can and should piggyback off this file.</p>
+      <p>Another note about styles and scripts: the code we create in this tutorial will be written into one main HTML file. <b>EPA's standard practice is to link to external CSS or JavaScript files</b>, which you'll do for all production code. For this tutorial, we're including scripts and styles inline because we want to make the code easy to read and manipulate. </p>
+      <p>Before we move on to adding JS, let's set up the HTML and CSS we'll be using in the next section. </p>
+      <p>Add this between the body tags: </p>
+      <pre>&lt;div id="content"&gt;
+  &lt;span&gt;SPAN&lt;br /&gt;No id&lt;br /&gt;No class&lt;/span&gt;
+  &lt;span class="test" id="second"&gt;SPAN&lt;br /&gt;id="second"&lt;br /&gt;class "test"&lt;/span&gt;
+  &lt;div class="test"&gt;DIV&lt;br /&gt;No id&lt;br /&gt;class "test"&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Toggles:&lt;/strong&gt;&lt;/p&gt;</pre>
+      <p>This HTML sets up two spans, one with the text, 'SPAN No id No class' and one with the text, 'SPAN id="second" class "test".' There's also a <code>div</code> with the text, 'DIV No id class "test"'. Below these two <code>span</code>s and the <code>div</code> are the words, "Toggles:".</p>
+	  <p>To style this HTML, put the following between the style tags in the <code>&lt;head></code>:</p>
+      <pre>#content div, #content span { border: 1px solid black; display: block; float: left; height: 150px; width: 150px; }
+#content .highlight { border: 3px solid orange; }
+p { clear: left; }
+input { display: block; }</pre>
+	  <p>This CSS will style the <code>span</code>s and <code>div</code> into "boxes" sitting next to each other. <a href="../js/training/index01.html">Reload the HTML file</a> you created and you'll see a few squares with some text on your screen. Yay! Now let's apply jQuery.</p>
+      <h3 id="jQuerys_ready_Function">jQuery's "ready()" Function</h3>
+      <p>Now, to use jQuery, you need the ready event. All jQuery code is placed inside the ready event so it is executed when the document is fully loaded (i.e., "ready"). jQuery provides a <code>ready()</code> function to make this easy.</p>
+      <p>Between the 2nd pair of script tags near the bottom of your HTML, add this JavaScript:</p>
+      <pre>$(function(){
+  // Your custom code goes here
+});</pre>
+      <p>When the <a href="../js/training/index02.html">document is loaded</a> (view source to see your changes), the browser will run the ready function. If you haven't seen this before, it may look strange, but it's part of the power of jQuery.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h2 id="You_Can_Get_Anything_With_jQuery">You Can Get Anything With jQuery</h2>
+      <p>One of the best features of jQuery is its ability to grab objects from a page. Most of this happens through the jQuery's "dollar sign" function, with CSS-like commands. In this section, we'll walk through common ways of selecting objects, as well as filtering a list of objects down to just the few you want.</p>
+      <p>You can read more about all the <a href="http://docs.jquery.com/Selectors">different types of selectors at jquery.com</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a>.</p>
+      <h3 id="Get_An_Object_By_ID">Get An Object By ID</h3>
+      <p>Identifying a single object by ID is similar to setting styles in CSS. Use the dollar sign function and pass the ID with a pound sign in front of it. Like this: <code>$("#second")</code> </p>
+      <p>To test this in our example HTML file, add the following button underneath the "Toggles" paragraph:</p>
+      <pre>&lt;input type="button" id="second-toggle" value="id='second'" /&gt;</pre>
+      <div class="boxmulti">
+      	<h5><code>code</code> Note</h5>
+        <p><code>click</code>: if you click on the matched element, it triggers the click event and executes the function.</p>
+        <p><code>toggleClass</code>: if a matched element already has the class, it is removed; if an element does not have the class, then it is added.</p>
+      </div>
+      <p>Add the following JS in between your ready function, underneath the <code>// Your custom code goes here</code> comment:</p>
+      <pre>$(function(){
+  // Your custom code goes here
+  $('#second-toggle').click(
+    function () {
+      $('#second').toggleClass('highlight');
+  });
+});</pre>
+      <p><a href="../js/training/index03.html">Reload the file</a> and click the button with the label "<code>id='second'</code>". The second <em><code>span</code> (the one with <code>id="second"</code>)</em> highlights. Click the button again, and the highlight around the <code>span</code> goes away.</p>
+      <p>To understand this bit of JS: we used jQuery to find the element with the id of <code>second-toggle</code> (the button). When you clicked on the button, jQuery triggered a function to toggle the class (<code>highlight</code>) on element with the id of <code>second</code> (the span).</p>
+      <hr />
+      <h3 id="Get_Objects_By_Class">Get Objects By Class</h3>
+      <p>Grabbing all objects of a certain class also uses similar CSS commands and the dollar sign function. Check it: <code>$(".test")</code> </p>
+      <p>Let's test it in our example HTML file. Here's the code for the testing the class button. Add it just below the button you created in the previous section: </p>
+      <pre>&lt;input type="button" id="test-toggle" value="class='test'" /&gt;</pre>
+      <p>And now the JavaScript, which you should paste below the previous code and inside the ready function: </p>
+      <pre>$('#test-toggle').click(
+  function () {
+    $('.test').toggleClass('highlight');
+});</pre>
+      <p><a href="../js/training/index04.html">Reload the file</a> and click the new button. The two right boxes (the ones with class="test") highlight. Click again, and the highlight goes away.</p>
+      <p>To understand this bit of JS: we used jQuery to find the element with the id of <code>test-toggle</code> (the button). When you clicked on the button, jQuery triggered a function to toggle the class (<code>highlight</code>) on the two elements (the 2nd <code>span</code> and the <code>div</code>) with a class of <code>test</code>.</p>
+      <hr />
+      <h3 id="Get_Objects_By_Tag">Get Objects By Tag</h3>
+      <p>If you want all objects of a particular tag, you just need to pass the name of the tag to the dollar sign function. This is also similar to CSS: <code>$("span")</code> </p>
+      <p>In our example HTML file, paste this code for the button to test getting objects by tag: </p>
+      <pre>&lt;input type="button" id="span-toggle" value="tag is 'span'" /&gt;</pre>
+      <p>And the JavaScript:</p>
+      <pre>$('#span-toggle').click(
+  function () {
+    $('span').toggleClass('highlight');
+});</pre>
+      <p><a href="../js/training/index05.html">Reload and click the new button</a>, you'll see the two left boxes (the ones that are span tags) highlight. Click again, and the highlight goes away.</p>
+      <p>To understand this bit of JS: we used jQuery to find the element with the id of <code>span-toggle</code> (the button). When you clicked on the button, jQuery triggered a function to toggle the class (<code>highlight</code>) on the two <code>span</code>s.</p>
+      <hr />
+      <h3 id="Get_Objects_By_Attribute">Get Objects By Attribute</h3>
+      <p>The 'attribute contains' selector <code>$("a[href*=something]")</code> will select all anchors with an href that contains the word 'something' like this: <code>&lt;a href="http://testsomething.com"&gt;&lt;/a&gt;</code></p>
+      <hr />
+      <h3 id="Filtering_Objects">Filtering Objects</h3>
+      <p>jQuery has a whole lot of filters for finding only the items you want from a selection. We'll filter the final example from the <a href="#Get_Objects_By_Tag">Get Objects By Tag</a> section, where we retrieved all the span tags.</p>
+      <p>Filters all start with a colon. In these examples, we will use the <b>:first</b> and <b>:not</b> filters. </p>
+      <p>Here's the HTML for the first filtering button:</p>
+      <pre>&lt;input type="button" id="filter-toggle01" value="the first object where tag is 'span'" /&gt;</pre>
+      <p>And the script for the first filter:</p>
+      <pre>$('#filter-toggle01').click(
+  function () {
+    $("span:first").toggleClass("highlight");
+});</pre>
+      <p>The <code>:first</code> filter returns only the first item in the collection. Where <code>$("span")</code> will return all the span tag objects, <code>$("span:first")</code> will return only the first span. </p>
+      <p><a href="../js/training/index06.html">Click the button labeled "the first object where tag is 'span'"</a> and see it highlight. Success!</p>
+      <p>Here's the HTML for the second filtering button:</p>
+      <pre>&lt;input type="button" id="filter-toggle02" value="tag is 'span', but id is not 'second'" /&gt;</pre>
+      <p>And the script for the second filter:</p>
+      <pre>$('#filter-toggle02').click(
+  function () {
+    $("span:not(#second)").toggleClass("highlight");
+});</pre>
+      <p>The second filter shows how to remove specific rules from being selected. This filter accepts a second set of CSS commands inside parentheses. The full rule, <code>$("span:not(#second)")</code> will first grab all the spans, but then filter out any that have <code>id="second"</code>. </p>
+      <p>Click the second of our two new buttons and we'll see the first span highlights again. It is the only span that does not contain the "second" id. </p>
+      <p>If you've been following along, your <a href="../js/training/index06.html">web page</a> should now look something like this: </p>
+      <iframe src="../js/training/index06.html" name="index06" frameborder="1" height="350" scrolling="no" width="500"></iframe>
+      <p>You can get quite a bit more complicated with the jQuery filters. There are a lot of <a href="http://docs.jquery.com/Selectors">different types of selectors at jquery.com</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a>.  See how to select every other element (i.e., for <a href="../s/tables.html">zebra striped tables</a>), elements containing specific text, and more.</p>
+      <p>Or, if you're all filtered out, move on to the next section. We'll working how to actually <em>do something</em> with the objects we're selecting with jQuery.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h2 id="Change_Things_Up_With_jQuery">Change Things Up With jQuery</h2>
+      <p>So far we've just selected objects on the page using jQuery. Now it's time to do something with them. For this section, I'm removing all my previous HTML buttons and script from my file. You can work on the same one, or clean house a bit.</p>
+      <p>There is an aspect to what I've shown so far that you've probably noticed: highlighting. It's an example of what can be done with the results from a jQuery call. The first item below shows how it's done, then I'll get into some other ways to manipulate the objects on the page using jQuery. </p>
+      <h3 id="Change_CSS_Classes">Change CSS Classes</h3>
+      <p>To alter the design of a site as a user interacts with it, you most likely want to add or remove CSS classes. jQuery makes it easy. In fact, every example so far has toggled the "highlight" class, which puts a 3 pixel orange border around our example boxes.</p>
+      <p>Add this HTML button to your file: </p>
+      <pre>&lt;input type="button" id="test" value="Change CSS class of id='second'" /&gt;</pre>
+      <p>And this script:</p>
+      <pre>$('#test').click(
+  function () {
+    $("#second").toggleClass("highlight");
+});</pre>
+      <p><a href="../js/training/index07.html">Here's the HTML</a>. The code is actually the same as the example to <a href="#Get_An_Object_By_ID">retrieve a particular ID</a>. Again, we use the toggleClass function to tell jQuery which class to either add or remove. If the class is already there, it removes. Otherwise, it adds.</p>
+      <p>We can also change the <code>toggleClass</code> function to <code>addClass</code> or <code>removeClass</code> to perform those functions directly.</p>
+      <hr />
+      <h3 id="Change_An_Objects_Inner_Text">Change An Object's Inner Text</h3>
+      <p>So far we've just made changes to how something looks. How about bigger changes? In this example, we'll change the text inside some of the boxes using jQuery. </p>
+      <p>To do this, we'll use the <code>text</code> function. It takes a string of text as an argument, where we tell it the new text to use.</p>
+      <p>Here's the HTML code for our button: </p>
+      <pre>&lt;input type="button" id="text" value="Change text where class='test'" /&gt;</pre>
+      <div class="boxmulti">
+      	<h5><code>code</code> Note</h5>
+        <p><code>text</code>: set the text contents of all matched elements.</p>
+      </div>
+      <p>And the script:</p>
+      <pre>$('#text').click(
+  function () {
+    $(".test").text("over-riding text for these boxes");
+});</pre>
+      <p>We use jQuery to return all the objects from the page with class "test", then replace their text with the new text.</p>
+      <p><a href="../js/training/index08.html">Reload your file</a>, click the new button, and suddenly your right two boxes (the ones with <code>class="test"</code>) will have new content inside.</p>
+      <p>The important thing to notice here is that jQuery made the change over multiple objects, but only required one line. If there had been 50 objects with class test, the code would have been the same. No looping code needed. jQuery does the hard work for us.</p>
+      <p>You're probably beginning to see the real power of jQuery. In the next section, I'll start making stuff disappear. Then you'll <em>know</em> it's magic. </p>
+      <hr />
+      <h3 id="Change_Your_Appearances:_Show_and_Hide">Change Your Appearances: Show and Hide</h3>
+      <p>Now for some real fun. We're going to make boxes disappear. To do this, we'll need the hide function. Let's get straight to the code, first for the button: </p>
+      <pre>&lt;input type="button" id="hide" value="Hide where id='second'" /&gt;</pre>
+      <p>And then the script:</p>
+      <div class="boxmulti">
+      	<h5><code>code</code> Note</h5>
+        <p><code>hide</code>: hides each of the set of matched elements if they are shown.</p>
+      </div>
+      <pre>$('#hide').click(
+  function () {
+    $("#second").hide();
+});</pre>
+      <p><a href="../js/training/index09.html">Reload the page</a>, click the new button, and just like that, the box goes away. As you may have guessed, to get it to return, you'll need to call <code>$("#second").show()</code>. Instead, let's try toggling, since it may be a more popular method than using show and hide independently. </p>
+      <p>The idea behind a show/hide toggle is that if an object is currently displayed on the page, it will disappear. If it's invisible, it will reappear. Voila! </p>
+      <p>Here is the button code: </p>
+      <pre>&lt;input type="button" id="toggle" value="Toggle show/hide where id='second'" /&gt;</pre>
+      <p>And the script: </p>
+      <pre>$('#toggle').click(
+  function () {
+    $("#second").hide();
+});</pre>
+      <p><a href="../js/training/index10.html">Reload your file</a>, click the new button. If you've been following along, the end result should look something like this: </p>
+      <p>
+        <iframe src="../js/training/index10.html" name="index10" frameborder="1" height="350" scrolling="no" width="500"></iframe>
+      </p>
+      <p>Notice the code is virtually the same as the show code? Instead of calling the show function, we call the toggle function. All the work to determine whether something is viewable is done by jQuery. </p>
+      <p>This example of toggling viewability will come in handy for the next section. I'm going to show you how to create an FAQ that only shows the questions until you click to expand the answers. </p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h2 id="Create_An_Expandable_FAQ_With_jQuery">Create An Expandable FAQ With jQuery</h2>
+      <p>In this section, I'll show an example project that you can start using in the real world right away. We'll create an FAQ with questions and answers, then use jQuery to hide the answers and display one when the question is clicked. </p>
+      <h3 id="Set_Up_The_HTML">Set Up The HTML</h3>
+      <p>Start with the shell of an HTML file, like in previous examples. Then add this definition list between the body tags: </p>
+      <pre>&lt;dl&gt;
+	&lt;dt&gt;Question number one&lt;/dt&gt;
+	&lt;dd&gt;Answer to first question&lt;/dd&gt;
+
+	&lt;dt&gt;Question number two&lt;/dt&gt;
+	&lt;dd&gt;Answer to second question&lt;/dd&gt;
+
+	&lt;dt&gt;Question number three&lt;/dt&gt;
+	&lt;dd&gt;Answer to third question&lt;/dd&gt;
+&lt;/dl&gt;</pre>
+      <p>(<a href="../js/training/index11.html">Here's the HTML</a>.) A definition list (<code>&lt;dl&gt;</code> tag) is a semantic way to show questions and answers. jQuery doesn't require this, but this simple markup does make things easier. Inside the definition list, we have questions as definition terms (<code>&lt;dt&gt;</code> tags) and the answers as definition descriptions (<code>&lt;dd&gt;</code> tags).</p>
+      <hr />
+      <h3 id="Hide_the_Questions">Hide the Questions</h3>
+      <p>When the FAQ page is first loaded, we want the definitions to be hidden, so that only the questions are viewable. Between the script tags, add this JavaScript:</p>
+      <pre>$("dd").hide();</pre>
+      <p>Don't forget your <a href="#jQuerys_ready_Function">ready function</a>.</p>
+      <p>We have one call, which will look familiar from previous sections of this tutorial. We are using jQuery to retrieve all the <code>&lt;dd&gt;</code> tags, then we call the <code>hide()</code> function to make them disappear.</p>
+      <p><a href="../js/training/index12.html">Reload your HTML file</a> and you should now only see the questions list.</p>
+      <hr />
+      <h3 id="Make_Your_Questions_Clickable">Make Your Questions Clickable</h3>
+      <p>Now that we have successfully hidden the FAQ answers, we want to allow users to click questions in order to display the appropriate answer. In order to do this, we need to use jQuery to tell the browser that every <code>dt</code> tag can be clicked, then also tell the browser what to do when it's clicked. </p>
+      <p>Add this code to your <code>ready()</code> function, just below the hide command from the previous section: </p>
+      <div class="boxmulti">
+      	<h5><code>code</code> Note</h5>
+        <p><code>css</code>: set style properties on all matched elements.</p>
+        <p><code>next</code>: gets the unique next siblings of each of the given set of elements.</p>
+      </div>
+      <pre>$("dt").css({ cursor: "pointer", color: "#4298aa" }).click(function(){
+  $(this).next().toggle();
+});</pre>
+      <p>Here we grab every <code>dt</code> tag, change its CSS by applying a few styles, and then run the click command, which attaches an event to the <code>dt</code>. Inside the click event, we create a function to toggle the visibility of the answer within the <code>dd</code> tag.</p>
+      <p>You may be asking, where do we reference the <code>dd</code> tag? We don't. We let the power of jQuery and our semantic code do the work:</p>
+      <ol>
+        <li>Reference the object (the <code>&lt;dt&gt;</code>) that was clicked with <code>$(this)</code></li>
+        <li>Call the <code>next()</code> function on the clicked object to return the object that comes after it in our HTML code. In this case, that is our <code>&lt;dd&gt;</code> tag.</li>
+        <li>Toggle the visability of the <code>&lt;dd&gt;</code> tag.</li>
+      </ol>
+      <p>Now, with very little JavaScript code, we've <a href="../js/training/index13.html">created an expandable FAQ that you could implement today</a>. An added bonus is that this code has easy upkeep. Add or remove questions to the list, and it still works without needing to edit any JavaScript code.</p>
+      <p>You could stop here, or you could add one more enhancement to the FAQ: the "expand all" link. </p>
+      <hr />
+      <h3 id="Add_Expand_All_Option_to_FAQ">Add "Expand All" Option to FAQ</h3>
+      <p>Some people dislike expandable FAQs. These people may be no fun at parties, but that doesn't mean we should deprive them of reading your Q&amp;A. Let's provide a link to show all the answers.</p>
+      <p>Now, because we're using JS to hide the answers, let's also use JS to create this one-click option. (Otherwise, for those with JS off, the "Expand All" button is useless!)</p>
+      <pre><b>$("#content").prepend('&lt;a href="#" id="show">Expand all&lt;/a>');</b>
+$("dd").hide();
+$("dt").css({ cursor: "pointer", color: "#4298aa" }).click(function(){
+  $(this).next().toggle();
+});
+<b>$("#show").click(
+  function () {
+    $("dd").show();
+});</b></pre>
+      <p>You may notice that the call to show all the definition descriptions (<code>dd</code>) is similar to hiding. Yet, instead of calling the <code>hide()</code> function, we call the <code>show()</code> function. </p>
+      <p>The <a href="../js/training/index14.html">end result</a> should look like this: </p>
+      <iframe src="../js/training/index14.html" name="index14" frameborder="1" height="200" scrolling="no" width="300"></iframe>
+      <p>Now you've made everyone happy and learned a tiny bit more jQuery.</p>
+      <hr />
+      <h3 id="A_Slicker_FAQ">A Slicker FAQ</h3>
+      <p>Here's a <a href="../js/training/index15.html">slicker FAQ</a> with some more jQuery.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h2 id="Become_a_jQuery_Master">Become a jQuery Master</h2>
+      <p>If you've made it this far in the tutorial, you have a good idea of the power jQuery has, while being easy to write. Hopefully you're looking to learn even more jQuery and maybe even to become a jQuery master. </p>
+      <p>The jQuery docs are a good reference. Now you have a little knowledge of the way jQuery is written, you may be able to figure out how to use more advanced functions and filters. Just about every item in the docs has an example if you click through to the detail page.</p>
+      <p>Here are a few particular jQuery docs to check out: </p>
+      <ul>
+        <li> <a href="http://docs.jquery.com/Selectors">More ways to select objects</a>  <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> You'll be surprised at the ways you can retrieve just the objects you need with jQuery. The hierarchy stuff almost makes my brain explode, but it's extremely powerful. </li>
+        <li> <a href="http://docs.jquery.com/Manipulation">More ways to manipulate objects</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> In addition to changing its text, you can completely remove, append, prepend, and wrap objects. </li>
+        <li> <a href="http://docs.jquery.com/Traversing">View child and sibling objects in many ways</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> If you liked the next() function, there's a lot more where that came from. </li>
+      </ul>
+      <!-- InstanceEndEditable -->
+<!--googleoff: index-->
+      <p id="areafooter">For help with your epa.gov web design, contact the <a href="/epafiles/auxfiles/contactus.html">Web Template Workgroup</a>.</p>
+    </div><!-- /main -->
+    <div id="areanav">
+      <h4 class="skip">Area Navigation</h4>
+      <ul>
+        <li class="separator"><a href="/epafiles/">EPA Web Design Home</a><hr /></li>
+        <li><a href="/epafiles/templates/">HTML Templates</a></li>
+        <li><a href="/epafiles/#instrux">Updating &amp; Creating your Web Pages</a></li>
+        <li><a href="/epafiles/s/">Styling your Content</a></li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/homepage">EPA Web Guide</a></li>
+        <li><a href="http://yosemite.epa.gov/oei/webguide.nsf/standards-guidance">EPA Web Standards</a></li>
+      </ul>
+    </div><!-- /area-nav -->
+  </div><!-- /page -->
+</div><!-- /content -->
+<div id="footer">
+  <ul id="goodies">
+    <li id="rss-news"><a href="/newsroom/rssfeeds.htm">News Feeds</a></li>
+    <li id="podcasts"><a href="/epahome/podcasts.htm">Podcasts</a></li>
+    <li id="mobile"><a href="http://m.epa.gov/">EPA Mobile</a></li>
+    <li id="email-news"><a href="/newsroom/email_signups.htm">News by Email</a></li>
+    <li id="widgets"><a href="/widgets/">Widgets</a></li>
+  </ul>
+  <ul id="globalfooter">
+    <li><a href="/">EPA Home</a></li>
+    <li><a href="http://www.epa.gov/epahome/usenotice.htm">Privacy and Security Notice</a></li>
+    <li class="last"><a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Contact Us</a></li>
+  </ul>
+  <p id="seal">The Seal of the United States Environmental Protection Agency</p>
+</div><!-- /footer -->
+<p class="skip"><a href="#content" title="Jump to main content.">Jump to main content.</a></p>
+<script src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+<script src="http://www.epa.gov/epafiles/js/epa-core-v4.js"></script>
+<!-- ALL SCRIPTS BELOW THIS LINE -->
+<!-- InstanceBeginEditable name="scripts" --> <!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

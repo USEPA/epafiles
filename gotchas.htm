@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/t4.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- EPA Template, OneEPA Web, 17 November 2010 -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Common Implementation Issues | EPA Web Design | US EPA</title>
+<meta name="DC.type" content="" />
+<meta name="DC.date.reviewed" content="" />
+<meta name="DC.date.modified" content="" />
+<meta name="DC.date.created" content="" />
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="metaElements" -->
+<meta name="DC.title" content="Common Implementation Issues" />
+<meta name="DC.description" content="These pages describe EPA's style guide for its web site." />
+<meta name="keywords" content="" />
+<!-- InstanceEndEditable -->
+<meta name="DC.type" content="" />
+<meta name="DC.Subject.epachannel" content="" />
+<meta name="DC.Subject.epabrm" content="" />
+<meta name="DC.Subject.epacat" content="" />
+<meta name="DC.Subject.epaect" content="" />
+<meta name="DC.Subject.epaemt" content="" />
+<meta name="DC.Subject.epahealth" content="" />
+<meta name="DC.Subject.epaindustry" content="" />
+<meta name="DC.Subject.epaopt" content="" />
+<meta name="DC.Subject.epappt" content="" />
+<meta name="DC.Subject.eparat" content="" />
+<meta name="DC.Subject.eparegulation" content="" />
+<meta name="DC.Subject.eparit" content="" />
+<meta name="DC.Subject.epasubstance" content="" />
+<meta name="DC.audience" content="" />
+<meta name="DC.coverage" content="" />
+<meta name="DC.date.created" content="" />
+<meta name="DC.date.modified" content="" />
+<meta name="DC.date.archivedate" content="" />
+<meta name="DC.creator" content="US EPA" />
+<meta name="DC.language" content="en" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="meta" href="/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<!--RSS Feeds -->
+<link rel="alternate" type="application/atom+xml" title="EPA.gov News" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSRecentNews" />
+<link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSByLocation?open&location=Headquarters" />
+<link rel="alternate" type="application/atom+xml" title="Greenversations, EPA's Blog" href="http://blog.epa.gov/blog/feed/" />
+
+<!-- ALL PAGE STYLES BELOW THIS LINE -->
+<link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/epa.css" />
+<!--[if IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie7.css"/><![endif]-->
+<!--[if lt IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie6.css"/><![endif]-->
+<!-- InstanceBeginEditable name="styles" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="bodyClass" type="text" value="basic" -->
+</head>
+<body class="basic">
+<!--googleoff: index-->
+<p id="sitewidec"></p>
+<p class="skip">Jump to <a href="#main" title="Jump to main content">main content</a> or <a href="#areanav" title="Jump to area navigation.">area navigation</a>.</p>
+<div id="header">
+  <p><a href="/" title="US EPA Home Page"><img src="/epafiles/templates/webcms/css/i/print-epa-logo.gif" alt="US Environmental Protection Agency logo" /></a></p>
+  <form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+    <fieldset>
+      <ol>
+        <li id="azindex"><a href="/epahome/quickfinder.htm" title="Alphabetical list of top EPA topics">A-Z Index</a></li>
+        <li><a href="/search.html">Advanced Search</a></li>
+        <li>
+          <fieldset id="search">
+            <legend>What are you looking for?</legend>
+            <input name="querytext" id="searchbox" value=""/>
+            <button id="searchbutton" type="submit" title="Search"></button>
+          </fieldset>
+        </li>
+      </ol>
+      <input type="hidden" name="fld" value="" />
+      <input type="hidden" name="areaname" value="" />
+      <input type="hidden" name="areacontacts" value="" />
+      <input type="hidden" name="areasearchurl" value="" />
+      <input type="hidden" name="result_template" value="epafiles_default.xsl" />
+      <input type="hidden" name="filter" value="sample4filt.hts" />
+    </fieldset>
+  </form><!-- /search -->
+  <ul>
+    <li id="learn"><a href="/gateway/learn/" title="Learn the Issues">Learn the Issues</a></li>
+    <li id="scitech"><a href="/gateway/science/" title="Science and Technology">Science &amp; Technology</a></li>
+    <li id="laws"><a href="/lawsregs/" title="Laws and Regulations">Laws &amp; Regulations</a></li>
+    <li id="about"><a href="/aboutepa/" title="About EPA">About EPA</a></li>
+  </ul><!-- /IA Buckets -->
+</div><!-- /header -->
+<div id="content">
+  <div id="area">
+    <p><a href="/epafiles/auxfiles/contactus.htm">Contact Us</a></p>
+    <p>EPAFiles: Web Design</p>
+  </div><!-- /area -->
+  <div id="page">
+    <div id="main">
+      <ul id="breadcrumbs">
+        <li class="first"><b>You are here:</b> <a href="/">EPA Home</a></li>
+        <!-- InstanceBeginEditable name="breadcrumbs" -->
+        <li><a href="http://www.epa.gov/epafiles/index.html">EPA Web Design</a></li>
+        <li>Common Issues</li>
+        <!-- InstanceEndEditable -->
+      </ul>
+<!--googleon: index-->
+      <h1><!-- InstanceBeginEditable name="PageName" -->Common Template Implementation Issues<!-- InstanceEndEditable --></h1>
+      <!-- InstanceBeginEditable name="content" -->
+      <p>Note: for the most part, the information below reflects the look and feel as implemented in mid-2006. The EPA Web Council approves <a href="http://yosemite.epa.gov/oei/webguide.nsf/standards-guidance">new standards</a> from time to time, and there are <a href="http://www.epa.gov/productreview/guide/web_lookfor.html">other content requirements</a> as well. The Council is creating a single location for all Web standards, but until then, please refer to the individual sites. Where relevant to the look and feel, there are brief reviews of the standards in this document plus a link to the full standard.</p>
+      <ul>
+        <li><a href="#epahome">Don't look at the EPA home page as an example for <strong>anything</strong></a></li>
+        <li><a href="#areas">Understand areas and what goes with them</a></li>
+        <li><a href="#areanames">Area Name</a></li>
+        <li><a href="#title">Title tags&mdash;used for bookmarks</a> </li>
+        <li><a href="#global">Recent additions, contact us, search</a></li>
+        <li><a href="#contactus">Contact us</a></li>
+        <li><a href="#searchcode">Search coding</a></li>
+        <li><a href="#crumbs">Breadcrumbs</a></li>
+        <li><a href="#pagename">Page name</a></li>
+        <li><a href="#sidelinks">Sidebar</a></li>
+        <li><a href="#exitingepa">Exit EPA procedure</a></li>
+        <li><a href="#textstuff">Text formatting</a></li>
+        <li><a href="#headings">Headings</a></li>
+        <li><a href="#fnf404">Do a &quot;file not found&quot; (404 page)</a></li>
+        <li><a href="#popups">New browser windows and pop-up windows</a></li>
+        <li><a href="#dynamicdates">Date last updated on dynamic pages</a></li>
+        <li><a href="#testtesttest">Test everything&mdash;forms, links, search box</a></li>
+      </ul>
+      <hr />
+      <h3 id="epahome">Don't look at the EPA home page as an example for anything</h3>
+      <p>The home page must satisfy requirements, including some that come from outside of EPA, that don't apply to the rest of the site.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="areas">Understand areas and what goes with them</h3>
+      <ul>
+        <li>Area name</li>
+        <li>Recent additions, contact pages</li>
+        <li>Sidebar</li>
+        <li>Search code</li>
+        <li>Area footers</li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="areanames">Area Name</h3>
+      <ul>
+        <li>Choose an area name that reflects the area's topic, not the organization providing the information</li>
+        <li>The area name must accurately portray the scope of the information covered</li>
+        <li>Use the same area name on all pages within that area</li>
+        <li>Regional area names must include the Region's identifier (either name&mdash;"New England" or number&mdash;"Region 1").
+          <ul>
+            <li>Do not include the names of organizational units other than Regions, unless the organization itself is the subject of the area</li>
+            <li>While meeting the requirements above, keep area names as short as possible</li>
+          </ul>
+        </li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/areaname">Full area name standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="title">Title tags&mdash;used for bookmarks </h3>
+      <ul>
+        <li>The title tag contains exactly three elements that appear in this order (specific to general):
+          <ul>
+            <li>the name of the page (if helpful to the reader, combine overarching concepts with the literal name of the page)</li>
+            <li>the relevant area name</li>
+            <li>US EPA</li>
+          </ul>
+        </li>
+        <li>Give just enough info to identify page</li>
+        <li>Must make some sense out of context</li>
+        <li>Must be unique to page&mdash;don't repeat title tags on multiple pages</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/titletag">Full title tag standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="global">Recent additions, contact us, search</h3>
+      <ul>
+        <li>Don't change text</li>
+        <li>&quot;Recent Additions&quot; pages are optional; remove link if not doing one</li>
+        <li>Don't add other links to the global links section</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/contactus">Full contact us links and pages standard</a></li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/recent-additions">Full recent additions links and pages standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="contactus">Contact us</h3>
+      <ul>
+        <li>Both contact us links (top and bottom of the page) must point to the same place</li>
+        <li>Contact pages must include phone number, mailing address, and online form</li>
+        <li>Comments form elements must fit on a 640 pixel wide screen (if on their own line, set inputs no wider than 40 columns; see <a href="samples/contact.htm">sample code</a></li>
+        <li>Code the form correctly&mdash;TSSMS name, recipients file, thank you page URL (and create your own thank you page)</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/contactus">Full contact us links and pages standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="searchcode">Search coding</h3>
+      <ul>
+        <li>See <a href="http://yosemite.epa.gov/OEI/webguide.nsf/searchengine/codingsearch">instructions for coding the search box</a></li>
+        <li>Replace variable <code>value</code>s, not <code>name</code>s</li>
+        <li>Use the correct area name, since it's what shows up at the top of search results (e.g., use &quot;Region Y&quot; instead of &quot;regionY&quot;)</li>
+        <li>Use the standard results template: epafiles_default.xsl</li>
+        <li>Don't link to &quot;Advanced Search&quot; in your area's template (template 4 includes that link). Instead, if a search page exists, provide the URL for it in the value for the variable <var>areasearchURL</var></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="crumbs">Breadcrumbs</h3>
+      <ul>
+        <li>Omit &quot;home&quot; in the breadcrumb for the area home page</li>
+        <li>Include partial names in breadcrumbs</li>
+        <li>Do not link the last breadcrumb (for the current page)</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/breadcrumbs">Full breadcrumbs standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="pagename">Page name</h3>
+      <ul>
+        <li>Don't use a page name on area home pages</li>
+        <li>Don't change the formatting of the page name&mdash;leave it left-justified and in the style found in the model template</li>
+        <li>All logos must be approved by OEA and appear right-justified with the page name</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/page-names">Full page name standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="sidelinks">Sidebar</h3>
+      <ul>
+        <li>Text only: no graphics other than kids pages icons</li>
+        <li>All text must be a properly formatted link</li>
+        <li>Use <a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/sidebars">standard language</a> when providing information for which a standard exists</li>
+        <li>Do not put the following in the sidebar:
+          <ul>
+            <li>Graphics, except for icon links to kids' pages</li>
+            <li>Links to the normal "Contact Us" page</li>
+            <li>Links to searches or search boxes</li>
+          </ul>
+        </li>
+        <li>You may link to lists of program contacts:
+          <ul>
+            <li>Label these links with specific descriptions like "State Contacts" as opposed to "Contacts"</li>
+            <li>Link back and forth between those other contacts pages and the "Contact Us" page</li>
+          </ul>
+        </li>
+        <li>If you are soliciting comments, then use sidebar language like "Send Comments" or "Comment on the rule" instead of "Contact Us."</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/sidebars">Full sidebar standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="exitingepa">Exit EPA procedure</h3>
+      <ul>
+        <li>See the <a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/external-links">exit disclaimer procedure</a></li>
+        <li>Icon: http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif<br />
+          Use the absolute URL instead of a local copy</li>
+        <li>Link it to http://www.epa.gov/epahome/exitepa.htm</li>
+        <li>Do not use the Exit EPA icon for links to other federal websites</li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="textstuff">Text formatting</h3>
+      <ul>
+        <li>Use font styles specified in the standard style sheet</li>
+        <li>Black for text is the default; use colored text only to highlight short items</li>
+        <li>Don't change link colors unless highlighting a specific link</li>
+        <li>Don't use blue or purple color for text that isn't a link</li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/text-styles">Full text and heading styles standard</a></li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="headings">Headings</h3>
+      <p>Per the <a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/toc">full table of contents standard</a> use HTML headings, not styled text.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="fnf404">Do a &quot;file not found&quot; (404 page)</h3>
+      <ul>
+        <li>See <a href="http://yosemite.epa.gov/OEI/webguide.nsf/customize/404code">instructions for creating a 404 page</a></li>
+        <li>All URLs (style sheet, contact us, recent additions, etc.) on the 404 page must be absolute (i.e., include <code>http://www.epa.gov/</code> and the rest of the path)</li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="popups">New browser windows and pop-up windows</h3>
+      <p>These are two different ways to open new windows to provide information. A new browser window is typically the same size as the original window. It usually contains information intended to stand on its own, as opposed to serving solely as a reference for the original window. It opens on top of the original browser window. A pop-up is a window, smaller than the full screen, intended to supplement the primary browser window. </p>
+      <ul>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/newwindow">Full new browser window standard</a></li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/popups">Full pop-up window standard</a> </li>
+      </ul>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="dynamicdates">Date last updated on dynamic pages</h3>
+      <p>Use whatever is appropriate to create the date last updated.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h3 id="testtesttest">Test everything&mdash;forms, links, search box</h3>
+      <p>No matter how many times you create forms or scripts, you need to confirm they work before making them public.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <!-- InstanceEndEditable -->
+<!--googleoff: index-->
+      <p id="areafooter">For help with your epa.gov web design, contact the <a href="/epafiles/auxfiles/contactus.html">Web Template Workgroup</a>.</p>
+    </div><!-- /main -->
+    <div id="areanav">
+      <h4 class="skip">Area Navigation</h4>
+      <ul>
+        <li class="separator"><a href="/epafiles/">EPA Web Design Home</a><hr /></li>
+        <li><a href="/epafiles/templates/">HTML Templates</a></li>
+        <li><a href="/epafiles/#instrux">Updating &amp; Creating your Web Pages</a></li>
+        <li><a href="/epafiles/s/">Styling your Content</a></li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/homepage">EPA Web Guide</a></li>
+        <li><a href="http://yosemite.epa.gov/oei/webguide.nsf/standards-guidance">EPA Web Standards</a></li>
+      </ul>
+    </div><!-- /area-nav -->
+  </div><!-- /page -->
+</div><!-- /content -->
+<div id="footer">
+  <ul id="goodies">
+    <li id="rss-news"><a href="/newsroom/rssfeeds.htm">News Feeds</a></li>
+    <li id="podcasts"><a href="/epahome/podcasts.htm">Podcasts</a></li>
+    <li id="mobile"><a href="http://m.epa.gov/">EPA Mobile</a></li>
+    <li id="email-news"><a href="/newsroom/email_signups.htm">News by Email</a></li>
+    <li id="widgets"><a href="/widgets/">Widgets</a></li>
+  </ul>
+  <ul id="globalfooter">
+    <li><a href="/">EPA Home</a></li>
+    <li><a href="http://www.epa.gov/epahome/usenotice.htm">Privacy and Security Notice</a></li>
+    <li class="last"><a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Contact Us</a></li>
+  </ul>
+  <p id="seal">The Seal of the United States Environmental Protection Agency</p>
+</div><!-- /footer -->
+<p class="skip"><a href="#content" title="Jump to main content.">Jump to main content.</a></p>
+<script src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+<script src="http://www.epa.gov/epafiles/js/epa-core-v4.js"></script>
+<!-- ALL SCRIPTS BELOW THIS LINE -->
+<!-- InstanceBeginEditable name="scripts" --> <!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

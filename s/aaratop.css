@@ -1,0 +1,102 @@
+/*	AA/RA/Topics top-level pages only.
+
+
+
+	Full styles for standards-compliant browsers
+
+	All image files needed for this style sheet are saved
+
+	in the folder "i/" (same directory as style sheet). 
+
+	This sheet overwrites some rules in epa.css, with
+
+	a few extra rules for styling top-level pages. */
+
+	
+
+/* Date: 20 May 2008 */
+
+/* Version: 3.1.2 */
+
+
+
+/* =Layout -- Positioning of major page blocks
+
+----------------------------------------------- */
+
+/* AA/RA/Topics pages are fixed and centered
+
+	Added 15 May 2008 */
+
+body#aaratop { text-align: center; width: auto; background: #ccc; margin: 0; }
+
+body#aaratop #wrap { position: relative; width: 958px; margin: 0 auto; text-align: left; background: #fff url(http://www.epa.gov/epafiles/s/i/epafiles_misc_bg.gif) repeat-y; padding: 0 0 40px; border: 1px solid #959596; }
+
+
+
+/* The sidebar moves down because of the larger logo */
+
+#area-nav {	top: 160px; }
+
+
+
+
+
+/* =Header elements (top of page)
+
+----------------------------------------------- */
+
+body#aaratop #header { margin: 0; padding: 135px 0 0 0; background-repeat: no-repeat; }
+
+body#aaratop #areaname { text-indent: -2000px; margin: 0; padding: 0; background: none; width: 0; height: 0; }
+
+
+
+	body#aaratop #areaname p { background: none; display: inline; line-height: 0; font-size: 0; padding: 0; }
+
+	body#aaratop #areaname p#tagline {  }
+
+
+
+	body#aaratop #header ul { margin: 0 0 0 142px; border-left: 2px solid #006; padding-left: 7px; }
+
+	body#aaratop #therest { margin: -1px 0 0 138px; background-color: #369; }
+
+	body#aaratop p#headerlinks { border-bottom: 2px solid #006; margin-left: 5px; background: #369; color: #fff; padding: 0 0 2px 8px; }
+
+	body#aaratop p#headerlinks a { color: #fff; text-decoration: none; }
+
+	#searchbox { margin-top: 2px; }
+
+	#searchbutton { font-weight: bold; color: #fff; background-color: #69c; padding: 2px; cursor: pointer; border: 0; }
+
+		
+
+	body#aaratop #header div#logo { left: 0; height: 136px; }
+
+	body#aaratop #header div#logo img { left: 5px; top: 5px; position: absolute; }
+
+
+
+
+
+
+
+/* =Content -- The white space for web owners
+
+----------------------------------------------- */
+
+body#aaratop #content { margin: 15px 7px 20px 151px; }
+
+
+
+
+
+/*  =Bookmarklet
+
+		Added 13 May 2008
+
+---------------------------------------------------------------------- */
+
+body#aaratop #footer ul#bookmarkList { top: 139px; right: 15px; background: #369; width: 115px; }
+

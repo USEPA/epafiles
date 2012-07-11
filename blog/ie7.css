@@ -1,0 +1,20 @@
+.header .searchButton {
+	font-size:0;
+	line-height:0;
+}
+a span {
+	cursor:pointer;
+}
+
+.comment .message .i,
+.sidebars .i .i2, 
+.sidebars .i .c,
+.sidebars h4,
+.commentReply .replyRow,
+.commentReplyActive {
+	zoom:1;
+}
+
+.postHeaderCompact .bottom span {
+	margin-right:-45px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+    <HEAD>
+        <TITLE>Foresee Survey Admin</TITLE>
+        <meta http-equiv="Content-Type" content= "text/html; charset=utf-8">
+        <link rel="stylesheet" href="foresee-admin.css" type="text/css" />
+        <!--[if lte IE 6]>
+            <style type="text/css">
+            div.fsradmin .clearfix { height: 1%; }
+            </style>
+        <![endif]-->
+        <!--[if IE 7]>
+            <style type="text/css">
+            div.fsradmin .clearfix { display:inline-block; }
+            </style>
+        <![endif]-->
+        <script type="text/javascript" src="foresee-admin.js">
+        </script>
+    </HEAD>
+    <BODY>
+        <div class="fsradmin">
+            <div class="header">
+                Survey Administration Page
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div class="instructions">
+                <b>1.</b>
+                Click 'Clear' to remove all cookies. Make sure the 'Submitted' cookie under the foreseeresults.com domain is also removed.
+                <br>
+                <b>2.</b>
+                Enter desired sampling percentage for testing.
+                <br>
+                <b>3.</b>
+                Click 'Set'. This will drop a cookie that represents the entered values. It will only affect YOUR SESSION and not other visitors to the site.
+                <br>
+                <b>4.</b>
+                Proceed with navigating the website to reach your parameters and receive a survey invitation.
+                <br>
+                <b>Notes:</b>
+                Make sure the page you are testing is not listed under the Exclude list inside trigger params file.
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div id="controls">
+                Enter Sampling Percentages:
+                <br>
+                <br>
+            </div>
+            <div>
+                <input type="button" value="Set" onclick="javascript:FSR.controller.set();" style="padding: 1px; width: 50px; margin-right: 5px;"><input type="button" value="Clear" onclick="javascript:FSR.controller.clear();" style="padding: 1px; width: 50px; margin-right: 5px;">
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div class="footer">
+                Copyright 
+                <script type="text/javascript">var today = new Date();
+                    document.write(today.getFullYear());
+                </script>
+                - all rights reserved
+                <br>
+                <a href="//www.foreseeresults.com" TARGET="_blank">ForeSee Results</a>&nbsp;&nbsp;<a href="//www.foreseeresults.com/Privacy.html" TARGET="_blank">Privacy</a>&nbsp;&nbsp;<a href="//www.foreseeresults.com/ContactUs.html" TARGET="_blank">Technical Support</a>
+            </div>
+        </div>
+    </BODY>
+</HTML>

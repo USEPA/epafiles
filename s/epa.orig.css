@@ -1,0 +1,126 @@
+@import 'http://www.epa.gov/epafiles/s/epa-content.css';
+
+/*	Master/core layout for all EPA pages.
+	Full styles for standards-compliant browsers
+	All image files needed for this style sheet are saved
+	in the folder "i/" (same directory as style sheet).  */
+
+/* Date: 04 April 2008 */
+/* Version: 3.1.3 */
+
+
+/* =Misc
+----------------------------------------------- */
+.skip { position: absolute; top: 0; left: 0; width: 0; height: 0; overflow: hidden; border: none; font-size: 0; }
+.printOnly { display: none; }
+img, a img, :link img, :visited img { border: none }
+a:link { color: #33c; }
+a:visited { color: #609; }
+a:hover { color: #933; }
+a:active { color: #933; }
+
+
+/* =Layout -- Positioning (and some styling) of major page blocks
+----------------------------------------------- */
+/*	Note: a fix for IE min-width in ie.css, line 14 */
+body { background: #fff url(http://www.epa.gov/epafiles/s/i/epafiles_misc_bg.gif) repeat-y 0 50%; font: 75%/1.3 Verdana, Tahoma, sans-serif; color: #000; margin: 0 5% 40px 0; padding: 0; min-width: 760px; }
+
+/*	Note: a fix for IE5/Win in ie.css, line 17 */
+#header { position: relative; top: 0; left: 0; margin: 0 1px 0 0; padding: 26px 0 0; background: url(http://www.epa.gov/epafiles/images/epafiles_ban_topepa.gif) no-repeat top right; } 
+
+#content { position: relative; margin: 30px 0 20px 151px; }
+#area-nav { position: absolute; top: 130px; left: 5px; width: 132px; margin: 0; padding: 0; } 
+#footer { clear: both; margin: 0 0 0 151px; padding: 0; font-size: 0.85em; text-align: center; }
+
+
+/* =Header elements (top of page)
+----------------------------------------------- */
+/* Note: a fix for IE5/Win in ie.css, line 21 */
+#header div#logo { position: absolute; left: 22px; top: 9px; padding: 0; margin: 0; }
+/* Note: a fix for IE/Win in ie.css, line 24 */
+#areaname  { background: #006 url(http://www.epa.gov/epafiles/images/epafiles_ban_endtop.gif) no-repeat 100% 0%; padding: 0 0 0 51px; margin: 0 0 0 100px; color: #fff; }
+	div#areaname p { background: url(http://www.epa.gov/epafiles/images/epafiles_ban_endbottom.gif) no-repeat 100% 100%; margin: 0; padding: 0 120px 0 0; color: #fff; font-weight: bold; font-size: 1.7em;  line-height: 1.3; display: block; }
+#header p { position: relative; background: #fff; margin: 1px 0 0 151px; color: #000; font-size: 0.85em; } 
+	#header p#tagline { margin: 0 0 4px 151px; padding: 0; line-height: 1.1; }
+
+	/* =Search elements
+	----------------------------------------------- */
+	#EPAsearch { margin: 0; padding: 0; }
+	#header .search { margin: 0 0 0 2em; font-size: 1.2em; }
+	#searchbox { width: 120px; border: 1px solid #000; border-color: #79c #bdf #bdf #79c; margin: 0 0 2px; padding: 2px; }
+	#searchbutton /* Note: a tweak for IE/Win in ie.css, line 35 */
+	{ margin: 0 20px 2px 0; padding: 0; }
+
+	/* =Breadcrumbs
+	----------------------------------------------- */
+	#header ul { margin: 0 0 0 147px; padding: 0 0 0 4px; font-size: 0.85em; line-height: 1.2; color: #000; background-color: #e1ebf4; list-style: none; letter-spacing: -0.04em; }
+		#header ul li /* Note: a fix for IE/Win in ie.css, line 30 */
+		{ margin: 0; padding: 0 0 0 14px; display: inline; background: url(http://www.epa.gov/epafiles/s/i/breadcrumbarrow.gif) no-repeat 0% 50%; }
+		#header ul li a { margin: 0; padding: 0; }
+		#header ul li.first { padding: 0; background-image: none; }
+		
+
+/* =Content -- The white space for web owners
+----------------------------------------------- */
+#content p#areafooter { clear: both; text-align: center; font-size: 0.85em; padding: 20px 0 0; }
+
+
+/* =Area Navigation -- Left sidebar
+----------------------------------------------- */
+#area-nav { background-color: #369; font-family: Arial, Helvetica, sans-serif; }
+#area-nav hr /* For those who have the hr outside the li */
+{ width: 85%; border: 1px solid #fff; background-color: #fff; }
+#area-nav ul li hr /* For those who do it correctly, hr inside li */
+{ width: 112px; margin: 6px 0 -2px 4px; border: 1px solid #fff; background-color: #fff; }
+	#area-nav ul { list-style: none; margin: 0; padding: 0; }
+		#area-nav ul li /* Note: a fix for IE/Win in ie.css, line 45 */
+		{ margin: 0; padding: 3px 0px 6px 6px; text-indent: -0.5em; }
+		#area-nav ul ul { margin: 0; padding: 0; }
+			#area-nav ul ul li { line-height: 1.1; margin: 0; padding: 0px 0 1px 12px; }
+	#area-nav a { display: block; color: #fff; line-height: 1.2; text-decoration: none; font-size: 1em; font-weight: bold; }
+		#area-nav a:hover, #area-nav a:active { color: #90f0ff; }
+
+
+/* =Footer elements
+----------------------------------------------- */
+ul#globalfooter { border-top: 4px solid #006; margin: 0 20% 10px; padding: 10px 0 0; list-style: none; }
+	ul#globalfooter li /* Note: a tweak for IE/Win in ie.css, line 50 */
+	{ display: inline; margin: 0 0 0 5px; padding: 0 10px 0 0; border-right: 1px solid #000; }
+		ul#globalfooter li.last { border-right: none; }
+#footer p#date { margin-bottom: 0; }
+#footer p#url, #footer p#printAsIs { margin: 0; }
+
+
+/* =Sidebarless pages
+----------------------------------------------- */
+body#sidebarless { background: #fff; }
+body#sidebarless #content { margin-left: 2%; }
+body#sidebarless #footer { margin-left: 0; }
+
+/* =Pages in Spanish
+----------------------------------------------- */
+body#espanol #header { background: url(http://www.epa.gov/espanol/layout-files/epa-spn-agencyname.gif) no-repeat top right; }
+
+
+/*  =Bookmarklet
+		Added 04 April 2008
+---------------------------------------------------------------------- */
+#footer ul#bookmarkList { z-index: 10; position: absolute; top: 27px; right: 6%; background: #006; margin: 0; padding: 1px 2px 0; text-align: left; font-size: 85%; }
+#footer ul#bookmarkList li { background: none; display: block; background: none; padding: 0; margin: 5px 0; }
+	#footer ul#bookmarkList li ul { position: static; background: #fff; margin: 5px 0 0; padding: 1px 2px 0; }
+ul#bookmarkList #post.post a, ul#bookmarkList #post.postFrame a { font-weight: bold; background-image: url(http://www.epa.gov/epafiles/s/i/bookmarkicon.gif); background-repeat: no-repeat; background-position: 0 50%; padding: 2px 2px 3px 18px; margin: 0 14px; color: #fff; }
+	ul#bookmarkList #post.post a:hover, ul#bookmarkList #post.postFrame a:hover { background-color: #fff; color: #33c; }
+	ul#bookmarkList #post.post a:hover { background-image: url(http://www.epa.gov/epafiles/s/i/expand.gif); }
+ul#bookmarkList #post.postFrame a { background-image: url(http://www.epa.gov/epafiles/s/i/contract.gif); }
+	ul#bookmarkList #post.postFrame ul#postList a { font-weight: normal; display: block; background-color: transparent; background-repeat: no-repeat; margin: 0 2px; color: #33c; }
+	ul#bookmarkList #post.postFrame ul#postList a:hover { background-color: #fff; color: #33c; }
+
+ul#bookmarkList li ul#postList .digg a { background-image: url(http://www.epa.gov/epafiles/s/i/digg.gif); }
+ul#bookmarkList li ul#postList .slashdot a { background-image: url(http://www.epa.gov/epafiles/s/i/slashdot.gif); }
+ul#bookmarkList li ul#postList .facebook a { background-image: url(http://www.epa.gov/epafiles/s/i/facebook.gif); }
+ul#bookmarkList li ul#postList .reddit a { background-image: url(http://www.epa.gov/epafiles/s/i/reddit.gif); }
+ul#bookmarkList li ul#postList .stumble a { background-image: url(http://www.epa.gov/epafiles/s/i/stumble.gif); }
+ul#bookmarkList li ul#postList .delicious a { background-image: url(http://www.epa.gov/epafiles/s/i/delicious.gif); }
+ul#bookmarkList li ul#postList .whatisthis a { background-image: url(http://www.epa.gov/epafiles/s/i/whatisthis.gif); }
+.show { display: block; }
+.hide { display: none; }

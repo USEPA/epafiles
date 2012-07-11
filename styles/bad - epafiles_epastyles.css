@@ -1,0 +1,80 @@
+/* epafiles_epastyles.css */
+
+/* version 2.0 02/27/02 */
+
+/* THE FOLLOWING STYLE DECLARATIONS ARE MANDATED FOR ALL EPA INTERNET SITES */
+
+/* The styles are VERY sensitive to changes in syntax */
+
+/* Do not edit the EPA styles */
+
+/* BEGIN EPA STYLES */
+
+/* STYLES USED BY ALL EPA PAGES */
+
+HTML { font-size: .8em;}
+
+H1, H2, H3, H4, H5, H6, P, td, th, blockquote, ol, ul, dl, dt, dd, li { font-family: Arial,Helvetica,sans-serif;}
+
+/* P, td, th, blockquote, ol, ul, dl, dt, dd, li { font-size: 10px;} */
+
+H1 { font-size: 1.77em;} 
+
+H2 { font-size: 1.55em;}
+
+H3 { font-size: 1.4em;}
+
+H5 { font-size: 1.05em;}
+
+H6 { font-size: .85em;}
+
+CODE { font-family: Courier, Courier New, mono;}
+
+A:link { color: #0000FF}
+
+A:visited { color: #009900;}
+
+A.epaSideBarLinks { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; line-height: 10pt; color: #FFFFFF; font-weight: bold; text-decoration: none;}
+
+A.epaSideBarLinks:link { color: #FFFFFF;}
+
+A.epaSideBarLinks:visited { color: #FFFFFF;}
+
+A.epaSideBarLinks:hover { color: #90F0FF;}
+
+TD#epaSideBar DIV { padding-bottom: .8em;}
+
+.epaPageName { font-family: Arial, Helvetica, sans-serif; font-size: 1.75em; color: #000000}
+
+.epaLtSans { font-family: Arial, Helvetica, sans-serif; font-size: .83em;}
+
+.epaBodyText { font-family: Arial, Helvetica, sans-serif;}
+
+.epaSideNavCell { background-color: #336699}
+
+.epaHighlightBox { background-color: #E1EBF4}
+
+.epaBodyAttributes { background-image:url(http://www.epa.gov/epafiles/images/epafiles_misc_bg.gif)}
+
+.epaAreaName { font-family: Arial, Helvetica, sans-serif; font-size: 1.75em; color: #FFFFFF; background-color: #000066; font-weight: bold}
+
+.epaSubHeadBig { font-family: Arial, Helvetica, sans-serif; font-size: 1.4em; font-weight: bold;}
+
+
+
+/* STYLES USED BY AA AND RA HOMEPAGES */
+
+.epaAARAAreaName { color: #FFFFFF; background-color: #000066; font-size: 1.4em; font-weight: bold}
+
+.raStates { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: .83em;}
+
+
+
+/* END EPA STYLES */
+
+
+
+/* If you want to add additional styles, do so below this comment */
+
+
+

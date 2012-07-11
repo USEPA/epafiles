@@ -1,0 +1,34 @@
+ErrorDocument 404 /adminweb/epafiles/auxfiles/error404.htm
+RedirectMatch 301 /epafiles/exit.html http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/external-links
+RedirectMatch 301 /epafiles/exemptions.html http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/look-feel#exemptions
+RedirectMatch 301 /epafiles/searchcode.html http://yosemite.epa.gov/OEI/webguide.nsf/searchengine/codingsearch
+RedirectMatch 301 /epafiles/docs/markup.html http://yosemite.epa.gov/OEI/webguide.nsf/customize/htmltip#markup
+RedirectMatch 301 /epafiles/usenotice.htm http://www.epa.gov/epahome/usenotice.htm
+RedirectMatch 301 /epafiles/v4/js.html /epafiles/templates/js.html
+RedirectMatch 301 /epafiles/v4/$ /epafiles/templates/
+
+# gzip compression.
+<IfModule mod_deflate.c>
+SetOutputFilter DEFLATE
+# Skip non-HTM, JS, CSS files
+SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png|.pdf|exe|t?gz|zip)$ no-gzip dont-vary
+BrowserMatch ^Mozilla/4 gzip-only-text/html
+BrowserMatch ^Mozilla/4\.0[678] no-gzip
+BrowserMatch \bMSIEs6 !no-gzip !gzip-only-text/html
+
+# Since we send far-future expires, no ETags for static content.
+FileETag none
+Header unset ETag
+<FilesMatch "\.(js|css|ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$">
+Header set Cache-Control "public"
+Header set Expires "Fri, 03 May 2013 20:00:00 GMT"
+</FilesMatch>
+<FilesMatch "\.(html|htm|xml|txt|xsl)$">
+Header set Cache-Control "max-age=7200, must-revalidate"
+</FilesMatch>
+</IfModule>
+
+# use utf-8 encoding for anything served text/plain or text/html
+# force utf-8 for a number of file formats
+AddDefaultCharset utf-8
+AddCharset utf-8 .html .css .js .xml .json .rss

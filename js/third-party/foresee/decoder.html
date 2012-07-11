@@ -1,0 +1,55 @@
+<head>
+<title>URL Decoder/Encoder</title>
+<style type="text/css">
+<!--
+body {background: white; color: black;}
+form {margin: 0;}
+h1 {font-family: Arial, sans-serif; line-height: 0.85em; border-bottom: 2px solid;
+  margin-bottom: 0.33em; padding-bottom: 0;}
+
+textarea {background: #EEF;}
+
+#footer {border-top: 1px solid #000; color: #999; font: italic 75% sans-serif;}
+#footer p {margin: 0 0 1em 0;}
+#footer img {float: right; margin: 0 0 0.5em 2em;}
+-->
+</style>
+<script type="text/javascript">
+function encode() {
+	var objd = document.getElementById('deencoded');
+	var unencoded = objd.value;
+	var obje = document.getElementById('encoded');
+	obje.value = escape(unencoded);
+}
+function decode() {
+	var obje = document.getElementById('encoded');
+	var encoded = obje.value;
+	var objd = document.getElementById('deencoded');
+	objd.value = unescape(encoded.replace(/\+/g,  " "));
+}
+</script>
+</head>
+<body>
+
+
+<form onsubmit="return false;">
+<h1>URL Decoder/Encoder</h1>
+
+<textarea cols="80" rows="10" id="encoded" wrap="HARD"></textarea>
+<p/>
+<textarea cols="80" rows="10" id="deencoded" wrap="HARD"></textarea>
+<div>
+<input type="button" onclick="decode()" value="Decode">
+<input type="button" onclick="encode()" value="Encode">
+</div>
+
+<ul>
+<li>Input a string of text and encode or decode it as you like.</li>
+<li>Handy for turning encoded JavaScript URLs from complete gibberish into readable gibberish.</li>
+<li>If you'd like to have the URL Decoder/Encoder for offline use, just view source and save to your hard drive.</li>
+</ul>
+
+</form>
+</body>
+
+</html>

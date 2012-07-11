@@ -1,0 +1,261 @@
+/*	Basic styles for the content section of all EPA pages.
+	Full styles for standards-compliant browsers
+	All image files needed for this style sheet are saved
+	in the folder "i/" (same directory as style sheet).  */
+
+/* Date: 25 March 2008 */
+/* Version: 3.1.3 */
+
+/* Table of Contents
+	Type "=" + first word to jump
+	to that section (example:
+	"=Colors" to jump to the Colors section
+-----------------------------------------------
+	Misc Stuff
+	Top of page links
+	Images -- with captions
+	Lists -- unordered/ordered lists with smaller spacing
+	Fonts -- header size
+	Text samples
+	Boxes for your pleasure
+		Disclaimers
+		Rounded Box Corners
+	Tables for data
+		Tables for Quick Finders
+	Contact us and other forms
+	Simple Layouts
+----------------------------------------------- */
+
+/* =Misc Stuff
+----------------------------------------------- */
+/* For aligning elements left or right */
+#content .right { float: right; }
+#content .center { text-align: center; }
+#content .left { float: left; }
+
+/* For clearing floated elements */
+#content .clear { clear: both; }
+
+#content ins { text-decoration: none; }
+
+#content abbr,
+#content acronym
+{ font-variant: small-caps; border-bottom: 1px dashed #d0d0d0; cursor: help; }
+	
+#content code,
+#content pre 
+{ font: 1.0em "Lucida Console", "Andale Mono", "monotype.com", "Bitstream Vera Sans Mono", monospace; }
+
+#content hr { clear: both; margin: 3px 0; border: 1px solid #ccc; background-color: #ccc; }
+
+/* =Top of page links
+----------------------------------------------- */
+#content p.pagetop { clear: both; margin: 1em 0; font-size: 0.80em; background: url(http://www.epa.gov/epafiles/s/i/pagetop.gif) no-repeat 0 50%; }
+#content p.pagetop a { color: #666; padding-left: 8px; text-decoration: none; }
+#content p.pagetop a:hover { text-decoration: underline; }
+
+
+/* =Images -- with and without captions
+----------------------------------------------- */
+#content .imgcontainer-r, #content .imgcontainer-l
+{ border: 2px solid #ccc; background-color: #ffffdb; padding: 0; }
+#content .imgcontainer-r img, #content .imgcontainer-l img
+{ margin: 0 0 -3px; padding: 0; }
+#content .imgcontainer-r { float: right; margin: 0 0 6px 6px; }
+#content .imgcontainer-l { float: left; margin: 0 6px 6px 0; }
+#content .imgcontainer-l .caption a, #content .imgcontainer-r .caption a { text-decoration: none; }
+#content .imgcontainer-r .caption a:hover, #content .imgcontainer-l .caption a:hover, #content .caption a:hover
+{ text-decoration: underline; }
+#content .caption { margin: 0; padding: 2px 4px; font-size: 0.85em; }
+
+
+/* =Lists -- unordered/ordered lists with	smaller spacing
+----------------------------------------------- */
+/* want consistent rendering of lists */
+#content ul { list-style-image: url(http://www.epa.gov/epafiles/s/i/bu_sftblue.gif); margin-top: 0; }
+#content ul ol { list-style-image: none; }
+#content li { margin-top: 0; padding-top: 0; margin-left: 10px; padding-left: 0; } 
+#content li li { margin-left: 0; padding-left: 0; }
+
+
+/* =Fonts -- header size
+Edited 05 June 2007
+----------------------------------------------- */
+#content h1	{ font-size: 1.9em; line-height: 1em; margin: 0 0 0.684em; }
+#content h2	{ font-size: 1.6em; line-height: 1em; margin: 1.219em 0 0.406em; }
+#content h3	{ font-size: 1.35em; line-height: 1em; margin: 1.444em 0 0.481em; }
+#content h4	{ font-size: 1.2em; line-height: 1.083em; margin: 1.625em 0 0.542em; }
+#content h5	{ font-size: 1.0em; line-height: 1.3em; margin: 1.95em 0 0.65em; }
+#content h6	{ font-size: 0.8em; line-height: 1.625em; margin: 2.438em 0 0.8125em; }
+
+#content p { font-size: 1.0em; line-height: 1.3em; margin-top: 1.3em; margin-bottom: 1.3em; }
+
+
+/* =Text
+----------------------------------------------- */
+#content #sitewidea, #content #sitewideb, 
+#content #sitewidec, #content .warning
+{	color: #c33; font-weight: bold; font-size: 1.0em; }
+
+/* Styles the inline information about non-html (PDF, MS-Word, etc.) files */
+#content .fileinfo { font-size: 0.85em; color: #666; }
+
+#content .epaltsansbold { font-size: 0.85em; font-weight: bold; font-family: Arial, Helvetica, sans-serif; }
+
+#content .epaltsans, #content .epaLtSans
+/* for smaller text */
+{	font-size: 0.90em; font-family: Arial, Helvetica, sans-serif; }
+
+
+/* =Boxes
+----------------------------------------------- */
+/*	Right-aligned multipurpose and national boxes. */
+#content .boxmulti, #content .boxnat
+{ float: right; width: 200px; background: #f1f1f1 url(http://www.epa.gov/epafiles/s/i/curves-bottom.gif) bottom left no-repeat; margin: 0 0 1em 0.5em; padding: 0; font-size: 0.90em; }
+
+/* Red box for emergency information. */
+#content .boxalert { float: right; width: 200px; border: 2px solid #c33; margin: 0 0 5px 5px; padding: 0; background-color: #f1f1f1; font-size: 0.90em; }
+
+/*	Basic boxes.
+	Default box is left-align, plain, no title required */
+#content .box { border: 2px solid #ccc; width: 50%; margin: 5px 5px 5px 0; padding: 0; font-size: 0.90em; }
+	
+#content .boxmulti h5, #content .boxnat h5, #content .boxalert h5, #content .box h5
+/*	Titles of all boxes share some properities */
+{ background-color: #5c9261; font-size: 1.0em; text-align: center; color: #fff; padding: 2px; margin: 0 0 0.2em 0; }
+
+#content .boxmulti h5 a,#content .boxnat h5 a,#content .box h5 a,#content .boxalert h5 a{color:#fff}
+
+#content .boxmulti h5, #content .boxnat h5
+/*	Titles of multi and national boxes have curved corners */
+{ background: #5c9261 url(http://www.epa.gov/epafiles/s/i/curves-top.gif) no-repeat top left; }
+
+/*	Overrides the green and sets the blue headline background for national boxes */
+#content .boxnat h5 { background-color: #369; }
+/*	Overrides the green and sets the red headline background for alert boxes */
+#content .boxalert h5 { background-color: #c33; }
+/*	Overrides the green and centered text; sets the gray headline background for basic boxes */
+#content .box h5 { background-color: #ddd; color: #000; text-align: left; }
+	
+/* Bullets for the various boxes; these override the default blue bullets */
+#content .boxmulti ul li { list-style-image: url(http://www.epa.gov/epafiles/s/i/bu_sftgrn.gif); }
+#content .boxalert ul li { list-style-image: url(http://www.epa.gov/epafiles/s/i/bu_alertred.gif);}
+
+/* Alignment for the boxes; these override the default left alignment */
+#content .centered {	margin: 5px auto; }
+#content .righted {	float: right; margin: 5px 0 5px 5px; }
+#content .centered h5, #content .righted h5 {	text-align: center; }
+
+/* Color for the boxes; these override the default gray */
+#content .color1 { border: 2px solid #363; }
+#content .color2 { border: 2px solid #006; }
+#content .color1 h5 { background-color: #5c9261; color: #fff; }
+#content .color1 ul li { list-style-image: url(http://www.epa.gov/epafiles/s/i/bu_sftgrn.gif); }
+#content .color2 h5 { background-color: #369; color: #fff; }
+
+
+/* All paragraphs, list items, and links in all boxes share properities */
+#content .boxmulti ul, #content .boxmulti ol,
+#content .boxnat ul, #content .boxnat ol,
+#content .boxalert ul, #content .boxalert ol,
+#content .box ul, #content .box ol
+{ margin-top: 0.5em; margin-bottom: 0.5em;  }
+
+#content .boxmulti li, #content .boxnat li, #content .boxalert li, #content .box li
+{ margin-left: -1em; padding: 0 0.5em 0 0;  }
+
+#content .boxmulti li li, #content .boxnat li li, #content .boxalert li li, #content .box li li
+{ margin-left: -2em;  padding:  0 0.5em 0 0;  }
+
+#content .boxmulti p, #content .boxnat p, #content .boxalert p, #content .box p
+{ margin: 0.5em 0; padding: 0 0.5em; }
+
+#content .boxmulti a, #content .boxnat a, #content .boxalert a, #content .box a
+{ text-decoration: none; }
+
+#content .boxmulti a:hover, #content .boxnat a:hover, #content .boxalert a:hover, #content .box a:hover
+{ text-decoration: underline; }
+
+/*	Small box for setting apart temporary information. Use paragraphs only */
+#content .boxsimple { width: 15%; float: right; font-size: 0.90em; border: 2px solid #ccc; margin: 0 0 1em 1em;  }
+#content .boxsimple h5 { font-size: 1.0em; margin: 0; padding: 0; }
+#content .boxsimple p { margin: 0.5em 0; padding: 0 0.5em; }
+
+
+/* Pull quotes */
+#content p.pullquote { float: right; border: 2px solid #ccc; border-width: 2px 0; font-size: 1.1em; font-style: italic; font-weight: bold; color: #333; line-height: normal; margin: 0.5em 0 0.5em 1em; padding: 0.5em; }
+#content p.pullquote span.author { font-size: 0.8em; font-style: normal; }
+
+
+	/*  =Disclaimers
+	---------------------------------------------------------------------- */
+	/*	PDF/Non-HTML file disclaimers */
+	#content .disclaimer, #content .disclaimer-wide, #content p#archive
+	{	width: 20%; float: right; font-size: 0.90em; line-height: 1.1; padding: 0.3em; margin: 1em 0 1em 1em; border: 2px solid #ccc; background: #f1f1f1; }
+	
+	#content .disclaimer-wide {	margin: 1em 10%; padding: 0.3em; text-align: center; width: auto; float: none; }
+
+	/* For information that's outdated, but still publicly relevant */
+	#content p#archive { margin: 0 0 .3em 0; padding: 0.3em 0.3em 0.3em 30px; width: 350px; float: none; background: #f1f1f1 url(http://www.epa.gov/epafiles/images/epafiles_misc_outdatediconmini.gif) 0.3em 50% no-repeat; }
+
+	/*  =Rounded Box Corners--for AA/RA QuickFinders....
+			Remove at earliest convenience
+	---------------------------------------------------------------------- */
+	#content b.cn {	position: absolute;	height: 10px; width: 10px;	margin: 0; padding: 0;	background: url(http://www.epa.gov/epafiles/s/i/white.gif) no-repeat;	line-height: 1px; font-size: 1px; }
+	#content b.tl {top: -1px; left: -1px; background-position: top left; } 
+	#content b.tr {top: -1px; right: -1px; background-position: top right; }
+
+
+
+/*  =Tables for data
+		Two styles available: table and tablebord
+---------------------------------------------------------------------- */
+#content table.table, #content table.tablebord
+{	border-collapse: collapse; margin: 0 0 1em; }
+#content table.table caption, #content table.tablebord caption
+{	padding-bottom: 6px; font-weight: bold; }
+#content table.table th, #content table.table td, #content table.tablebord th, #content table.tablebord td
+{	padding: 5px; border: 1px solid #ccc; border-width: 0 0 1px 0; }
+#content table.table thead, #content table.table tfoot, #content table.tablebord thead, #content table.tablebord tfoot 
+{	background: #ccc; color: #000; }
+#content table.table th, #content table.tablebord th { background: #ccc; color: #000; border: 1px solid #ddd; border-width: 0 1px; }
+
+	/*	Alternate row color */
+#content table.zebra tr.tint, #content table.tablebord tr.tint { background-color: #eee; }
+
+#content table.tablebord { border: 1px solid #ccc; border-width: 1px 0 0 1px; }
+	#content table.tablebord th, #content table.tablebord td { border-width: 0 1px 1px 0; }
+
+/*  =Table for Quick Finders
+		Added 28 February 2007
+---------------------------------------------------------------------- */
+	#content table.qfinder { font: 90%/1.1em Arial, Helvetica, sans-serif; margin: 0 0 1em; padding-bottom: 0.2em; border-bottom: 1px solid #5c9261; width: 100%; border-collapse: collapse; }	
+	#content table.qfinder thead th { background: #5c9261 url(http://www.epa.gov/epafiles/s/i/qf-r.gif) no-repeat top right; margin: 0; padding: 0; }
+		#content table.qfinder thead th p { background: url(http://www.epa.gov/epafiles/s/i/qf-l.gif) no-repeat; margin: 0 8px 0 0; padding: 3px 8px; color: #fff; font-size: 1.3em; font-weight: bold; text-align: left; }
+	#content table.qfinder thead td { padding: 0 8px 0 0; }
+	#content table.qfinder tbody td { line-height: 1.2em; padding-top: 0.1em; vertical-align: top; }
+	#content table.qfinder a { margin: 0; padding: 0 0 0 7px; text-decoration: none; display: block; }
+		#content table.qfinder td a:hover { background-color: #f1f1f1; text-decoration: none; }
+		#content table.qfinder td a.more { background: url(http://www.epa.gov/epahome/images/more_topic.gif) 7px 3px no-repeat;	padding: 0 0 0 17px; }
+
+
+
+/*  =Contact us and other forms
+---------------------------------------------------------------------- */
+#content form.form label, #content form.form input
+{ display: block; float: left; width: 150px; margin-bottom: 10px; }
+#content form.form fieldset { border: none; }
+#content form.form label { text-align: right; width: 100px; padding-right: 10px; }
+#content form.form br, #content form.form p { clear: left; }
+#content form.form input#formsubmit { margin: 10px 0 10px 110px; width: auto; }
+
+
+/*  =Simple Layouts
+		Added 25 March 2008
+		Fixes for IE in ie.css
+---------------------------------------------------------------------- */
+#main #maincenter { float: left; margin-right: -95%; width: 100%; }
+	#maincenter #mainpad-2 { margin: 0 215px 0 0; }
+	#maincenter #mainpad-3 { margin: 0 215px; }
+#main #secondary { float: right; width: 200px; margin: 20px 0 0; }
+#main #tertiary { float: left; width: 200px; margin: 20px 0 0 -5%; }

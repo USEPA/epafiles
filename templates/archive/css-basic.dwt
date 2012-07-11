@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- EPA Template version 3.2.2, 05 August 2010 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Page Title | Area Name | US EPA</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="metaElements" -->
+<meta name="DC.description" content="" />
+<meta name="keywords" content="" />
+<meta name="DC.title" content="" />
+<meta name="DC.type" content="" />
+<meta name="DC.Subject.epachannel" content="" />
+<!-- For date metadata, use the format YYYY-MM-DD -->
+<meta name="DC.date.modified" content="" />
+<meta name="DC.date.created" content="" />
+<meta name="DC.date.reviewed" content="" />
+<!-- TemplateEndEditable -->
+<meta name="DC.language" content="en" />
+<meta name="DC.creator" content="" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="meta" href="http://www.epa.gov/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<style type="text/css" media="screen">@import 'http://www.epa.gov/epafiles/s/epa.css';</style>
+<!--[if lt IE 7]><link rel="stylesheet" type="text/css" href="http://www.epa.gov/epafiles/s/ie.css" /><![endif]-->
+<script type="text/javascript" src="http://www.epa.gov/epafiles/js/epa-core.js"></script>
+<script type="text/javascript" src="http://www.epa.gov/epafiles/js/extra.js"></script>
+</head>
+<body>
+<!--googleoff: index-->
+<p class="skip"><a id="skiptop" href="#content" title="Jump to main content.">Jump to main content.</a></p>
+<div id="header">
+  <!-- START EPA HEADER -->
+  <div id="logo"><a href="http://www.epa.gov/" title="US EPA home page"><img src="http://www.epa.gov/epafiles/images/logo_epaseal.gif" alt="[logo] US EPA" width="100" height="111" /></a></div>
+  <div id="areaname">
+    <!-- START AREA NAME -->
+    <p>Area Name</p>
+  </div>
+  <!-- END AREA NAME -->
+  <!-- START SEARCH CONTROLS -->
+  <form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+    <!-- START AREA SPECIFIC LINKS AND SEARCH BOX  -->
+    <!-- CHANGE links to point to your own recent additions and contact pages -->
+    <!-- REMOVE recent additions link if your area doesn't have one -->
+    <p><a href="#">Recent Additions</a> | <a href="#">Contact Us</a> <span class="search"><strong>Search:</strong>
+      <input name="querytext" id="searchbox" value="" />
+      <input name="submit" id="searchbutton" type="submit" value="Go" />
+      <input type="hidden" name="fld" value="" />
+      <input type="hidden" name="areaname" value="" />
+      <input type="hidden" name="areacontacts" value="" />
+      <!-- AREA ADVANCED SEARCH URL HERE (OPTIONAL) -->
+      <input type="hidden" name="areasearchurl" value="" />
+      <!-- THE REMAINING HIDDEN INPUTS ARE USED BY THE SEARCH ENGINE - DO NOT EDIT -->
+      <input type="hidden" name="result_template" value="epafiles_default.xsl" />
+      <input type="hidden" name="filter" value="sample4filt.hts" />
+      </span> </p>
+  </form>
+  <!-- END SEARCH CONTROLS -->
+  <ul>
+    <!-- BEGIN BREADCRUMBS -->
+    <li class="first">You are here: <a href="http://www.epa.gov/">EPA Home</a></li>
+    <!-- START AREA BREADCRUMBS -->
+    <!-- TemplateBeginEditable name="breadcrumbs" -->
+    <li><a href="#">Area Name</a></li>
+    <li>Page Title</li>
+    <!-- TemplateEndEditable -->
+    <!-- END AREA BREADCRUMBS -->
+  </ul>
+  <!-- END BREADCRUMBS -->
+</div>
+<!-- END EPA HEADER -->
+<hr class="skip" />
+<p class="skip"><a name="pagecontents" id="pagecontents"></a><a name="pagetop" id="pagetop"></a></p>
+<div id="content">
+  <!-- BEGIN CONTENT -->
+  <!-- EPA SITE-WIDE ANNOUNCEMENTS - DO NOT REMOVE - this code is used for emergency messages -->
+  <!-- If this page is a Sub-Office/Sub-Region/Center/Lab/Topic home page, CHANGE "sitewidec" TO "sitewideb" -->
+  <p id="sitewidec"></p>
+  <!-- BEGIN PAGE NAME -->
+<!--googleon: index-->
+  <h1><!-- TemplateBeginEditable name="PageName" -->{Page title}<!-- TemplateEndEditable --></h1>
+  <!-- END PAGE NAME -->
+  <!-- BEGIN CONTENT AREA -->
+  <!-- TemplateBeginEditable name="content" --> {content} <!-- TemplateEndEditable -->
+<!--googleoff: index-->
+  <!-- BEGIN AREA FOOTER - ADD text/links for area footer within this paragraph tag -->
+  <p id="areafooter">If there is an Area footer, put it here.</p>
+  <!-- END AREA FOOTER -->
+</div>
+<!-- END CONTENT -->
+<hr class="skip" />
+<div id="area-nav">
+  <!-- BEGIN AREA MAIN NAVIGATION -->
+  <h3 class="skip">Local Navigation</h3>
+  <ul>
+    <li><a href="#">Area Home</a></li>
+    <li><a href="#">Basic Information</a></li>
+    <li><a href="#">Where You Live</a></li>
+    <li><a href="#">Part 4</a></li>
+    <li><a href="#">Part 5</a>
+      <ul>
+        <li><a href="#">Sublist link</a></li>
+        <li><a href="#">Sublist link</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Part 6</a></li>
+    <li><a href="#">Part 7</a></li>
+  </ul>
+</div>
+<!-- END AREA MAIN NAVIGATION -->
+<hr class="skip" />
+<div id="footer">
+  <!-- BEGIN FOOTER -->
+  <ul id="globalfooter">
+    <li><a href="http://www.epa.gov/">EPA Home</a></li>
+    <li><a href="http://www.epa.gov/epafiles/usenotice.htm">Privacy and Security Notice</a></li>
+    <!-- CHANGE link to point to your own contact page -->
+    <li class="last"><a href="#">Contact Us</a></li>
+  </ul>
+</div>
+<!-- END FOOTER -->
+<p class="skip"><a id="skipbot" href="#content" title="Jump to main content.">Jump to main content.</a></p>
+</body>
+</html>

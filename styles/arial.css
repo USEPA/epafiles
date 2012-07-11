@@ -1,0 +1,112 @@
+th{ ;font-family: Arial, Helvetica, sans-serif}
+
+H1 { ; font-family: Arial, Helvetica, sans-serif; font-size: 1.44em} 
+
+H2 { ; font-family: Arial, Helvetica, sans-serif; font-size: 1.28em} 
+
+H3 { ; font-family: Arial, Helvetica, sans-serif; font-size: 1.12em} 
+
+H4 { ; font-family: Arial, Helvetica, sans-serif; font-size: 0.96em} 
+
+H5 { ; font-family: Arial, Helvetica, sans-serif; font-size: 0.8em} 
+
+H6 { ; font-family: Arial, Helvetica, sans-serif; font-size: 0.72em} 
+
+P { ; } 
+
+td { ; font-family: Arial, Helvetica, sans-serif}
+
+P { ; font-family: Arial, Helvetica, sans-serif; font-size: 0.8em}
+
+blockquote { ; font-family: Arial, Helvetica, sans-serif}
+
+li { ; font-family: Arial, Helvetica, sans-serif}
+
+.tdtext {  font-family: Arial, Helvetica, sans-serif}
+
+ul {  font-family: Arial, Helvetica, sans-serif; font-size: 0.8em}
+
+A:visited { color: #009900;}
+
+.epaSideBarLinks { color: #FFFFFF; font-weight: bold; text-decoration: none;; font-family: Arial, Helvetica, sans-serif; font-size: 0.8em}
+
+.epaSideBarLinks:visited { color: #FFFFFF;}
+
+.epaSideBarLinks:hover { color: #D2FFF0;}
+
+.epaLtSans { font-size: 0.6em; font-family: Arial, Helvetica, sans-serif}
+
+.epaSideNavCell { background-color: #336699}
+
+.epaHighlightBox { background-color: #E1EBF4}
+
+.epaBodyAttributes { background-image:url(http://www.epa.gov/epafiles/images/epafiles_misc_bg.gif)}
+
+.epaAreaName { color: #FFFFFF; background-color: #000066; font-size: x-large; font-weight: bold; font-family: Arial, Helvetica, sans-serif}
+
+
+
+/* STYLES USED BY AA AND RA HOMEPAGES */
+
+.epaAARAAreaName { color: #FFFFFF; background-color: #000066; font-size: large; font-weight: bold; font-family: Arial, Helvetica, sans-serif}
+
+.raStates { font-size: small; font-family: Arial, Helvetica, sans-serif}
+
+
+
+/* STYLES USED BY EPA TOP LEVEL PAGES */
+
+
+
+.epaPageHeaders { font-size: large; color: #FFFFFF; font-weight: bold; font-family: Arial, Helvetica, sans-serif}
+
+.epaPageHeaders2 { font-size: x-large; color: #000066; font-weight: bold; font-family: Arial, Helvetica, sans-serif}
+
+.epaBodyText { font-family: Arial, Helvetica, sans-serif}
+
+.epaSubHead { font-weight: bold;; font-family: Arial, Helvetica, sans-serif}
+
+.epaSubHeadBig { font-size: large; font-weight: bold;; font-family: Arial, Helvetica, sans-serif}
+
+
+
+/* END EPA STYLES */
+
+/* If you want to add additional styles, do so below this comment */
+
+
+
+
+
+
+
+/* epafiles_epastyles.css */
+
+
+
+/* version 1.2 1/28/02 */
+
+
+
+/* THE FOLLOWING STYLE DECLARATIONS ARE MANDATED FOR ALL EPA INTERNET SITES */
+
+
+
+/* The styles are VERY sensitive to changes in syntax */
+
+
+
+/* Do not edit the EPA styles */
+
+
+
+/* BEGIN EPA STYLES */
+
+
+
+/* STYLES USED BY ALL EPA PAGES */
+
+
+
+
+

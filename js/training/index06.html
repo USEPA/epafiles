@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Testing JQuery, #6</title>
+  <style>
+  /* CSS goes here */
+	#content div, #content span { border: 1px solid black; display: block; float: left; height: 150px; width: 150px; }
+	#content .highlight { border: 3px solid orange; }
+	p { clear: left; }
+	input { display: block; }
+  </style>
+</head>
+<body>
+  <!-- HTML goes here -->
+    <div id="content">
+      <span>SPAN<br />No id<br />No class</span>
+      <span class="test" id="second">SPAN<br />id="second"<br />class "test"</span>
+      <div class="test">DIV<br />No id<br />class "test"</div>
+    </div>
+    <p>
+      <strong>Toggles:</strong>
+      <input type="button" id="second-toggle" value="id='second'" />
+      <input type="button" id="test-toggle" value="class='test'" />
+      <input type="button" id="span-toggle" value="tag is 'span'" />
+      <input type="button" id="filter-toggle01" value="the first object where tag is 'span'" />
+      <input type="button" id="filter-toggle02" value="tag is 'span', but id is not 'second'" />
+    </p>
+  <!-- JS goes at end of body -->
+  <script type="text/javascript" src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+  <script type="text/javascript">
+    // JavaScript goes here
+	$('#second-toggle').click(
+      function () {
+        $('#second').toggleClass('highlight');
+    });
+	$('#test-toggle').click(
+	  function () {
+		$('.test').toggleClass('highlight');
+	});
+	$('#span-toggle').click(
+	  function () {
+		$('span').toggleClass('highlight');
+	});
+	$('#filter-toggle01').click(
+	  function () {
+		$("span:first").toggleClass("highlight");
+	});
+	$('#filter-toggle02').click(
+	  function () {
+		$("span:not(#second)").toggleClass("highlight");
+	});
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+This directory exists solely because of old references in existing EPA pages to http://www.epa.gov/epafiles/templates/styles
+
+
+
+Don't delete it or pages like http://www.epa.gov/enviro/ej/ will stop working.
+
+
+
+Once the conversion to template 3 is completed, it'll be safe to delete this directory.

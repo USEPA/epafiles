@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/t4.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- EPA Template, OneEPA Web, 17 November 2010 -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>JavaScript in EPA Template 4 and 3.2.1 | EPA Web Design | US EPA</title>
+<!--Required Metadata, direction on how to complete are in the Web Guide -->
+<meta name="DC.description" content="These pages describe EPA's style guide for its web site." />
+<meta name="Keywords" content="" />
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="metaElements" -->
+<meta name="DC.title" content="JavaScript in EPA Template 4 and 3.2.1" />
+<!-- InstanceEndEditable -->
+<meta name="DC.type" content="" />
+<meta name="DC.Subject.epachannel" content="" />
+<meta name="DC.Subject.epabrm" content="" />
+<meta name="DC.Subject.epacat" content="" />
+<meta name="DC.Subject.epaect" content="" />
+<meta name="DC.Subject.epaemt" content="" />
+<meta name="DC.Subject.epahealth" content="" />
+<meta name="DC.Subject.epaindustry" content="" />
+<meta name="DC.Subject.epaopt" content="" />
+<meta name="DC.Subject.epappt" content="" />
+<meta name="DC.Subject.eparat" content="" />
+<meta name="DC.Subject.eparegulation" content="" />
+<meta name="DC.Subject.eparit" content="" />
+<meta name="DC.Subject.epasubstance" content="" />
+<meta name="DC.audience" content="" />
+<meta name="DC.coverage" content="" />
+<meta name="DC.date.created" content="" />
+<meta name="DC.date.modified" content="" />
+<meta name="DC.date.archivedate" content="" />
+<meta name="DC.creator" content="US EPA" />
+<meta name="DC.language" content="en" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="meta" href="/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<!--RSS Feeds -->
+<link rel="alternate" type="application/atom+xml" title="EPA.gov News" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSRecentNews" />
+<link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSByLocation?open&location=Headquarters" />
+<link rel="alternate" type="application/atom+xml" title="Greenversations, EPA's Blog" href="http://blog.epa.gov/blog/feed/" />
+
+<!-- ALL PAGE STYLES BELOW THIS LINE -->
+<link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/epa.css" />
+<!--[if IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie7.css"/><![endif]-->
+<!--[if lt IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie6.css"/><![endif]-->
+<!-- InstanceBeginEditable name="styles" -->
+<link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/local.css" />
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="bodyClass" type="text" value="basic" -->
+</head>
+<body class="basic">
+<!--googleoff: index-->
+<p id="sitewidec"></p>
+<p class="skip">Jump to <a href="#main" title="Jump to main content">main content</a> or <a href="#areanav" title="Jump to area navigation.">area navigation</a>.</p>
+<div id="header">
+  <p><a href="/" title="US EPA Home Page"><img src="/epafiles/templates/webcms/css/i/print-epa-logo.gif" alt="US Environmental Protection Agency logo" /></a></p>
+  <form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+    <fieldset>
+      <ol>
+        <li id="azindex"><a href="/epahome/quickfinder.htm" title="Alphabetical list of top EPA topics">A-Z Index</a></li>
+        <li><a href="/search.html">Advanced Search</a></li>
+        <li>
+          <fieldset id="search">
+            <legend>What are you looking for?</legend>
+            <input name="querytext" id="searchbox" value=""/>
+            <button id="searchbutton" type="submit" title="Search"></button>
+          </fieldset>
+        </li>
+      </ol>
+      <input type="hidden" name="fld" value="" />
+      <input type="hidden" name="areaname" value="" />
+      <input type="hidden" name="areacontacts" value="" />
+      <input type="hidden" name="areasearchurl" value="" />
+      <input type="hidden" name="result_template" value="epafiles_default.xsl" />
+      <input type="hidden" name="filter" value="sample4filt.hts" />
+    </fieldset>
+  </form><!-- /search -->
+  <ul>
+    <li id="learn"><a href="/gateway/learn/" title="Learn the Issues">Learn the Issues</a></li>
+    <li id="scitech"><a href="/gateway/science/" title="Science and Technology">Science &amp; Technology</a></li>
+    <li id="laws"><a href="/lawsregs/" title="Laws and Regulations">Laws &amp; Regulations</a></li>
+    <li id="about"><a href="/aboutepa/" title="About EPA">About EPA</a></li>
+  </ul><!-- /IA Buckets -->
+</div><!-- /header -->
+<div id="content">
+  <div id="area">
+    <p><a href="/epafiles/auxfiles/contactus.htm">Contact Us</a></p>
+    <p>EPAFiles: Web Design</p>
+  </div><!-- /area -->
+  <div id="page">
+    <div id="main">
+      <ul id="breadcrumbs">
+        <li class="first"><b>You are here:</b> <a href="/">EPA Home</a></li>
+        <!-- InstanceBeginEditable name="breadcrumbs" -->
+        <li><a href="../index.html">EPA Web Design</a></li>
+        <li><a href="index.html">Templates</a></li>
+        <li>JavaScript</li>
+        <!-- InstanceEndEditable -->
+      </ul>
+<!--googleon: index-->
+      <h1><!-- InstanceBeginEditable name="PageName" -->jQuery in Template 4 and 3.2.1<!-- InstanceEndEditable --></h1>
+      <!-- InstanceBeginEditable name="content" -->
+      <div class="boxalert">
+        <h5>KINDLY NOTE</h5>
+        <p>This page is fairly technical. If you have any issues, please feel free to <a href="../auxfiles/contactus.htm">contact us</a>.</p>
+        <p><strong>All scripts must go at the bottom of the HTML, just before the closing <code>&lt;/body></code> tag.</strong></p>
+      </div>
+      <div class="boxmulti clear">
+        <h5>Scripting Links of Note</h5>
+        <ul>
+          <li><a href="../docs/jstest.html">Writing Good JavaScript</a></li>
+          <li><a href="js-start.html">Getting Started with jQuery</a></li>
+          <li><a href="http://yosemite.epa.gov/oei%5Cwebguide.nsf/approved_cat?openView&RestrictToCategory=Scripts%20and%20Codes">Other "Scripts and Codes"</a></li>
+        </ul>
+        <h5>"New!" icon <img src="../images/new-en.gif" height="16" width="34" alt="New!" /></h5>
+        <p>EPA's <a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/newicon#howto">new icon</a> is included as part of the core JS file (epa-core-v4.js). The <b>code is identical for Template 4 and 3.2.1</b>.</p>
+      </div>
+	  <p>JavaScript frameworks, like jQuery, Prototype and Moo Tools, are designed to help us. These web frameworks sit on top of JavaScript and make some common tasks easier. When you write in JQuery, as you will in <a href="js-start.html">this tutorial</a>, you're still writing JavaScript, but what used to be 50 lines may now be one or two. jQuery's slogan is "write less, do more," and it lives up to that promise.</p>
+      <p>The popularity of JavaScript frameworks, especially jQuery, means we potentially have multiple copies of the same JS files scattered throughout our web site. We are providing a standard suite of JavaScript files for everyone at the Agency to use. Linking to the EPA master JS files will improve our site performance, as users will cache a copy of the JS files. We're also providing a set of jQuery plugins.</p>
+      <p>All Template 4 pages link to the master jQuery file. If you want to add additional plugin functionality, you must also link to the plugin script. You can, of course, link to your own scripts if you don't find what you need here.</p>
+      <p>Please note, all JS should be linked at the bottom of the HTML, just before the closing <code>&lt;/body></code> tag. Placing scripts here will speed up epa.gov for our readers. If your scripts are linked at the top, it would be good practice to adjust your templates.</p>
+      <ul>
+        <li><a href="#js-start">Getting Started with jQuery</a></li>
+        <li><a href="#plugins" id="plugins-link">Available jQuery Plugins</a>
+          <ul>
+            <li><a href="#cycle-demo">Cycle</a></li>
+            <li><a href="#colorbox-demo">Colorbox (popups)</a></li>
+            <li><a href="#table-demo">Tablesorter</a></li>
+            <li><a href="#tabs-demo">Tabs</a></li>
+            <li><a href="#accord-demo">Accordion</a></li>
+            <li><a href="#form-demo">Form Validation</a></li>
+          </ul>
+        </li>
+        <li><a href="#template3">Using jQuery with Template 3</a></li>
+        <li><a href="#multiple">Combine multiple plugins</a></li>
+      </ul>
+      <p><a href="http://docs.jquery.com/Main_Page">jQuery documentation is readily available</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a>.</p>
+      <hr />
+      <h2 id="js-start">Getting Started with jQuery</h2>
+      <p>We've adapted a <a href="js-start.html">jQuery tutorial from webmonkey</a>. Check it out!</p>
+      <p>In this tutorial, you find a new way to write JavaScript: the easy, JQuery way. You'll retrieve multiple objects in a single line, add CSS classes and make things magically disappear. At the end, you'll be able to create an expandable Frequently Asked Questions template, where users can click a question and the answer will appear below.</p>
+      <p>You don't have to be a pro to master jQuery. Even if you're new to JavaScript, you'll want to read on and see what JQuery can do for you.</p>
+      <hr />
+      <h2 id="plugins">Available jQuery Plugins</h2>
+      <h3 id="cycle-demo">Cycle</h3>
+      <p>Anything can be cycled: forms, images, text. All "children" of the parent div (with the id="ID") will be cycled.</p>
+      <div class="boxsimple" style="width:350px">
+        <div id="feature" style="height:100px">
+          <div>
+            <img src="../images/banner01.jpg" width="350" alt="" />
+            <p class="caption">This is text for photo 1.</p>
+          </div>
+          <div style="display:none">
+            <img src="../images/banner02.jpg" width="350" alt="" />
+            <p class="caption">This is text for photo 2.</p>
+          </div>
+          <div style="display:none">
+            <img src="../images/banner03.jpg" width="350" alt="" />
+            <p class="caption">This is text for photo 3.</p>
+          </div>
+          <div style="display:none">
+            <img src="../images/banner04.jpg" width="350" alt="" />
+            <p class="caption">This is text for photo 4.</p>
+          </div>
+        </div>
+      </div>
+      <h4>HTML How-to</h4>
+      <p>(View Source to see the HTML for the cycling banner to the right.)</p>
+      <p><pre>&lt;div id="<b>ID</b>" style="height:200px;"&gt;
+  &lt;img src="../images/banner01.jpg" alt="" /&gt;
+  &lt;img src="../images/banner02.jpg" alt="" /&gt;
+  &lt;img src="../images/banner03.jpg" alt="" /&gt;
+  &lt;img src="../images/banner04.jpg" alt="" /&gt;
+&lt;/div&gt;</pre></p>
+      <h4>JavaScript How-to</h4>
+      <p>To create a slideshow, place the following code just before the <code>&lt;/body></code> closing tag of your web page (or in the JavaScript tab of Web Publisher):</p>
+      <p><pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.cycle.lite.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+  // Cycle a banner, replace "ID" with the name of the ID you want to cycle
+    $('#<b>ID</b>').cycle();
+  });
+&lt;/script&gt;</pre></p>
+          <p>... where <b>ID</b> is the ID of the element you're "cycling".</p>
+          <p>The above code links to the "lite" version of the Cycle plugin. If you want more transition options, link to the full script instead:</p>
+          <p><pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.cycle.all.min.js"&gt;&lt;/script&gt;</pre></p>
+          <h4>More Cycle Documentation</h4>
+          <p>The above examples are basic, see the <a href="http://www.malsup.com/jquery/cycle/">cycle plugin demo and documentation</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> for more options. <a href="http://www.epa.gov/">EPA's home page has a nice example of a cycling banner</a> (starting and stopping on click, showing the number of slides, different timing).</p>
+          <p class="pagetop"><a href="#plugins-link">Back to jQuery Plugins</a></p>
+          <hr />
+          <h3 id="colorbox-demo">Colorbox</h3>
+          <div class="box right" style="width:200px">
+            <h5>"Popup" Video Example</h5>
+            <p><a href="http://www.epa.gov/multimedia/playercontents/video/2010-04-20_EarthDay_Admin/" class="outside" title="Lisa Jackson, Earthday Video">Lisa Jackson, EarthDay</a></p>
+          </div>
+          <h4>Link to Other Content on the Same Server</h4>
+          <p>You can link to a file (in this case, a video) on the <strong>same server</strong> (www.epa.gov).</p>
+          <h5>HTML</h5>
+          <p>Link directly to the HTML page with the video:<br/>
+          <code>&lt;a href=&quot;http://www.epa.gov/multimedia/playercontents/video/2010-04-20_EarthDay_Admin/&quot; <b>class=&quot;outside&quot;</b> title=&quot;Lisa Jackson, Earthday Video&quot;&gt;Lisa Jackson, Earthday&lt;/a&gt;</code></p>
+          <h5>JavaScript</h5>
+          <p>To create a 'popup' displaying content on other pages on the same domain, place the following code just before the <code>&lt;/body></code> closing tag of your web page (or in the JavaScript tab of Web Publisher):</p>
+           <p><code>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.colorbox.min.js"&gt;&lt;/script&gt;<br/>
+&lt;script&gt;<br/>
+&nbsp;$(function(){
+&nbsp;// Display content stored elsewhere on epa.gov<br/>
+&nbsp;&nbsp;$(".outside").colorbox({width:"360px", height:"310px", iframe:true});<br/>
+&nbsp;});<br/>
+&lt;/script&gt;</code></p>
+          <h4>Image Gallery</h4>
+          <p>Here's an example of an image gallery (using the <a href="gallery.html">sample gallery code</a>):</p>
+          <ul class="gallery">
+            <li class="first"><a href="http://farm4.static.flickr.com/3155/2636513939_cd75b704ec.jpg" title="Berlin New National Gallery" rel="gallery1"><img src="http://farm4.static.flickr.com/3155/2636513939_cd75b704ec_s.jpg" /></a></li>
+            <li><a href="http://farm4.static.flickr.com/3105/2618870872_cf22d3cdb1.jpg" title="Alternate view of the Gallery" rel="gallery1"><img src="http://farm4.static.flickr.com/3105/2618870872_cf22d3cdb1_s.jpg" /></a></li>
+            <li><a href="http://farm4.static.flickr.com/3435/3276760045_742ebd4663.jpg" title="Mies: Barcelona Pavilion" rel="gallery1"><img src="http://farm4.static.flickr.com/3435/3276760045_742ebd4663_s.jpg" /></a></li>
+            <li><a href="http://farm4.static.flickr.com/3420/3755900866_95e61c6df2.jpg" title="Minimalistic design inside the Gallery" rel="gallery1"><img src="http://farm4.static.flickr.com/3420/3755900866_95e61c6df2_s.jpg" /></a></li>
+            <li><a href="http://farm4.static.flickr.com/3247/2400693384_9e8776d482.jpg" title="Romantic outdoor view" rel="gallery1"><img src="http://farm4.static.flickr.com/3247/2400693384_9e8776d482_s.jpg" /></a></li>
+          </ul>
+          <h5>HTML</h5>
+          <p><pre>&lt;ul class=&quot;gallery&quot;&gt;
+  &lt;li class=&quot;first&quot;&gt;&lt;a href=&quot;image01.jpg&quot; title=&quot;Title for Image 01&quot; <b>rel=&quot;gallery1&quot;</b>&gt;&lt;img src=&quot;image01-t.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;image02.jpg&quot; title=&quot;Title for Image 02&quot; <b>rel=&quot;gallery1&quot;</b>&gt;&lt;img src=&quot;image02-t.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;image03.jpg&quot; title=&quot;Title for Image 03&quot; <b>rel=&quot;gallery1&quot;</b>&gt;&lt;img src=&quot;image03-t.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;image04.jpg&quot; title=&quot;Title for Image 04&quot; <b>rel=&quot;gallery1&quot;</b>&gt;&lt;img src=&quot;image04-t.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;image05.jpg&quot; title=&quot;Title for Image 05&quot; <b>rel=&quot;gallery1&quot;</b>&gt;&lt;img src=&quot;image05-t.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre></p>
+          <h5>JavaScript</h5>
+          <p><code>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.colorbox.min.js"&gt;&lt;/script&gt;<br/>
+&lt;script&gt;<br/>
+&nbsp;$(function(){<br/>
+&nbsp;// Photo gallery<br/>
+&nbsp;&nbsp;$("a[rel='gallery1']").colorbox();<br/>
+&nbsp;});<br/>
+&lt;/script&gt;</code></p>
+          <h4>Inline Content (same page)</h4>
+          <div class="box right" style="width:200px">
+            <h5>Inline Content Example</h5>
+            <p>You can also display hidden content, displaying it when the user does something, like <a href="#example" class="inlink">clicking here</a>.</p>
+            <div style="display:none">
+                <div id="example" style="padding:10px;background:#fff">
+                    <p><strong>This content comes from a hidden element on this page.</strong></p>
+                    <p>You might even embed a form or something?</p>
+                </div>
+            </div>
+          </div>
+          <h5>JavaScript</h5>
+          <p><code>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.colorbox.min.js"&gt;&lt;/script&gt;<br/>
+&lt;script&gt;<br/>
+&nbsp;$(function(){<br/>
+&nbsp;// Pop up inline content<br/>
+&nbsp;&nbsp;$(".inlink").colorbox({width:"50%", inline:true, href:"#example"});<br/>
+&nbsp;});<br/>
+&lt;/script&gt;</code></p>
+          <h4 class="clear">More Colorbox Documentation</h4>
+          <p>These examples are basic, and this plugin has more different examples. See the <a href="http://colorpowered.com/colorbox/">colorbox demos and documentation</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> for more.</p>
+          <p class="pagetop"><a href="#plugins-link">Back to jQuery Plugins</a></p>
+          <hr />
+          <h3 id="table-demo">Tablesorter</h3>
+          <h4>Tablesorting Example</h4>
+          <table id="table1" class="tablebord" summary="% of Total GHG Emissions by Sector Covered Under Tailpipe and emissions.">
+            <caption>
+            Greenhouse Gas Emissions by Sector Covered Under Tailpipe and Tailoring Rules
+            </caption>
+            <thead>
+              <tr>
+                <th>Sector</th>
+                <th>Million Metric Tons</th>
+                <th>% of Total US GHG Emissions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Electric Power Industry, covered under proposed rules</td>
+                <td>2373</td>
+                <td>33.2</td>
+              </tr>
+              <tr>
+                <td>Electric Power Industry, not covered under proposed rules</td>
+                <td>72</td>
+                <td>1.0</td>
+              </tr>
+              <tr>
+                <td>Transportation, covered under proposed rules</td>
+                <td>1197</td>
+                <td>16.7</td>
+              </tr>
+              <tr>
+                <td>Transportation,  not covered under proposed rules</td>
+                <td>798</td>
+                <td>11.2</td>
+              </tr>
+              <tr>
+                <td>Industry, covered under proposed rules</td>
+                <td>964</td>
+                <td>13.5</td>
+              </tr>
+              <tr>
+                <td>Industry,  not covered under proposed rules</td>
+                <td>422</td>
+                <td>5.9</td>
+              </tr>
+              <tr>
+                <td>Agriculture</td>
+                <td>503</td>
+                <td>7.0</td>
+              </tr>
+              <tr>
+                <td>Commercial, covered under proposed rules</td>
+                <td>125</td>
+                <td>1.7</td>
+              </tr>
+              <tr>
+                <td>Commercial, not covered under proposed rules</td>
+                <td>283</td>
+                <td>4.0</td>
+              </tr>
+              <tr>
+                <td>Residential, covered under proposed rules</td>
+                <td>1</td>
+                <td>0.0</td>
+              </tr>
+              <tr>
+                <td>Residential, not covered under proposed rules</td>
+                <td>354</td>
+                <td>5.0</td>
+              </tr>
+              <tr>
+                <td>U.S. Territories</td>
+                <td>58</td>
+                <td>0.8</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Total Emissions</th>
+                <th>7150</th>
+                <th>100</th>
+              </tr>
+            </tfoot>
+          </table>
+          <h4>Tablesorting How-to</h4>
+          <p>To sort tables, place the following code just before the <code>&lt;/body></code> closing tag of your web page (or in the JavaScript tab of Web Publisher):</p>
+          <p><pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.tablesorter.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+  // Sort this table
+    $("#ID").tablesorter();
+  });
+&lt;/script&gt;</pre>
+          where <b>ID</b> is the ID of the table you're "sorting".</p>
+          <p>To make the zebra stripe sort with the content, do the following:</p>
+          <p><pre>$("#table1").tablesorter({widgets: ['zebra']});</pre> (Note: you do not need the <code>zebra</code> class for your table if you use this widget.)</p>
+          <p>This example is very basic, see the <a href="http://tablesorter.com/docs/">tablesorter plugin demo and documentation</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> for more.
+          </p>
+          <p class="pagetop"><a href="#plugins-link">Back to jQuery Plugins</a></p>
+          <hr />
+          <h3 id="tabs-demo">Tabs</h3>
+          <div class="box righted" style="width: 350px;">
+            <h5>Tab Example</h5>
+            <p>Note that you can set a tab to open on page load by referencing its anchor.</p>
+            <ul class="tabs">
+              <li><a href="#tabs-1">Nunc tincidunt</a></li>
+              <li><a href="#tabs-2">Proin dolor</a></li>
+              <li><a href="#tabs-3">Aenean lacinia</a></li>
+            </ul>
+            <div class="pane">
+              <div id="tabs-1">
+                <p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p>
+              </div>
+              <div id="tabs-2">
+                <p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+              </div>
+              <div id="tabs-3">
+                <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+                <p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+              </div>
+            </div>
+          </div>
+          <p><b>Note</b>: These tabs are not the tabs for linking to related content in an Area, although they look the same. To see examples of those tabs, check out the <a href="../s/tabs.html">horizontal and vertical tabs</a>. These jQuery tabs, rather, are for placing related <em>page</em> content together.</p>
+          <h4>Script How-to</h4>
+          <p>To use these tabs, place the following code just before the <code>&lt;/body></code> closing tag of your web page (or in the JavaScript tab of Web Publisher):</p>
+          <p>
+          <pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.tools.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+  // Tabs
+    $("ul.tabs").addClass("tabs-js").tabs( "div.pane > div" );
+  });
+&lt;/script&gt;</pre>
+          </p>
+          <p>... where <b>tabs-js</b> is the class name of the element you're making into tabs (required) and <b>pane</b> is the name of the element you're applying the tabs to. Inside the "pane" element, each of the child elements will become a "tabbed" section: only one of the child elements will be visible, until you click on the next tab.</p>
+          <h4>HTML How-to</h4>
+          <p>The HTML is straightforward:</p>
+          <p>
+          <pre>&lt;ul class="<b>tabs</b>"&gt;
+  &lt;li&gt;&lt;a href="#tabs-1"&gt;Nunc tincidunt&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tabs-2"&gt;Proin dolor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="#tabs-3"&gt;Aenean lacinia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="pane">
+  &lt;div id="tabs-1"&gt;
+    &lt;p&gt;Proin elit arcu, rutrum commodo, vehicula tempus....&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tabs-2"&gt;
+    &lt;p&gt;Morbi tincidunt, dui sit amet facilisis feugiat....&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div id="tabs-3"&gt;
+    &lt;p&gt;Mauris eleifend est et turpis....&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </p>
+          <h4>More Tabs Documentation</h4>
+          <p>This example is basic, see the <a href="http://flowplayer.org/tools/tabs/">tab demo and documentation</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> for more options.</p>
+          <p class="pagetop"><a href="#plugins-link">Back to jQuery Plugins</a></p>
+          <hr />
+          <h3 id="accord-demo">Accordion</h3>
+          <div class="accordion" style=" width: 525px;">
+            <h3>Site-wide</h3>
+            <div class="pane">
+              <p>This is some text to hide and show.</p>
+            </div>
+            <h3>Operable Units (OUs)</h3>
+            <div class="pane">
+              <p>This is more text to hide and show.</p>
+            </div>
+            <h3>Sampling Programs</h3>
+            <div class="pane">
+              <p>This is some more text to hide and show.</p>
+            </div>
+          </div>
+          <h4>Script How-to</h4>
+          <p>To create an accordion, place the following code just before the <code>&lt;/body></code> closing tag of your web page (or in the JavaScript tab of Web Publisher):</p>
+          <p>
+          <pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.tools.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+    //  Accordion Panels
+    $(".accordion div").show();
+    setTimeout ("$('.accordion div').slideToggle('slow');", 1000);
+    $(".accordion h3").click(function(){
+      $(this).next(".pane").slideToggle("slow").siblings(".pane:visible").slideUp("slow");
+      $(this).toggleClass("current");
+      $(this).siblings("h3").removeClass("current");
+    });
+  });
+&lt;/script&gt;</pre>
+          </p>
+          <p>... where <b>accordion</b> is the class name of the element you're making into an accordion (required) and <b>pane</b> is the class of the elements you're hiding (can be anything).</p>
+          <h4>HTML How-to</h4>
+          <p>The HTML is simple. Use <code>h3</code> to create the "clickable" panel headers:</p>
+          <p>
+          <pre>&lt;div class="<b>accordion</b>"&gt;
+  &lt;h3&gt;Section 1&lt;/h3&gt;
+  &lt;div class="pane"&gt;
+    &lt;p&gt;Mauris mauris ante, blandit et, ultrices a....&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Section 2&lt;/h3&gt;
+  &lt;div class="pane"&gt;
+    &lt;p&gt;Sed non urna. Donec et ante. Phasellus eu ligula....&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;h3&gt;Section 3&lt;/h3&gt;
+  &lt;div class="pane"&gt;
+    &lt;ul&gt;
+      &lt;li&gt;List item one&lt;/li&gt;
+      &lt;li&gt;List item two&lt;/li&gt;
+      &lt;li&gt;List item three&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+          </p>
+          <h4>More Accordion Documentation</h4>
+          <p>This example is basic, see the <a href="http://flowplayer.org/tools/demos/tabs/accordion.html">accordion demo and documentation</a> <a href="http://www.epa.gov/epahome/exitepa.htm" title="EPA's External Link Disclaimer"><img src="http://www.epa.gov/epafiles/images/epafiles_misc_exitepadisc.gif" width="87" height="13" alt="Exit EPA Disclaimer" /></a> for more options.</p>
+          <p class="pagetop"><a href="#plugins-link">Back to jQuery Plugins</a></p>
+          <hr />
+          <h3 id="form-demo">Form Validation</h3>
+          <p>To validate forms, place the following code just before the <code>&lt;/body></code> closing tag of your web page (or in the JavaScript tab of Web Publisher):<br />
+          <pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.tools.1.2.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+  // Validate this form
+    $("#ID").validator();
+  });
+&lt;/script&gt;</pre>
+          where <b>ID</b> is the ID of the form you're valdiating. See an <a href="../s/forms.html">example, using common EPA Contact Us form fields</a>.</p>
+      <p class="pagetop"><a href="#plugins-link">Back to jQuery Plugins</a></p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h2 id="template3">Using jQuery with Template 3</h2>
+      <p>You can use these javascript files with Template 3. You'll need to link to the master jQuery file (already linked in Template 4).</p>
+      <p>
+      <pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.js"&gt;&lt;/script&gt;</pre>
+      </p>
+      <p>This script link must go above any links to jQuery plugins.</p>
+      <p>Note that it's (as usual) not this simple: the CSS file for Template 4 contains a lot more styles, especially for things like tabs and forms. Those styles are not directly available for Template 3 unless you copy them over (into a local stylesheet).</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <hr />
+      <h2 id="multiple">Combine multiple plugins</h2>
+      <p>You can combine multiple effects/plugins (this page does).</p>
+      <p>
+      <pre>&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.tablesorter.min.js"&gt;&lt;/script&gt;
+&lt;script src="http://www.epa.gov/epafiles/js/third-party/jquery.cycle.lite.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  $(function(){
+    // Sort this table
+     $("#ID").tablesorter();
+    // Cycle the banner on TROPO pages
+     $('#differentID').cycle();
+  });
+&lt;/script&gt;</pre>
+      </p>
+      <p>If you know of other jQuery plugins you want to make available, please <a href="/epafiles/auxfiles/contactus.htm">contact us</a> and let us know. We'll evaluate your request.</p>
+      <p class="pagetop"><a href="#content">Top of Page</a></p>
+      <!-- InstanceEndEditable -->
+<!--googleoff: index-->
+      <p id="areafooter">For help with your epa.gov web design, contact the <a href="/epafiles/auxfiles/contactus.html">Web Template Workgroup</a>.</p>
+    </div><!-- /main -->
+    <div id="areanav">
+      <h4 class="skip">Area Navigation</h4>
+      <ul>
+        <li class="separator"><a href="/epafiles/">EPA Web Design Home</a><hr /></li>
+        <li><a href="/epafiles/templates/">HTML Templates</a></li>
+        <li><a href="/epafiles/#instrux">Updating &amp; Creating your Web Pages</a></li>
+        <li><a href="/epafiles/s/">Styling your Content</a></li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/homepage">EPA Web Guide</a></li>
+        <li><a href="http://yosemite.epa.gov/oei/webguide.nsf/standards-guidance">EPA Web Standards</a></li>
+      </ul>
+    </div><!-- /area-nav -->
+  </div><!-- /page -->
+</div><!-- /content -->
+<div id="footer">
+  <ul id="goodies">
+    <li id="rss-news"><a href="/newsroom/rssfeeds.htm">News Feeds</a></li>
+    <li id="podcasts"><a href="/epahome/podcasts.htm">Podcasts</a></li>
+    <li id="mobile"><a href="http://m.epa.gov/">EPA Mobile</a></li>
+    <li id="email-news"><a href="/newsroom/email_signups.htm">News by Email</a></li>
+    <li id="widgets"><a href="/widgets/">Widgets</a></li>
+  </ul>
+  <ul id="globalfooter">
+    <li><a href="/">EPA Home</a></li>
+    <li><a href="http://www.epa.gov/epahome/usenotice.htm">Privacy and Security Notice</a></li>
+    <li class="last"><a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Contact Us</a></li>
+  </ul>
+  <p id="seal">The Seal of the United States Environmental Protection Agency</p>
+</div><!-- /footer -->
+<p class="skip"><a href="#content" title="Jump to main content.">Jump to main content.</a></p>
+<script src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+<script src="http://www.epa.gov/epafiles/js/epa-core-v4.js"></script>
+<!-- ALL SCRIPTS BELOW THIS LINE -->
+<!-- InstanceBeginEditable name="scripts" -->
+<script src="../js/third-party/jquery.tools.min.js"></script>
+<script src="../js/third-party/jquery.cycle.lite.min.js"></script>
+<script src="../js/third-party/jquery.colorbox.min.js"></script>
+<script src="../js/third-party/jquery.tablesorter.min.js"></script>
+<script>
+  $(function(){
+  // Tabs
+    $("ul.tabs").addClass("tabs-js").tabs("div.pane > div");
+//  Accordion Panels
+    $(".accordion div").show();
+    setTimeout ("$('.accordion div').slideToggle('slow');", 1000);
+    $(".accordion h3").click(function(){
+      $(this).next(".pane").slideToggle("slow").siblings(".pane:visible").slideUp("slow");
+      $(this).toggleClass("current");
+      $(this).siblings("h3").removeClass("current");
+    });
+
+  // Cycle
+    $('#feature').cycle();
+  // Colorbox Photo Gallery
+    $("a[rel='gallery1']").colorbox();
+  // Colorbox AJAX/iframe content
+    $(".outside").colorbox({width:"360px", height:"340px", iframe:true,
+			onOpen: function(){
+			  $('#colorbox').append('<p class="closebox">Press "Esc" Key to Close</p>');
+			},
+			onComplete: function(){ $('#cboxlc').focus(); },
+			onClosed: function(){ $('.closebox').remove(); }
+		});
+  // Colorbox inline content
+    $(".inlink").colorbox({width:"50%", inline:true,
+			onOpen: function(){
+        var link = $(this).attr('href');
+			  $(link).append('<p>Press "Esc" Key to Close</p>');
+			},
+			onComplete: function(){ $('#cboxlc').focus(); },
+			onClosed: function(){ $('.closebox').remove(); }
+		});
+  // Sort this table
+    $("#table1").tablesorter({widgets: ['zebra']});
+  });
+</script>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en"><!-- InstanceBegin template="/Templates/t4.dwt" codeOutsideHTMLIsLocked="false" -->
+<!-- EPA Template, OneEPA Web, 17 November 2010 -->
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Styling your Content with CSS | EPA Web Design | US EPA</title>
+<meta name="DC.title" content="Styling your Content with CSS" />
+<meta name="DC.description" content="These pages describe EPA's style guide for its web site." />
+<meta name="keywords" content="" />
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="metaElements" -->
+<!-- InstanceEndEditable -->
+<meta name="DC.type" content="" />
+<meta name="DC.Subject.epachannel" content="" />
+<meta name="DC.Subject.epabrm" content="" />
+<meta name="DC.Subject.epacat" content="" />
+<meta name="DC.Subject.epaect" content="" />
+<meta name="DC.Subject.epaemt" content="" />
+<meta name="DC.Subject.epahealth" content="" />
+<meta name="DC.Subject.epaindustry" content="" />
+<meta name="DC.Subject.epaopt" content="" />
+<meta name="DC.Subject.epappt" content="" />
+<meta name="DC.Subject.eparat" content="" />
+<meta name="DC.Subject.eparegulation" content="" />
+<meta name="DC.Subject.eparit" content="" />
+<meta name="DC.Subject.epasubstance" content="" />
+<meta name="DC.audience" content="" />
+<meta name="DC.coverage" content="" />
+<meta name="DC.date.created" content="" />
+<meta name="DC.date.modified" content="" />
+<meta name="DC.date.archivedate" content="" />
+<meta name="DC.creator" content="US EPA" />
+<meta name="DC.language" content="en" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="meta" href="/labels.rdf" type="application/rdf+xml" title="ICRA labels" />
+<!--RSS Feeds -->
+<link rel="alternate" type="application/atom+xml" title="EPA.gov News" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSRecentNews" />
+<link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSByLocation?open&location=Headquarters" />
+<link rel="alternate" type="application/atom+xml" title="Greenversations, EPA's Blog" href="http://blog.epa.gov/blog/feed/" />
+
+<!-- ALL PAGE STYLES BELOW THIS LINE -->
+<link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/epa.css" />
+<!--[if IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie7.css"/><![endif]-->
+<!--[if lt IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie6.css"/><![endif]-->
+<!-- InstanceBeginEditable name="styles" -->
+<!-- InstanceEndEditable -->
+<!-- InstanceParam name="bodyClass" type="text" value="basic" -->
+</head>
+<body class="basic">
+<!--googleoff: index-->
+<p id="sitewidec"></p>
+<p class="skip">Jump to <a href="#main" title="Jump to main content">main content</a> or <a href="#areanav" title="Jump to area navigation.">area navigation</a>.</p>
+<div id="header">
+  <p><a href="/" title="US EPA Home Page"><img src="/epafiles/templates/webcms/css/i/print-epa-logo.gif" alt="US Environmental Protection Agency logo" /></a></p>
+  <form id="EPAsearch" method="get" action="http://nlquery.epa.gov/epasearch/epasearch">
+    <fieldset>
+      <ol>
+        <li id="azindex"><a href="/epahome/quickfinder.htm" title="Alphabetical list of top EPA topics">A-Z Index</a></li>
+        <li><a href="/search.html">Advanced Search</a></li>
+        <li>
+          <fieldset id="search">
+            <legend>What are you looking for?</legend>
+            <input name="querytext" id="searchbox" value=""/>
+            <button id="searchbutton" type="submit" title="Search"></button>
+          </fieldset>
+        </li>
+      </ol>
+      <input type="hidden" name="fld" value="" />
+      <input type="hidden" name="areaname" value="" />
+      <input type="hidden" name="areacontacts" value="" />
+      <input type="hidden" name="areasearchurl" value="" />
+      <input type="hidden" name="result_template" value="epafiles_default.xsl" />
+      <input type="hidden" name="filter" value="sample4filt.hts" />
+    </fieldset>
+  </form><!-- /search -->
+  <ul>
+    <li id="learn"><a href="/gateway/learn/" title="Learn the Issues">Learn the Issues</a></li>
+    <li id="scitech"><a href="/gateway/science/" title="Science and Technology">Science &amp; Technology</a></li>
+    <li id="laws"><a href="/lawsregs/" title="Laws and Regulations">Laws &amp; Regulations</a></li>
+    <li id="about"><a href="/aboutepa/" title="About EPA">About EPA</a></li>
+  </ul><!-- /IA Buckets -->
+</div><!-- /header -->
+<div id="content">
+  <div id="area">
+    <p><a href="/epafiles/auxfiles/contactus.htm">Contact Us</a></p>
+    <p>EPAFiles: Web Design</p>
+  </div><!-- /area -->
+  <div id="page">
+    <div id="main">
+      <ul id="breadcrumbs">
+        <li class="first"><b>You are here:</b> <a href="/">EPA Home</a></li>
+        <!-- InstanceBeginEditable name="breadcrumbs" -->
+    <li><a href="../index.html">EPA Web Design</a></li>
+    <li>Available Styles</li>
+    <!-- InstanceEndEditable -->
+      </ul>
+<!--googleon: index-->
+      <h1><!-- InstanceBeginEditable name="PageName" -->Styling your Content with CSS<!-- InstanceEndEditable --></h1>
+      <!-- InstanceBeginEditable name="content" -->
+  <p>There are a variety of styles available for your use in the master style sheet. These styles aim to make your life easier: they are easy to implement and give your pages a little bit of visual interest.</p>
+  <p class="warning">In general, if the page is in Template 4, like this one, then its instructions have been updated (if needed).</p>
+  <ul>
+    <li><a href="#available">Available Styles</a></li>
+    <li><a href="#version">Style Sheet Version History</a></li>
+  </ul>
+  <hr />
+  <h2 id="available">Available Styles</h2>
+  <ul>
+    <li><a href="boxes.html">Boxes</a> (<a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/boxes">Full box standard</a>)
+      <ul>
+        <li>Multi-purpose</li>
+        <li>National information (from regional pages)</li>
+        <li>Simple or temporary information</li>
+        <li>Emergency alerts</li>
+        <li>Pull quote</li>
+        <li>Highlight</li>
+        <li><a href="images.html">Images (w/ or w/o captions)</a></li>
+        <li><a href="disclaimers.html">Disclaimers</a></li>
+      </ul>
+    </li>
+    <li><a href="forms.html">Forms</a></li>
+    <li><a href="qf.html">Quick Finder</a> (<a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/quickfinder">Full quick finder standard</a>)</li>
+    <li><a href="disclaimers.html">Disclaimers</a>
+      <ul>
+        <li>PDF/non-HTML file information</li>
+        <li>Archived/out of date information</li>
+      </ul>
+    </li>
+    <li><a href="images.html">Images (w/ or w/o captions)</a></li>
+    <li><a href="lists.html">Lists and Bullets</a> (<a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/lists">Full list standard</a>)</li>
+    <li><a href="text.html">Text</a></li>
+    <li><a href="tabs.html">Tabs</a></li>
+    <li><a href="tables.html">Tables (for data)</a></li>
+  </ul>
+  <p>These styles are replicated in a MS-Word document, for printing: <a href="../docs/instructions-styles-200907.doc">Styling your content using the master style sheet (MS-Word)</a> <span class="fileinfo">(21 pp., 344 K)</span>. (This <a href="../docs/instructions-styles-200702.doc">same styling document is available for Template 3</a> as well (MS-Word) <span class="fileinfo">(20 pp., 204 K)</span>.</p>
+  <h3>Optional</h3>
+  <p>We offer some <a href="../templates/columns.html">simple</a> <a href="../templates/html.html#columns">column layouts</a>. Many more layouts are possible, as long as you confine your columns to the "white space".</p>
+  <p class="pagetop"><a href="#content">Top of Page</a></p>
+  <hr />
+  <h2 id="version">Style Sheet Version History</h2>
+  <p>The master style sheet contains many useful styles. You should not need to create styles very often, if ever. If you have a style you think should be included in the master style sheet so everyone can use it, <a href="../auxfiles/contactus.htm">please contact us</a>.</p>
+  <p>Do not download local copies of the style sheets. If you require local copies for development, you will be responsible for:</p>
+  <ul>
+    <li>not modifying the style sheets in any way, and</li>
+    <li>maintaining current copies.</li>
+  </ul>
+  <p>Rules in local style sheets, if you create them, cannot override any rules in the master style sheets.</p>
+  <h3>Version History</h3>
+  <table class="table zebra" summary="Version history of EPA's master style sheet">
+    <caption>
+    Version history, release dates, and modifcations for EPA's master style sheets
+    </caption>
+    <thead>
+      <tr>
+        <th>Version</th>
+        <th>Release Date</th>
+        <th>Modification since prior release</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>One EPA</td>
+        <td>November 2010</td>
+        <td>Major overhaul to CSS file that resulted in significant changes to the layout (including the drop-down menus), but not to the <a href="#available">styles available for your content</a>.</td>
+      </tr>
+      <tr>
+        <td>4.1.2</td>
+        <td>02/23/10</td>
+        <td>Minor changes.</td>
+      </tr>
+      <tr>
+        <td>4.1.1</td>
+        <td>09/30/09</td>
+        <td>Minor changes.</td>
+      </tr>
+      <tr>
+        <td>4.1.0</td>
+        <td>07/15/09</td>
+        <td>Initial Release
+        	<p>Note that the HTML to create the EPA design elements (above) has not changed, even if the way they look has.</p>
+            <p>There are six style sheets:</p>
+            <ol>
+                <li>master (epa-core.css)</li>
+                <li>hacks for Internet Explorer (using conditional comments)
+                	<ul>
+                    	<li>Version 6 and under (ie6.css)</li>
+                    	<li>Version 7 (ie7.css)</li>
+                    	<li>Version 8 (ie8.css)</li>
+                    </ul>
+                </li>
+                <li>For pages that use special jQuery effects
+                	<ul>
+                    	<li>Thickbox (jquery.thickbox.css)</li>
+                    </ul>
+                </li>
+            </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>3.1.2</td>
+        <td>06/05/07</td>
+        <td><p>The following styles were <strong>added</strong>:</p>
+          <ul>
+            <li><a href="forms.html">Contact Us Form</a> styling</li>
+          </ul>
+          <p>The following styles were <strong>modified</strong>:</p>
+          <ul>
+            <li>Images inside a link (<code>a img</code>; such as image maps0 no longer get a border.</li>
+            <li>Typographical changes, including spacing around headings.</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>3.1</td>
+        <td>11/15/06</td>
+        <td><p>The following styles were <strong>added</strong>:</p>
+          <ul>
+            <li><a href="../templates/archive/css-basic-spanish.html">Spanish template</a> styling</li>
+            <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/boxes">New boxes</a></li>
+          </ul>
+          <p>The following styles were <strong>modified</strong>:</p>
+          <ul>
+            <li>Area navigation (sidebar) horizontal rule (<code>&#60;hr /&#62;</code>'s inside the first list item [area home link] is centered, fixes validation problem)</li>
+            <li>Various styles, especially in the print style sheet (to ensure consistency across browsers)</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>3.0</td>
+        <td>05/30/06</td>
+        <td>Initial Release<br />
+          The style sheets are well-documented.
+		  <p>There are five style sheets:</p>
+        <ol>
+            <li>master (epa.css)</li>
+            <li>The master style sheets links to epa-content.css</li>
+            <li>hacks for Internet Explorer, version 6 and under (ie.css)</li>
+            <li>(For AA/RA or Topic home pages only [aara.css])</li>
+            <li>print version (print.css)</li>
+        </ol>
+        </td>
+      </tr>
+      <tr>
+        <td>2.2</td>
+        <td>05/30/02</td>
+        <td><p>NOTE VERSION 2.2 SUPERCEDES ALL PREVIOUS VERSIONS</p>
+          <p>The following styles were <strong>added</strong>:</p>
+          <ul>
+            <li>PRE (sets the font-family to font-family: Courier New, Courier, monospace;)</li>
+          </ul>
+          <p>The following styles were <strong>modified</strong>:</p>
+          <ul>
+            <li>CODE (sets the font-family to font-family: Courier New, Courier, monospace;)</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>2.1</td>
+        <td>03/13/02</td>
+        <td><p>NOTE VERSION 2.1 SUPERCEDES ALL PREVIOUS VERSIONS</p>
+          <p>This history only reflects the changes between v2.0   and v2.1.</p>
+          <p>The following styles were <strong>added</strong>:</p>
+          <ul>
+            <li>The 1st line that declares Arial as the font-family for the following tags: H1, H2, h2, H4, H5, H6, P, td, th, blockquote, ol, ul, dl, dt, dd, li</li>
+            <li>The 2nd-8th lines that declared the font-size for the following tags: P, td, th, blockquote, ol, ul, dl, dt, dd, li</li>
+            <li>The following custom style was added: .epaPageName (declares the font-size and color)</li>
+            <li>The following custom style was added: .epaBodyText (declares the font-family and font-size)</li>
+          </ul>
+          <p>The following styles were <strong>modified</strong>:</p>
+          <ul>
+            <li>The style .raStates was edited<strong> </strong>to change the font-size to font-size: 8pt;</li>
+            <li>The styles A.epaSideBarLinks and epaStates were edited to change the font-size to font-size: 9pt;</li>
+            <li>The style .epaLtSans was edited to change the font-size to font-size: 8pt;</li>
+            <li>The style .epaAreaName was edited to change the font-size to font-size: 18pt;</li>
+            <li>The style TD#epaSideBar DIV was edited to change the padding-bottom to padding-bottom: 6pt;</li>
+            <li>The styles .epaGlobalLinks, .epaBreadLinks, .epaFooterText, .raStates were edited to change the font-size to font-size: 8pt; </li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>2.0</td>
+        <td>03/05/02</td>
+        <td><p>Several changes have been made to the style sheet:</p>
+          <p>The following styles were <strong>deleted</strong>:</p>
+          <ul>
+            <li>The 1st line that declared Arial as the font-family for the following tags: H1, H2, h2, H4, H5, H6, P, td, th, blockquote, li</li>
+            <li>The 2nd-8th lines that declared the font-size for the following tags: P, td, th, blockquote, li, H1, H2, h2, H4, H5, H6</li>
+            <li>The 9th line that declared the color for all visited links</li>
+            <li>The following custom styles were deleted: .epaPageHeaders, .epaPageHeaders2, .epaSubHead, .epaSubHeadBig, epaBodyText</li>
+          </ul>
+          <p>The following styles were <strong>modified</strong>:</p>
+          <ul>
+            <li>The selector A was added to the style declarations for the sidebar. Styles are now A.epaSideBarLinks, A.epaSideBarLinks:visited, A.epaSideBarLinks:hover</li>
+            <li>The style .raStates was edited<strong> </strong>to change the font-family to: font-family: Verdana, Arial, Helvetica, sans-serif; and the font-size to font-size: 0.655em;</li>
+            <li>The style A.epaSideBarLinks was edited to change the font-size to font-size: 0.7em;</li>
+            <li>The style .epaLtSans was edited to change the font-size to font-size: 0.655em;</li>
+            <li>The style .epaAreaName was edited to change the font-size to font-size: 1.44em;</li>
+          </ul>
+          <p>The following styles were <strong>added</strong>:</p>
+          <ul>
+            <li>A.epaSideBarLinks:link (sets the link color of the sidebar links to white)</li>
+            <li>TD#epaSideBar DIV (note the spacing of the syntax for this style). This style controls the appearance of any DIV tag within a TD that has the id of epaSideBar.</li>
+            <li>CODE (sets the font-family to font-family: Courier, Courier New, mono;)</li>
+            <li>The style .epaGlobal was added to change the Search Form from a block to an inline element</li>
+            <li>The styles .epaGlobalLinks, .epaBreadLinks, .epaFooterText were added to format the Global Links, Breadcrumbs, and Footer Text</li>
+          </ul></td>
+      </tr>
+      <tr>
+        <td>1.2</td>
+        <td>01/28/02</td>
+        <td>Added 2 new styles (.epaAARAAreaName and .raStates) for use by the AAship and RAship home pages. Also added some comments to the style sheet.</td>
+      </tr>
+      <tr>
+        <td>1.1</td>
+        <td>12/27/01</td>
+        <td>reversed the order that the .epaSideBarLinks:visited and .epaSideBarLinks:hover styles are listed in the style sheet</td>
+      </tr>
+      <tr>
+        <td>1.0</td>
+        <td>12/19/01</td>
+        <td>(initial release)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="pagetop"><a href="#content">Top of Page</a></p>
+  <!-- InstanceEndEditable -->
+<!--googleoff: index-->
+      <p id="areafooter">For help with your epa.gov web design, contact the <a href="/epafiles/auxfiles/contactus.html">Web Template Workgroup</a>.</p>
+    </div><!-- /main -->
+    <div id="areanav">
+      <h4 class="skip">Area Navigation</h4>
+      <ul>
+        <li class="separator"><a href="/epafiles/">EPA Web Design Home</a><hr /></li>
+        <li><a href="/epafiles/templates/">HTML Templates</a></li>
+        <li><a href="/epafiles/#instrux">Updating &amp; Creating your Web Pages</a></li>
+        <li><a href="/epafiles/s/">Styling your Content</a></li>
+        <li><a href="http://yosemite.epa.gov/OEI/webguide.nsf/homepage">EPA Web Guide</a></li>
+        <li><a href="http://yosemite.epa.gov/oei/webguide.nsf/standards-guidance">EPA Web Standards</a></li>
+      </ul>
+    </div><!-- /area-nav -->
+  </div><!-- /page -->
+</div><!-- /content -->
+<div id="footer">
+  <ul id="goodies">
+    <li id="rss-news"><a href="/newsroom/rssfeeds.htm">News Feeds</a></li>
+    <li id="podcasts"><a href="/epahome/podcasts.htm">Podcasts</a></li>
+    <li id="mobile"><a href="http://m.epa.gov/">EPA Mobile</a></li>
+    <li id="email-news"><a href="/newsroom/email_signups.htm">News by Email</a></li>
+    <li id="widgets"><a href="/widgets/">Widgets</a></li>
+  </ul>
+  <ul id="globalfooter">
+    <li><a href="/">EPA Home</a></li>
+    <li><a href="http://www.epa.gov/epahome/usenotice.htm">Privacy and Security Notice</a></li>
+    <li class="last"><a href="http://www.epa.gov/epafiles/auxfiles/contactus.htm">Contact Us</a></li>
+  </ul>
+  <p id="seal">The Seal of the United States Environmental Protection Agency</p>
+</div><!-- /footer -->
+<p class="skip"><a href="#content" title="Jump to main content.">Jump to main content.</a></p>
+<script src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+<script src="http://www.epa.gov/epafiles/js/epa-core-v4.js"></script>
+<!-- ALL SCRIPTS BELOW THIS LINE -->
+<!-- InstanceBeginEditable name="scripts" -->
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

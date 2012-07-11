@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Testing JQuery, #8</title>
+  <style>
+  /* CSS goes here */
+	#content div, #content span { border: 1px solid black; display: block; float: left; height: 150px; width: 150px; }
+	#content .highlight { border: 3px solid orange; }
+	p { clear: left; }
+	input { display: block; }
+  </style>
+</head>
+<body>
+  <!-- HTML goes here -->
+    <div id="content">
+      <span>SPAN<br />No id<br />No class</span>
+      <span class="test" id="second">SPAN<br />id="second"<br />class "test"</span>
+      <div class="test">DIV<br />No id<br />class "test"</div>
+    </div>
+    <p>
+      <strong>Toggles:</strong>
+      <input type="button" id="test" value="Change CSS class of id='second'" />
+      <input type="button" id="text" value="Change text where class='test'" />
+    </p>
+  <!-- JS goes at end of body -->
+  <script type="text/javascript" src="http://www.epa.gov/epafiles/js/third-party/jquery.js"></script>
+  <script type="text/javascript">
+	$(function(){
+    // JavaScript goes here
+		$('#test').click(
+		  function () {
+			$("#second").toggleClass("highlight");
+		});
+		$('#text').click(
+		  function () {
+			$(".test").text("over-riding text for these boxes");
+		});
+	});
+  </script>
+</body>
+</html>

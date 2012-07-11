@@ -1,0 +1,117 @@
+/* epafiles_epastyles.css */
+
+
+
+/* THE FOLLOWING STYLE DECLARATIONS ARE MANDATED FOR ALL EPA INTERNET SITES */
+
+
+
+/* The styles are VERY sensitive to changes in syntax */
+
+
+
+/* Do not edit the EPA styles */
+
+
+
+/* BEGIN EPA STYLES */
+
+
+
+H1, H2, H3, H4, H5, H6, P, td, th, blockquote, li { font-family: Arial,Helvetica,sans-serif;}
+
+
+
+P, td, th, blockquote, li { font-size: 10pt;}
+
+
+
+H1 { font-size: 18pt;} 
+
+
+
+H2 { font-size: 16pt;}
+
+
+
+H3 { font-size: 14.001pt;}
+
+
+
+H4 { font-size: 12pt;}
+
+
+
+H5 { font-size: 10pt}
+
+
+
+H6 { font-size: 9pt}
+
+
+
+A:visited { color: #009900;}
+
+
+
+.epaSideBarLinks { font-family: Arial, Helvetica, sans-serif; font-size: 9pt; color: #FFFFFF; font-weight: bold; text-decoration: none;}
+
+
+
+.epaSideBarLinks:hover { color: #D2FFF0;}
+
+
+
+.epaSideBarLinks:visited { color: #FFFFFF;}
+
+
+
+.epaPageHeaders { font-family: Arial, Helvetica, sans-serif; font-size: 18pt; color: #FFFFFF; font-weight: bold}
+
+
+
+.epaPageHeaders2 { font-family: Arial, Helvetica, sans-serif; font-size: 20pt; color: #000066; font-weight: bold}
+
+
+
+.epaBodyText { font-family: Arial, Helvetica, sans-serif; font-size: 10pt}
+
+
+
+.epaSubHead { font-weight: bold;}
+
+
+
+.epaLtSans { font-family: Arial, Helvetica, sans-serif; font-size: 8pt}
+
+
+
+.epaSubHeadBig { font-family: "Times New Roman", Times, serif; font-size: 24px; font-weight: bold;}
+
+
+
+.epaSideNavCell { background-color: #336699}
+
+
+
+.epaHighlightBox { background-color: #E1EBF4}
+
+
+
+.epaBodyAttributes { background-image:url(http://www.epa.gov/epafiles/images/epafiles_misc_bg.gif)}
+
+
+
+.epaAreaName { color: #FFFFFF; background-color: #000066; font-family: Arial, Helvetica, sans-serif; font-size: 15pt; font-weight: bold}
+
+
+
+/* END EPA STYLES */
+
+
+
+
+
+
+
+/* If you want to add additional styles, do so below this comment */
