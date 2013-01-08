@@ -1,6 +1,7 @@
 // EPA's core functions
 // Last edited: 14 May 2010
 // Updated 20 June 2012: Added Google Analytics
+// 08 Jan 2012: More robust GA tracking
 // Questions? hessling.michael@epa.gov
 var epaCore = {
   printAsIs_Date_URL : function() {
@@ -108,10 +109,25 @@ var epaCore = {
 		var title = encodeURIComponent(document.title);
 		var description = '';
 		switch (site) {
-			case "facebook": epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
-			case "reddit": epaCore.postPopUp('http://www.reddit.com/submit?url='+popURL, 'reddit', 'height=450,width=650,scrollbars=yes,resizable=yes'); break;
-			case "twitter": epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPAgov&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
-			case "whatisthis": window.location='http://www.epa.gov/epahome/bookmarks.html'; break;
+			case "facebook":
+				epaCore.postPopUp("http://www.facebook.com/sharer.php?u=" + popUrl + "&t=" + title, "facebook", "height=436,width=646,scrollbars=yes,resizable=yes");
+				_gaq.push(['_trackSocial', 'facebook', 'share click', popUrl]);
+				break;
+
+			case "reddit":
+				epaCore.postPopUp("http://www.reddit.com/submit?url=" + popUrl, "reddit", "height=450,width=650,scrollbars=yes,resizable=yes");
+				_gaq.push(['_trackSocial', 'reddit', 'share click', popUrl]);
+				break;
+
+			case "twitter":
+				epaCore.postPopUp("https://twitter.com/share?text=" + title + "&url=" + popUrl + "&via=EPAgov&count=none&lang=en", "twitter", "height=375,width=550,scrollbars=yes,resizable=yes");
+				_gaq.push(['_trackSocial', 'twitter', 'share click', popUrl]);
+				break;
+
+			case "whatisthis":
+				setTimeout('window.location = "http://www.epa.gov/epahome/bookmarks.html"', 200);
+				_gaq.push(['_trackSocial', 'what is this', 'what is this click', popUrl]);
+				break
 		}
 	},
 	
@@ -181,20 +197,193 @@ addEvent(window, 'load', epaCore.printAsIs_Date_URL); addEvent(window, 'load', e
 addEvent(window, 'load', epaCore.notice); addEvent(window, 'load', epaCore.stripeTables);
 addEvent(window, 'load', epaCore.writePost);
 
-// Google Analytics
+
+// Start Google Analytics
 var _gaq = _gaq || [];
 
 function loadtracking() {
-  window._gaq.push(['_setAccount', 'UA-32633028-1']);
-  window._gaq.push(['_trackPageview']);
-  window._gaq.push(['_trackPageLoadTime']);
-  window._gaq.push(['_setDomainName','epa.gov']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+/* 
+ * Get Root Domain- Used for Google Analytics _setDomainName & _addIgnoredRef
+ */
+
+var epaGA_hostName= window.location.hostname;
+var epaGA_hostArray= epaGA_hostName.split('.').slice(-2);
+var epaGA_hostDomain= epaGA_hostArray.join('.').toLowerCase();
+
+/* 
+ * Get Google Analytics Visitor Cookie 
+ */
+	function getCookie(c_name) {
+	var i,x,y,ARRcookies=document.cookie.split(";");
+	for (i=0;i<ARRcookies.length;i++) {
+	  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+	  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+	  x=x.replace(/^\s+|\s+$/g,"");
+	  if (x==c_name)
+	    {
+	    return unescape(y);
+	    }
+	  }
+	}
+	var cookieX=getCookie("__utma");
+
+	if (cookieX!=null && cookieX!=""){
+     var split= cookieX.split(".");
+	 var gaVisitorID= (split[1]);
+	 var passToGA=gaVisitorID;
+	}
+	else {
+	 passToGA="one and done visitor"
+	}
+
+	/* START For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie */
+function getQuerystring(key, default_) {
+  if (default_==null) default_="";
+  key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+  var qs = regex.exec(window.location.href);
+  if(qs == null)
+    return default_;
+  else
+    return qs[1];
+}	
+
+if(window.location.href.indexOf('__utma') > 1){
+	passToGA = getQuerystring('__utma').split('.')[1];
+}//if 
+else{
+	//nothing
+}//else
+
+/* END For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie  */
+	
+	
+ // Page Level Google Analytics Code
+ 
+ window._gaq.push(['_setAccount', 'UA-32633028-1']);
+ window._gaq.push(['_setDomainName', epaGA_hostDomain]);
+ window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]); 
+ window._gaq.push(['_setAllowLinker', true]); 
+ window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
+ window._gaq.push(['_trackPageview']);
+
+ (function() {
+
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+ })();
+ 
+ /************START Google Analytics Download & External Link & Mailto & Cross Domain Tracking******************/
+
+ //Helper function to safely attach to a link
+function trackDownloads(){
+ var myLinks = document.links;
+ //Specify Filetypes Tracked
+ var fileTypes = ['zip','exe','pdf','doc','xls','ppt','mp3','csv','docx','xlsx','pptx'];
+
+ //Specify Cross Domains Tracked
+ var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
+
+ var crossDomainExclude = ['http://www.epa.gov/myenv/myenview2.html','http://www.epa.gov/emefdata/em4ef.html','http://nepassisttool.epa.gov/nepassist/nepamap.aspx','http://nepassist.epa.gov/nepave/nepamap.aspx','cfpub.epa.gov','yosemite.epa.gov','iaspub.epa.gov','oaspub.epa.gov','ofmpub.epa.gov','watersgeo.epa.gov','cfpub2.epa.gov','cumulis.epa.gov','cfpub1.epa.gov','actor.epa.gov','nepis.epa.gov','yosemite1.epa.gov','ofmext.epa.gov','epamap32.epa.gov','gispub2.epa.gov','gispub6.epa.gov','epamap10.epa.gov','epamap21.epa.gov','maps6.epa.gov'];
+var theLink ='';
+var theValue = '';
+var theType = '';
+var theTarget = '';
+
+
+
+function track(type, theLink, val1, target){
+	if(target == ""){
+	  target = "_self";
+	}
+	try{
+		if(type == "Email"){
+			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
+			_gaq.push(['_trackEvent', type, "Link Click", val1]);	
+		}
+		else if(type == "Download"){
+			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
+			_gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);	
+		}
+		else if(type == "External"){
+			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
+			_gaq.push(['_trackEvent', type, val1, theLink.href]);
+		}//close firstIf
+		else {
+			window.open(theLink.href, target);
+		}
+	}
+	catch(e){}
+};//close track
+
+for(var i=0;i < myLinks.length;i++) {
+	if(myLinks[i].onclick != null || myLinks[i].href.indexOf("javascript:") > -1){
+		continue;
+	}
+	var download = false;
+	for(var k=0;k < fileTypes.length; k++) {
+		if(myLinks[i].href.indexOf("." + fileTypes[k]) > -1){					
+			theLink = myLinks[i]
+			theValue = fileTypes[k];
+			theTarget = myLinks[i].target;
+			theType = "Download";
+			theTarget = myLinks[i].target;
+			var f =function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget); return false;};}(theType, theLink, theValue, theTarget);
+			myLinks[i].onclick = f;
+			download = true;
+			break;
+		}//close ifDownload
+	}//close fileTypesLoop		
+
+	if(download == false){
+		if(myLinks[i].href.indexOf("mailto:") > -1){
+			theLink = myLinks[i]
+			theTarget = null;
+			theValue = myLinks[i].href.slice(7);
+			theType = "Email";
+			var g = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget); return false;};}(theType, theLink, theValue, theTarget)
+			myLinks[i].onclick = g;
+		}//close ifMail
+		else{
+			//Cross Domain
+			var crossDomain = false;
+			for(c=0;c < crossDomains.length; c++){
+				if((myLinks[i].href.indexOf(crossDomains[c])) > -1 && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)){
+					_gaq.push(['_setAllowLinker', true]);
+					myLinks[i].onclick = function(){
+						_gaq.push(['_trackEvent', 'crossDomain', 'Link Click', this.href]);
+				       if (this.target == '_self' || this.target == '') {
+							_gaq.push(['_link', this.href]);
+						} else {
+							window.open(_gat._getTrackers()[0]._getLinkerUrl(this.href), this.target);
+						}
+						return false;
+					};
+					crossDomain = true;
+					break;
+				}	
+			}
+			//External
+			if((crossDomain == false) && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)){
+				theLink = myLinks[i]
+				theTarget = myLinks[i].target;
+				theValue = "Link Click";
+				theType = "External";
+				var h = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget);  return false;};}(theType, theLink, theValue, theTarget)
+				myLinks[i].onclick = h;
+			}
+		}//close elseExternalLink
+	}
+}//close myLinksLoop
+}//close trackDownloads
+
+addEvent(window, 'load', trackDownloads);
+ /************END Google Analytics Download & External Link & Mailto & Cross Domain Tracking******************/
+// End Google Analytics
 }
-
 loadtracking();
