@@ -197,6 +197,10 @@ addEvent(window, 'load', epaCore.printAsIs_Date_URL); addEvent(window, 'load', e
 addEvent(window, 'load', epaCore.notice); addEvent(window, 'load', epaCore.stripeTables);
 addEvent(window, 'load', epaCore.writePost);
 
+ // Start Google Analytics
+ var _gaq = _gaq || [];
+
+
 
 function loadtracking() {
 
@@ -254,9 +258,6 @@ else{
 }//else
 
 /* END For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie  */
-
- // Start Google Analytics
- var _gaq = _gaq || [];
 
  // Page Level Google Analytics Code
  window._gaq.push(['_setAccount', 'UA-32633028-1']);
