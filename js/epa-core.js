@@ -1,7 +1,7 @@
 // EPA's core functions
 // Last edited: 14 May 2010
 // Updated 20 June 2012: Added Google Analytics
-// 08 Jan 2012: More robust GA tracking
+// 08 Jan 2013: More robust GA tracking
 // Questions? hessling.michael@epa.gov
 var epaCore = {
   printAsIs_Date_URL : function() {
@@ -26,7 +26,7 @@ var epaCore = {
     updated.appendChild(document.createTextNode('Last updated on ' + d.toLocaleDateString()));
     f.appendChild(updated);
   },
-  
+
   p_view : function() {
     var links = document.getElementsByTagName('link');
     for (var i = 0; i < links.length; i++) {
@@ -79,7 +79,7 @@ var epaCore = {
 		if (!element.className) { element.className = name; }
 		else { element.className+= ' '; element.className+= name; }
 	},
-	
+
 	stripeTables : function() {
 		if (!document.getElementsByTagName('table')) return;
 		var t = document.getElementsByTagName('table');
@@ -130,23 +130,23 @@ var epaCore = {
 				break
 		}
 	},
-	
+
 	postPopUp :function(url, name, params) { var win = window.open(url, name, params); },
-	
+
 	addPostItem : function(parentElement, style, post_link, text) {
 		var postItem = document.createElement("li"); postItem.className = style;
 		var itemLink = document.createElement("a");
 		itemLink.setAttribute("href", post_link); itemLink.innerHTML = text;
 		postItem.appendChild(itemLink); parentElement.appendChild(postItem);
 	},
-	
+
 	writePost : function() {
 		if(!document.getElementById('footer')) return;
 		if (document.getElementById('aara')) return;
 		var f = document.getElementById("footer");
 		var parentElement = document.createElement("ul");
 		parentElement.id = "bookmarkList";
-		
+
 		//create post li
 		var postElement = document.createElement("li");
 		postElement.className = "post"; postElement.setAttribute("id", "post");
@@ -155,25 +155,25 @@ var epaCore = {
 		postLink.onclick = function () { epaCore.showHideSwap('postList', 'post'); return false; };
 		postLink.innerHTML = "Share";
 		postElement.appendChild(postLink);
-		
+
 		// create unordered list for post items
 		var postList = document.createElement("ul");
 		postList.setAttribute("id","postList");	postList.className = "hide";
-		
+
 		//add post links
 		epaCore.addPosts(postList);
-		
+
 		postElement.appendChild(postList);
 		parentElement.appendChild(postElement);
 		f.appendChild(parentElement);
 	},
-	
-	addPosts : function(shareList) {	
+
+	addPosts : function(shareList) {
 		var sList;
 		if(typeof(shareList)=='string') { sList = document.getElementById(shareList); }
 		else if(typeof(shareList)=='object') { sList = shareList; }
 		else return false;
-	
+
 		epaCore.addPostItem(sList, "facebook", "javascript:epaCore.articleShare('facebook');", "Facebook");
 		epaCore.addPostItem(sList, "reddit", "javascript:epaCore.articleShare('reddit');", "reddit");
 		epaCore.addPostItem(sList, "twitter", "javascript:epaCore.articleShare('twitter');", "Twitter");
@@ -204,7 +204,7 @@ addEvent(window, 'load', epaCore.writePost);
 
 function loadtracking() {
 
-/* 
+/*
  * Get Root Domain- Used for Google Analytics _setDomainName & _addIgnoredRef
  */
 
@@ -212,8 +212,8 @@ var epaGA_hostName= window.location.hostname;
 var epaGA_hostArray= epaGA_hostName.split('.').slice(-2);
 var epaGA_hostDomain= epaGA_hostArray.join('.').toLowerCase();
 
-/* 
- * Get Google Analytics Visitor Cookie 
+/*
+ * Get Google Analytics Visitor Cookie
  */
 	function getCookie(c_name) {
 	var i,x,y,ARRcookies=document.cookie.split(";");
@@ -248,11 +248,11 @@ function getQuerystring(key, default_) {
     return default_;
   else
     return qs[1];
-}	
+}
 
 if(window.location.href.indexOf('__utma') > 1){
 	passToGA = getQuerystring('__utma').split('.')[1];
-}//if 
+}//if
 else{
 	//nothing
 }//else
@@ -262,15 +262,15 @@ else{
  // Page Level Google Analytics Code
  window._gaq.push(['_setAccount', 'UA-32633028-1']);
  window._gaq.push(['_setDomainName', epaGA_hostDomain]);
- window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]); 
- window._gaq.push(['_setAllowLinker', true]); 
+ window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
+ window._gaq.push(['_setAllowLinker', true]);
  window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
  window._gaq.push(['_trackPageview']);
- 
+
  _gaq.push(['GSA._setAccount', 'UA-32633028-5']); // Parallel tracking to GSA UA-33523145-1
  _gaq.push(['GSA._setDomainName', epaGA_hostDomain]); // Parallel tracking to GSA
  _gaq.push(['GSA._addIgnoredRef', epaGA_hostDomain]);  // Parallel tracking to GSA
- _gaq.push(['GSA._setAllowLinker', true]);  // Parallel tracking to GSA - will use referring site's cookies sent in URL 
+ _gaq.push(['GSA._setAllowLinker', true]);  // Parallel tracking to GSA - will use referring site's cookies sent in URL
  _gaq.push(['GSA._setCustomVar', 3, 'Agency', 'EPA', 3]); // Page level variable sent only to GSA account
  _gaq.push(['GSA._setCustomVar', 4, 'Sub-Agency', 'EPA - ' + epaGA_hostName, 3]); // Page level variable sent only to GSA account
  _gaq.push(['GSA._setCustomVar', 5, 'Code Ver', 'EPA 1.0 121211', 3]); // Page level variable sent only to GSA account
@@ -281,7 +281,7 @@ else{
  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
  })();
- 
+
  /************START Google Analytics Download & External Link & Mailto & Cross Domain Tracking******************/
 
  //Helper function to safely attach to a link
@@ -308,12 +308,12 @@ function track(type, theLink, val1, target){
 	try{
 		if(type == "Email"){
 			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
-			_gaq.push(['_trackEvent', type, "Link Click", val1]);	
-			
+			_gaq.push(['_trackEvent', type, "Link Click", val1]);
+
 		}
 		else if(type == "Download"){
 			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
-			_gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);	
+			_gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
 		}
 		else if(type == "External" && document.location.hostname != theLink.hostname){
 			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
@@ -332,7 +332,7 @@ function track(type, theLink, val1, target){
 		}
 		var download = false;
 		for(var k=0;k < fileTypes.length; k++) {
-			if(myLinks[i].href.indexOf("." + fileTypes[k]) > -1){					
+			if(myLinks[i].href.indexOf("." + fileTypes[k]) > -1){
 				theLink = myLinks[i]
 				theValue = fileTypes[k];
 				theTarget = myLinks[i].target;
@@ -343,8 +343,8 @@ function track(type, theLink, val1, target){
 				download = true;
 				break;
 			}//close ifDownload
-		}//close fileTypesLoop	
-		
+		}//close fileTypesLoop
+
 		if(download == false){
 			if(myLinks[i].href.indexOf("mailto:") > -1){
 				theLink = myLinks[i]
