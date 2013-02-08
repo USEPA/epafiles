@@ -1,7 +1,8 @@
 // EPA's Core JS file, vOneEPA Web
-// Edited: 23 Mar 2012, Added Twitter
-// Edited: 20 June 2012, Added Google Analytics
-// 08 Jan 2013, Added more robust GA tracking
+// 23 Mar 2012: Added Twitter
+// 20 June 2012: Added Google Analytics
+// 08 Jan 2013: More robust GA tracking
+// 08 Feb 2013: Sending GA data to GSA
 // Questions? hessling.michael@epa.gov
 var epaCore = {
   //Date related functions
@@ -85,7 +86,7 @@ else{
  _gaq.push(['_setCustomVar',1,'visitor id',epaGA_gaVisitorID,1]);
  _gaq.push(['_trackPageview']);
 
- _gaq.push(['GSA._setAccount', 'UA-32633028-5']); // Parallel tracking to GSA, UA-33523145-1
+ _gaq.push(['GSA._setAccount', 'UA-33523145-1']); // Parallel tracking to GSA, UA-33523145-1
  _gaq.push(['GSA._setDomainName', epaGA_hostDomain]); // Parallel tracking to GSA
  _gaq.push(['GSA._addIgnoredRef', epaGA_hostDomain]);  // Parallel tracking to GSA
  _gaq.push(['GSA._setAllowLinker', true]);  // Parallel tracking to GSA - will use referring site's cookies sent in URL

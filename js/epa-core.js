@@ -1,7 +1,7 @@
 // EPA's core functions
-// Last edited: 14 May 2010
-// Updated 20 June 2012: Added Google Analytics
+// 20 June 2012: Added Google Analytics
 // 08 Jan 2013: More robust GA tracking
+// 08 Feb 2013: Sending GA data to GSA
 // Questions? hessling.michael@epa.gov
 var epaCore = {
   printAsIs_Date_URL : function() {
@@ -267,7 +267,7 @@ else{
  window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
  window._gaq.push(['_trackPageview']);
 
- _gaq.push(['GSA._setAccount', 'UA-32633028-5']); // Parallel tracking to GSA UA-33523145-1
+ _gaq.push(['GSA._setAccount', 'UA-33523145-1']); // Parallel tracking to GSA
  _gaq.push(['GSA._setDomainName', epaGA_hostDomain]); // Parallel tracking to GSA
  _gaq.push(['GSA._addIgnoredRef', epaGA_hostDomain]);  // Parallel tracking to GSA
  _gaq.push(['GSA._setAllowLinker', true]);  // Parallel tracking to GSA - will use referring site's cookies sent in URL
