@@ -1,18 +1,29 @@
-var FSR = {
-    'version': '4.6.1',
-    'date': '7/11/2009',
-    'enabled': true,
-    'files': 'http://www.epa.gov/epafiles/js/third-party/foresee/',
-    'id': 'VkERNMYgs5wllZ0khFwkEA==',
-    'sites': [{
-        path: /\w+\.(gov|com|net)/,
-        cookie: 'session'
-    }]
+// Initialize with options
+var $$FSR = {
+   'timestamp': 'February 20, 2012 @ 3:38 PM',
+   'version': '11.3.0',
+   'enabled': true,
+   'sessionreplay': true,
+   'auto' : true,
+   'encode' : true,
+   'files': 'http://www.epa.gov/epafiles/js/third-party/foresee/',
+   'id': 'VkERNMYgs5wllZ0khFwkEA==',
+   'definition': 'foresee-surveydef.js',
+   'embedded': false,
+   'replay_id': 'epa.gov',
+   'renderer':'W3C',	// or "ASRECORDED"
+   'layout':'CENTERFIXED',	// or "LEFTFIXED" or "LEFTSTRETCH" or "CENTERSTRETCH"
+   'sites': [
+      {
+         path: /\w+-?\w+\.(com|org|edu|gov|net|co\.uk)/
+      },
+      {
+         path: '.',
+         domain: 'default'
+      }
+   ],
+   storageOption: 'cookie'
 };
-/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
-function fsr$setAlive(){var A=new Date().getTime();document.cookie="foresee.alive="+A+";path=/;domain="+FSR.site.domain+";"
-}(function(){if(window!=window.top){return }var F=FSR.sites;for(var D=0,C=F.length;D<C;D++){var B;
-if(B=document.location.href.match(F[D].path)){FSR.siteid=D;FSR.site=FSR.sites[FSR.siteid];if(!FSR.site.domain){FSR.site.domain=B[0]
-}if(!FSR.site.name){FSR.site.name=FSR.site.domain}var E=["files","js_files","image_files","html_files"];
-for(var D=0,A=E.length;D<A;D++){if(FSR.site[E[D]]){FSR[E[D]]=FSR.site[E[D]]}}break}}if(!window["fsr$timer"]){fsr$setAlive();
-window["fsr$timer"]=setInterval(fsr$setAlive,1000)}})();
+// -------------------------------- DO NOT MODIFY ANYTHING BELOW THIS LINE ---------------------------------------------
+(function(a,g,d){for(var b=a.sites,c=0,h=b.length;c<h;c++){var e;"[object Array]"!==Object.prototype.toString.call(b[c].path)&&(b[c].path=[b[c].path]);for(var f=0,i=b[c].path.length;f<i;f++)if(e=d.location.href.match(b[c].path[f])){a.siteid=c;a.site=a.sites[c];a.site.domain?"default"==a.site.domain&&(a.site.domain=null):a.site.domain=e[0];a.site.secure||(a.site.secure=null);a.site.name||(a.site.name=e[0]);break}if(e)break}b={b:function(b){var j;j=(b=d.cookie.match("(?:^|;)\\s*"+b.replace(/([-.*+?^${}()|[\]\/\\])/g,
+"\\$1")+"=([^;]*)"))?b[1]:null,b=j;a.encode&&(b=b?decodeURIComponent(b):null);return b},a:function(){d.cookie="fsr.a"+(a.site.cookie?"."+a.site.cookie:"")+"="+(new Date).getTime()+";path=/"+(a.site.domain?";domain="+a.site.domain+";":";")+(a.site.secure?"secure":"")}};if(!b.b("fsr.a"+(a.site.cookie?"."+a.site.cookie:"")))b.a(),g.fsr$timer=setInterval(b.a,1E3),d.cookie="fsr.paused=1;path=/"+(a.site.domain?";domain="+a.site.domain+";":";")+(a.site.secure?"secure":"")})($$FSR,window,window.document);

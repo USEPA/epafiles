@@ -17,49 +17,87 @@ FSR.surveydefs = [{
 FSR.properties = {
     repeatdays: 0,
     
+    repeatoverride: false,
+    
+    altcookie: {},
+    
     language: {
         locale: 'en'
     },
     
-    exclude: {
-        local: ['indrasoft','induscorp','intranet','m','owstgauthor','staging','wcmsprd'],
-        referer: []
-    },
+    exclude: {},
+    
+    zIndexPopup: 10000,
+    
+    ignoreWindowTopCheck: false,
+    
+    reverseButtons: false,
+    
+    ipexclude: 'fsr$ip',
     
     invite: {
-        content: '<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\"><HTML><HEAD><TITLE>Foresee Invite</TITLE></HEAD><BODY><div id=\"fsrinvite\"><div id=\"fsrcontainer\"><div class=\"fsri_sitelogo\"><img src=\"{%baseHref%}sitelogo.gif\" alt=\"Site Logo\"></div><div class=\"fsri_fsrlogo\"><img src=\"{%baseHref%}fsrlogo.gif\" alt=\"Site Logo\"></div></div><div class=\"fsri_body\"><b>Thank you for visiting the Environmental Protection Agency.</b><br><br><b>Upon leaving our website,</b> you may be randomly selected to take part in a customer satisfaction survey that is being conducted by ForeSee Results on behalf of the Environmental Protection Agency.<br><br>The feedback you provide will help the Environmental Protection Agency enhance its site and serve you better in the future. All results are strictly confidential.<br><br></div></div></BODY></HTML>',
+        /* desktop */
+        content: '<div id=\"fsrinvite\"><div id=\"fsrcontainer\"><div class=\"fsri_sitelogo\"><img src=\"{%baseHref%}sitelogo.gif\" alt=\"Site Logo\"></div><div class=\"fsri_fsrlogo\"><img src=\"{%baseHref%}fsrlogo.gif\" alt=\"Site Logo\"></div></div><div class=\"fsri_body\">\
+      <div style=\"padding:0 0 8px 0;font-size:medium;font-weight:bold;\">We\'d welcome your feedback!</div>\
+      <div style=\"padding:0 0 8px 0;\">Thank you for visiting our website. You have been selected to participate<br>in a brief customer satisfaction survey to let us know how we can improve<br>your experience.</div>\
+      <div style=\"font-weight:bold;\">The survey is designed to measure your entire experience, please look for it at the <u>conclusion</u> of your visit.</div>\
+      </div></div>',
+        
+        /* desktop */
+        footer: '<div div id=\"fsrcontainer\"><div style=\"float:left;width:80%;font-size:8pt;text-align:left;line-height:12px;\">This survey is conducted by an independent company ForeSee,<br>on behalf of the site you are visiting.</div><div style=\"float:right;font-size:8pt;\"><a target="_blank" title="Validate TRUSTe privacy certification" href="//privacy-policy.truste.com/click-with-confidence/ctv/en/www.foreseeresults.com/seal_m"><img border=\"0\" src=\"{%baseHref%}truste.png\" alt=\"Validate TRUSTe Privacy Certification\"></a></div></div>',
+        
+        exclude: {
+            local: ['indrasoft', 'induscorp', 'intranet', 'owstgauthor', 'staging', 'wcmsprd'],
+            referrer: []
+        },
+        include: {
+            local: ['.']
+        },
+        
+        /* desktop */
         width: '500',
+        /* mobile
+         width: {p: '260', l: '380'},
+         text: {p: '100%', l: '70%'},
+         */
         bgcolor: '#333',
         opacity: 0.7,
         x: 'center',
         y: 'center',
         delay: 0,
-		timeout: 0,
+        timeout: 0,
         buttons: {
-            accept: 'Continue',
+            accept: "Yes, I'll give feedback",
             decline: 'No thanks'
         },
         hideOnClick: false,
-		css: 'foresee-dhtml.css'
+        css: 'foresee-dhtml.css',
+        hide: [],
+        type: 'dhtml',
+        url: 'invite.html'
     },
     
     tracker: {
-        width: '500',
-        height: '325',
+        width: '690',
+        height: '415',
         timeout: 3,
+        adjust: true,
+        alert: {
+            enabled: true,
+            message: 'The survey is now available.'
+        },
         url: 'tracker.html'
     },
     
     survey: {
-        width: 550,
-        height: 600,
-        loading: true
+        width: 690,
+        height: 600
     },
     
     qualifier: {
-        location: 'local',
-        width: '500',
-        height: '300',
+        footer: '<div div id=\"fsrcontainer\"><div style=\"float:left;width:80%;font-size:8pt;text-align:left;line-height:12px;\">This survey is conducted by an independent company ForeSee,<br>on behalf of the site you are visiting.</div><div style=\"float:right;font-size:8pt;\"><a target="_blank" title="Validate TRUSTe privacy certification" href="//privacy-policy.truste.com/click-with-confidence/ctv/en/www.foreseeresults.com/seal_m"><img border=\"0\" src=\"{%baseHref%}truste.png\" alt=\"Validate TRUSTe Privacy Certification\"></a></div></div>',
+        width: '690',
+        height: '500',
         bgcolor: '#333',
         opacity: 0.7,
         x: 'center',
@@ -69,17 +107,14 @@ FSR.properties = {
             accept: 'Continue'
         },
         hideOnClick: false,
-		css: false
+        css: 'foresee-dhtml.css',
+        url: 'qualifying.html'
     },
     
     cancel: {
         url: 'cancel.html',
-        width: '500',
-        height: '300'
-    },
-
-    loading: {
-        url: 'survey_loading.html'
+        width: '690',
+        height: '400'
     },
     
     pop: {
@@ -90,13 +125,43 @@ FSR.properties = {
     },
     
     meta: {
-        referer: true,
+        referrer: true,
         terms: true,
         ref_url: true,
-		url_params: false
+        url: true,
+        url_params: false,
+        user_agent: false
     },
-	
-	previous: false,
-	
+    
+    events: {
+        enabled: true,
+        id: true,
+        codes: {
+            purchase: 800,
+            items: 801,
+            dollars: 802,
+            followup: 803,
+            information: 804,
+            content: 805
+        },
+        pd: 7,
+        custom: {}
+    },
+    
+    pool: 200,
+    
+    previous: false,
+    
+    analytics: {
+        google: false
+    },
+    
+    cpps: {
+		VisitorID: { //name of the cpp
+			source: 'variable',
+			name: 'epaGA_VisitorID' //value sent will be the value of the parameter
+		}
+	},
+    
     mode: 'first-party'
 };

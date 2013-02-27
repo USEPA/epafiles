@@ -5,7 +5,7 @@
 div.fsrwin div {
     background: #FFFFFF none repeat scroll 0;
     color: #4D4D4D;
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, Sans-Serif;
     font-size: 10pt;
     font-weight: normal;
     text-decoration: none;
@@ -15,7 +15,7 @@ div.fsrwin div {
 div.fsrwin td {
     background: #FFFFFF none repeat scroll 0;
     color: #4D4D4D;
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, Sans-Serif;
     font-size: 10pt;
     font-weight: normal;
     text-decoration: none;
@@ -26,14 +26,14 @@ div.fsrwin td {
 }
 
 div.fsrwin h1 {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, Sans-Serif;
     font-size: 10pt;
     font-weight: normal;
     text-decoration: none;
 }
 
 div.fsrwin b {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, Sans-Serif;
     font-size: 10pt;
     font-weight: bold;
     text-decoration: none;
@@ -68,6 +68,7 @@ div.fsrwin h1.fsr_caption {
     left: 5px;
     float: left;
     height: 22px;
+    background: none;
 }
 
 div.fsrwin div.fsr_body {
@@ -80,35 +81,43 @@ div.fsrwin div.fsr_closeButtons {
 }
 
 div.fsrwin button.fsr_button {
-    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, Sans-Serif;
     border: 1px solid #999999;
     cursor: pointer;
     font-size: 12pt;
     margin: 2px 8px;
     padding: 2px 12px;
     text-decoration: none;
-	width: 120px;
+    text-transform: none;
+    font-weight: normal;
+    width: 180px;
 	float: none;
 }
 
 div.fsrwin button.fsr_accept {
     background-color: #EEEEEE;
     color: #000000;
+    font-weight: bold;
+    width: 200px;
 }
 
 div.fsrwin button.fsr_mouseover_accept {
     background-color: #EE3224;
     color: #FFFFFF;
+    font-weight: bold;
+    width: 200px;
 }
 
 div.fsrwin button.fsr_decline {
     background-color: #EEEEEE;
     color: #000000;
+    width: 130px;
 }
 
 div.fsrwin button.fsr_mouseover_decline {
-    background-color: #EE3224;
-    color: #FFFFFF;
+    background-color: #DCDCDC;
+    color: #000000;
+    width: 130px;
 }
 
 div.fsrwin div.fsr_closeButton {
@@ -128,7 +137,7 @@ div.fsrwin div.fsr_closeButton {
 #fsrinvite div.fsri_sitelogo {
     float: left;
     width: 130px;
-    height: 81px;
+    height: 70px;
 }
 
 #fsrinvite div.fsri_fsrlogo {
@@ -169,6 +178,7 @@ div.fsrwin div.fsr_closeButton {
 #fsrcontainer {
     display: inline-block;
 }
+
 /* Hides from IE-mac \*/
 * html #fsrcontainer {
     height: 1%;
