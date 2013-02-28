@@ -159,7 +159,7 @@ FSR.properties = {
     cpps: {
 		VisitorID: { //name of the cpp
 			source: 'variable',
-			name: 'epaGA_VisitorID' //value sent will be the value of the parameter
+			name: 'epaGA_gaVisitorID' //value sent will be the value of the parameter
 		}
 	},
     
