@@ -259,12 +259,34 @@ else{
 
 /* END For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie  */
 
- // Page Level Google Analytics Code
+/*
+ * NEW LINES 7 Mar 2013
+ * Read the body class and assign a content type
+ */
+    var epaGA_gaContentType = 'not-assigned';
+    var classList = document.body.getAttribute('class') || [];
+        if(classList.indexOf('ms') !== -1) {
+            epaGA_gaContentType = 'microsite';
+        }
+        else if(classList.indexOf('rd') !== -1) {
+            epaGA_gaContentType = 'resource-directory';
+        }
+      
+
+// Page Level Google Analytics Code
+
  window._gaq.push(['_setAccount', 'UA-32633028-1']);
  window._gaq.push(['_setDomainName', epaGA_hostDomain]);
  window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
  window._gaq.push(['_setAllowLinker', true]);
  window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
+
+ /*
+  * NEW LINE 7 Mar 2013
+  * Send content type and pathname to page-level custom variable in slot 2
+  */
+     window._gaq.push(['_setCustomVar',2,epaGA_gaContentType,document.location.pathname,3]);
+
  window._gaq.push(['_trackPageview']);
 
  _gaq.push(['GSA._setAccount', 'UA-33523145-1']); // Parallel tracking to GSA
@@ -291,7 +313,12 @@ function trackDownloads(){
 var myLinks = document.links;
 
 //Specify Filetypes Tracked
-var fileTypes = ['zip','exe','pdf','doc','xls','ppt','mp3','csv','docx','xlsx','pptx'];
+
+/*
+ *Added aspx file type March 12 2013
+ */
+
+var fileTypes = ['zip','exe','pdf','doc','xls','ppt','mp3','csv','docx','xlsx','pptx','aspx'];
 //Specify Cross Domains Tracked
 var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
 var crossDomainExclude = ['http://oaspub.epa.gov/enviro/fii_query_dtl.disp_program_facility','http://iaspub.epa.gov/enviro/tsca.get_chem_info','http://iaspub.epa.gov/enviro/ICIS_DETAIL_REPORTS_NPDESID.icis_tst','http://oaspub.epa.gov/enviro/tris_control.tris_print', 'http://www.epa.gov/myenv/myenview2.html','http://www.epa.gov/emefdata/em4ef.html','http://nepassisttool.epa.gov/nepassist/nepamap.aspx','http://nepassist.epa.gov/nepave/nepamap.aspx','cfpub.epa.gov','yosemite.epa.gov','iaspub.epa.gov','oaspub.epa.gov','ofmpub.epa.gov','watersgeo.epa.gov','cfpub2.epa.gov','cumulis.epa.gov','cfpub1.epa.gov','actor.epa.gov','nepis.epa.gov','yosemite1.epa.gov','ofmext.epa.gov','epamap32.epa.gov','gispub2.epa.gov','gispub6.epa.gov','epamap10.epa.gov','epamap21.epa.gov','maps6.epa.gov','http://ghgdata.epa.gov/ghgp/main.do'];

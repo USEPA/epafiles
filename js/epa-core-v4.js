@@ -77,6 +77,21 @@ else{
 
 /* END For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie  */
 
+
+/*
+ * NEW LINES 7 Mar 2013
+ * Read the body class and assign a content type
+ */
+    var epaGA_gaContentType = 'not-assigned';
+    var classList = document.body.getAttribute('class') || [];
+        if(classList.indexOf('ms') !== -1) {
+            epaGA_gaContentType = 'microsite';
+        }
+        else if(classList.indexOf('rd') !== -1) {
+            epaGA_gaContentType = 'resource-directory';
+        }
+      
+
 // Page Level Google Analytics Code
 
  _gaq.push(['_setAccount', 'UA-32633028-1']);
@@ -84,6 +99,13 @@ else{
  _gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
  _gaq.push(['_setAllowLinker', true]);
  _gaq.push(['_setCustomVar',1,'visitor id',epaGA_gaVisitorID,1]);
+
+ /*
+  * NEW LINE 7 Mar 2013
+  * Send content type and pathname to page-level custom variable in slot 2
+  */
+     _gaq.push(['_setCustomVar',2,epaGA_gaContentType,document.location.pathname,3]);
+
  _gaq.push(['_trackPageview']);
 
  _gaq.push(['GSA._setAccount', 'UA-33523145-1']); // Parallel tracking to GSA, UA-33523145-1
@@ -106,7 +128,11 @@ else{
 /************START Google Analytics jQuery Download & External Link & Mailto & Cross Domain Tracking******************/
 
 	//Specify Filetypes Tracked
-        var filetypes = /\.(zip|exe|pdf|doc*|xls*|ppt*|mp3)$/i;
+
+/*
+ *Added aspx file type March 12 2013
+ */
+        var filetypes = /\.(zip|exe|pdf|doc*|xls*|ppt*|mp3|aspx)$/i;
 
 	//Specify Cross Domains Tracked
 		var domains = /(epa.gov|epa-otis.gov|epa-echo.gov|energystar.gov|enviroflash.info|airnow.gov|urbanwaters.gov|relocatefeds.gov|lab21century.gov|supportportal.com)/i;
