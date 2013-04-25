@@ -77,6 +77,35 @@ else{
 
 /* END For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie  */
 
+
+/*
+ * NEW LINES 7 Mar 2013
+ * Read the body class and assign a content type
+ * REVISED 19 Mar 2013
+ * For backwards compatibility with IE7 and IE8
+ *   instead of getAttribute, we use getElementsByTagName, attributes, and nodeValue
+ */
+    var epaGA_gaContentType = 'not-assigned';
+
+//  var classList = document.body.getAttribute('class') || [];
+    var classList;
+    var elements = document.getElementsByTagName('body');
+
+    for(var i=0; i<elements.length; i++){
+        if(elements[i].attributes['class']=='undefined'){
+            classList = elements[i].getAttribute('class');
+        } else {
+            classList = elements[i].attributes['class'].nodeValue;
+			if(classList.indexOf('ms') !== -1) {
+				epaGA_gaContentType = 'microsite';
+			}
+			else if(classList.indexOf('rd') !== -1) {
+				epaGA_gaContentType = 'resource-directory';
+			}
+		}
+    }
+      
+
 // Page Level Google Analytics Code
 
  _gaq.push(['_setAccount', 'UA-32633028-1']);
@@ -84,6 +113,15 @@ else{
  _gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
  _gaq.push(['_setAllowLinker', true]);
  _gaq.push(['_setCustomVar',1,'visitor id',epaGA_gaVisitorID,1]);
+
+ /*
+  * NEW LINE 7 Mar 2013
+  * Send content type and pathname to page-level custom variable in slot 2
+  * REVISED 19 Mar 2013
+  * Convert document.location.pathname to lowercase
+  */
+     _gaq.push(['_setCustomVar',2,epaGA_gaContentType,document.location.pathname.toLowerCase(),3]);
+
  _gaq.push(['_trackPageview']);
 
  _gaq.push(['GSA._setAccount', 'UA-33523145-1']); // Parallel tracking to GSA, UA-33523145-1
