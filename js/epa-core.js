@@ -266,25 +266,23 @@ else{
  * For backwards compatibility with IE7 and IE8
  *   instead of getAttribute, we use getElementsByTagName, attributes, and nodeValue
  */
-    var epaGA_gaContentType = 'not-assigned';
+    var epaGA_gaContentType = 'not-assigned', classList;
 
 //  var classList = document.body.getAttribute('class') || [];
-    var classList;
     var elements = document.getElementsByTagName('body');
 
     for(var i=0; i<elements.length; i++){
-        if(elements[i].attributes['class']=='undefined'){
-            return;
-        } else {
-            classList = elements[i].attributes['class'].nodeValue;
-			if(classList.indexOf('ms') !== -1) {
-				epaGA_gaContentType = 'microsite';
-			}
-			else if(classList.indexOf('rd') !== -1) {
-				epaGA_gaContentType = 'resource-directory';
-			}
-        }
-    }
+      classList = elements[i].getAttribute('class');
+	  if (classList !== null) {
+        if(classList.indexOf('ms') !== -1) {
+	  	  epaGA_gaContentType = 'microsite';
+	    }
+	    else if(classList.indexOf('rd') !== -1) {
+		  epaGA_gaContentType = 'resource-directory';
+	    }		
+	    else { var epaGA_gaContentType = 'not-assigned'; }
+	  }
+	}
       
 
 // Page Level Google Analytics Code
