@@ -2,6 +2,7 @@
 // 20 June 2012: Added Google Analytics
 // 08 Jan 2013: More robust GA tracking
 // 08 Feb 2013: Sending GA data to GSA
+// 01 May 2013: Saving body classes
 // Questions? hessling.michael@epa.gov
 var epaCore = {
   printAsIs_Date_URL : function() {
@@ -125,7 +126,7 @@ var epaCore = {
 				break;
 
 			case "whatisthis":
-				setTimeout('window.location = "http://www.epa.gov/epahome/bookmarks.html"', 200);
+				setTimeout('window.location = "http://www.epa.gov/epahome/bookmarks.html"', 150);
 				_gaq.push(['_trackSocial', 'what is this', 'what is this click', popUrl]);
 				break
 		}
@@ -343,16 +344,16 @@ function track(type, theLink, val1, target){
 	}
 	try{
 		if(type == "Email"){
-			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
+			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
 			_gaq.push(['_trackEvent', type, "Link Click", val1]);
 
 		}
 		else if(type == "Download"){
-			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
+			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
 			_gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
 		}
 		else if(type == "External" && document.location.hostname != theLink.hostname){
-			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 200);
+			setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
 			_gaq.push(['_trackEvent', type, val1, theLink.href]);
 		}//close firstIf
 		else {
@@ -403,7 +404,7 @@ function track(type, theLink, val1, target){
 									if(target == ""){
 										target = "_self";
 									}
-									setTimeout("window.open('"+this.href+"','"+ target+"')", 200);
+									setTimeout("window.open('"+this.href+"','"+ target+"')", 150);
 									_gaq.push(['_trackEvent', 'External', 'Link Click', this.href]);
 									return false;
 								}// if crossExclude
