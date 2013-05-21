@@ -1,6 +1,3 @@
-/* http://www.epa.gov/epafiles/js/third-party/jquery.tooltip.js 
-   bullets jm feb 2011  */
-
 /*
  * jQuery Tooltip plugin 1.3
  *
@@ -161,23 +158,11 @@
 			helper.body.empty();
 			for(var i = 0, part; (part = parts[i]); i++) {
 				if(i > 0)
-		//		helper.body.append("<br/>");
-				helper.body.append("");
-		//		helper.body.append(part);
-
-/* --- jm bulletize breakBody is %% */ 
-			var activs=title.split(settings(this).showBody)[1];
-			activs=activs.replace(settings(this).breakBody,"</li><li>");
-			activs = "<ul><li>" + activs + "</li></ul>";
-			activs += '<BR /><span id="clickReminder">click the state for more info</span>';
-			helper.body.append(activs);
-			$("#clickReminder").delay(1200).fadeIn("slow");
-/* --- end bulletize --- */ 
-
-		}
+					helper.body.append("<br/>");
+				helper.body.append(part);
+			}
 			helper.body.hideWhenEmpty();
-		} 
-		else {
+		} else {
 			helper.title.html(title).show();
 			helper.body.hide();
 		}
