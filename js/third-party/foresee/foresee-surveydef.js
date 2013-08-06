@@ -7,7 +7,7 @@ FSR.surveydefs = [{
         when: 'later'
     },
     criteria: {
-        sp: 2,
+        sp: 3,
         lf: 4
     },
     include: {
@@ -157,11 +157,29 @@ FSR.properties = {
     },
     
     cpps: {
-		VisitorID: { //name of the cpp
-			source: 'variable',
-			name: 'epaGA_gaVisitorID' //value sent will be the value of the parameter
-		}
-	},
+        section_www2: {
+            source: 'url',
+            init: 'N',
+            patterns: [{
+                regex: 'www2.epa.gov',
+                value: 'Y'
+            }]
+        },
+        section_www: {
+            source: 'url',
+            init: 'N',
+            patterns: [{
+                regex: 'www.epa.gov',
+                value: 'Y'
+            }]
+        },
+        
+        
+        VisitorID: { //this will be the name of the cpp
+            source: 'variable',
+            name: 'epaGA_gaVisitorID' //the value sent will be the value of the parameter
+        }
+    },
     
     mode: 'first-party'
 };
