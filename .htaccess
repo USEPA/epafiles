@@ -1,9 +1,8 @@
 ErrorDocument 404 /adminweb/epafiles/auxfiles/error404.htm
-RedirectMatch 301 /epafiles/exit.html http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/external-links
-RedirectMatch 301 /epafiles/exemptions.html http://yosemite.epa.gov/OEI/webguide.nsf/standards-guidance/look-feel#exemptions
-RedirectMatch 301 /epafiles/searchcode.html http://yosemite.epa.gov/OEI/webguide.nsf/searchengine/codingsearch
-RedirectMatch 301 /epafiles/docs/markup.html http://yosemite.epa.gov/OEI/webguide.nsf/customize/htmltip#markup
-RedirectMatch 301 /epafiles/usenotice.htm http://www.epa.gov/epahome/usenotice.htm
+RedirectMatch 301 /epafiles/exit.html http://www2.epa.gov/webguide/exit-epa
+RedirectMatch 301 /epafiles/exemptions.html http://www2.epa.gov/webguide/procedure-complying-epagov-look-and-feel#exemptions
+RedirectMatch 301 /epafiles/searchcode.html http://origin-www2.epa.gov/webguide/search-epa
+RedirectMatch 301 /epafiles/usenotice.htm http://www2.epa.gov/webguide/privacy-and-security-notice
 RedirectMatch 301 /epafiles/v4/js.html /epafiles/templates/js.html
 RedirectMatch 301 /epafiles/v4/$ /epafiles/templates/
 
@@ -21,7 +20,7 @@ FileETag none
 Header unset ETag
 <FilesMatch "\.(js|css|ico|pdf|flv|jpg|jpeg|png|gif|swf|mp3|mp4)$">
 Header set Cache-Control "public"
-Header set Expires "Fri, 03 May 2013 20:00:00 GMT"
+Header set Expires "Fri, 01 Aug 2014 20:00:00 GMT"
 </FilesMatch>
 <FilesMatch "\.(html|htm|xml|txt|xsl)$">
 Header set Cache-Control "max-age=7200, must-revalidate"
