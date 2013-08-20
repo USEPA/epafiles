@@ -3,6 +3,7 @@
 // 08 Jan 2013: More robust GA tracking
 // 08 Feb 2013: Sending GA data to GSA
 // 01 May 2013: Saving body classes
+// 13 Aug 2013: Removing body classes for GA
 // Questions? hessling.michael@epa.gov
 var epaCore = {
   printAsIs_Date_URL : function() {
@@ -260,32 +261,6 @@ else{
 
 /* END For Cross Domain Tracking Use Visitor ID from __utma query param instead of cookie  */
 
-/*
- * NEW LINES 7 Mar 2013
- * Read the body class and assign a content type
- * REVISED 19 Mar 2013
- * For backwards compatibility with IE7 and IE8
- *   instead of getAttribute, we use getElementsByTagName, attributes, and nodeValue
- */
-    var epaGA_gaContentType = 'not-assigned', classList;
-
-//  var classList = document.body.getAttribute('class') || [];
-    var elements = document.getElementsByTagName('body');
-
-    for(var i=0; i<elements.length; i++){
-      classList = elements[i].getAttribute('class');
-	  if (classList !== null) {
-        if(classList.indexOf('ms') !== -1) {
-	  	  epaGA_gaContentType = 'microsite';
-	    }
-	    else if(classList.indexOf('rd') !== -1) {
-		  epaGA_gaContentType = 'resource-directory';
-	    }		
-	    else { var epaGA_gaContentType = 'not-assigned'; }
-	  }
-	}
-      
-
 // Page Level Google Analytics Code
 
  window._gaq.push(['_setAccount', 'UA-32633028-1']);
@@ -293,14 +268,6 @@ else{
  window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
  window._gaq.push(['_setAllowLinker', true]);
  window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
-
- /*
-  * NEW LINE 7 Mar 2013
-  * Send content type and pathname to page-level custom variable in slot 2
-  * REVISED 19 Mar 2013
-  * Convert document.location.pathname to lowercase
-  */
-     window._gaq.push(['_setCustomVar',2,epaGA_gaContentType,document.location.pathname.toLowerCase(),3]);
 
  window._gaq.push(['_trackPageview']);
 
