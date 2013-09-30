@@ -1,6 +1,7 @@
 // EPA's Core Spanish JS file, vOneEPA Web
 // Edited: 23 Mar 2012, Added Twitter
 // Edited: 20 June 2012, Added Google Analytics
+// 30 Sep 2013: Adjusted Twitter handle for EPA
 // Eventually, merge with epa-core-v4.js
 // Questions? hessling.michael@epa.gov
 var epaCore = {
@@ -124,7 +125,7 @@ jQuery(document).ready(function() {
 	  switch (site) {
 	    case "facebook": epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
 	    case "reddit": epaCore.postPopUp('http://www.reddit.com/submit?url='+popURL, 'reddit', 'height=450,width=650,scrollbars=yes,resizable=yes'); break;
-	    case "twitter": epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPAgov&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+	    case "twitter": epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
 	    case "whatisthis": window.location='http://www.epa.gov/epahome/bookmarks.html'; break;
 	  }
 	});

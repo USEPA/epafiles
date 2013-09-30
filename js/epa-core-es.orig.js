@@ -2,6 +2,7 @@
 // 04 April 2008
 // Updated 12 April 2010: changed date formatting
 // Updated 20 June 2012: Added Google Analytics
+// 30 Sep 2013: Adjusted Twitter handle for EPA
 // In the object literal, to prevent name clashes
 var epaCore = {
 	printAsIs_Date_URL : function() {
@@ -114,7 +115,7 @@ var epaCore = {
 		switch (site) {
 			case "facebook": epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
 			case "reddit": epaCore.postPopUp('http://www.reddit.com/submit?url='+popURL, 'reddit', 'height=450,width=650,scrollbars=yes,resizable=yes'); break;
-			case "twitter": epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPAgov&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+			case "twitter": epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
 			case "whatisthis": window.location='http://www.epa.gov/epahome/bookmarks.html'; break;
 		}
 	},

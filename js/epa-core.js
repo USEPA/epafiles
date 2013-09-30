@@ -122,7 +122,7 @@ var epaCore = {
 				break;
 
 			case "twitter":
-				epaCore.postPopUp("https://twitter.com/share?text=" + title + "&url=" + popUrl + "&via=EPAgov&count=none&lang=en", "twitter", "height=375,width=550,scrollbars=yes,resizable=yes");
+				epaCore.postPopUp("https://twitter.com/share?text=" + title + "&url=" + popUrl + "&via=EPA&count=none&lang=en", "twitter", "height=375,width=550,scrollbars=yes,resizable=yes");
 				_gaq.push(['_trackSocial', 'twitter', 'share click', popUrl]);
 				break;
 
