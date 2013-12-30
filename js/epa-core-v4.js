@@ -1,8 +1,9 @@
 /* EPA's Core JS file, vOneEPA Web
  * 20 June 2012: Added Google Analytics
  * 30 Sep 2013: Adjusted Twitter handle for EPA
- * 17 Dec 2013: Removed JQuery dependenices for GA
+ * 17 Dec 2013: Removed JQuery dependencies for GA
  ** and added .dmg as trackable file extension
+ * 27 Dec 2013: Added unobtrusiveAddEvent (from GTM) and use it to call trackDownloads
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -26,14 +27,13 @@ function loadtracking() {
 
   /* Get GA Visitor Cookie */
 	function getCookie(c_name) {
-	var i,x,y,ARRcookies=document.cookie.split(";");
-	for (i=0;i<ARRcookies.length;i++) {
-    x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-    y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-    x=x.replace(/^\s+|\s+$/g,"");
-    if (x==c_name)
-      {
-      return unescape(y);
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0;i<ARRcookies.length;i++) {
+      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x==c_name) {
+        return unescape(y);
       }
     }
   } // for ARRcookies loop
@@ -102,6 +102,15 @@ function loadtracking() {
    */
 
   //Helper function to safely attach to a link
+  var unobtrusiveAddEvent = function (element, event, fn) { 
+	try { 
+		var old = element[event] ? element[event] : function () {}; 
+		element[event] = function () {fn.call(this);return old.call(this);}; 
+	} 
+	catch (err) { 
+	} 
+  };
+
   function trackDownloads() {
     var myLinks = document.links;
 
@@ -148,7 +157,7 @@ function loadtracking() {
       var download = false;
       for(var k=0;k < fileTypes.length; k++) {
         if(myLinks[i].href.indexOf("." + fileTypes[k]) > -1){
-          theLink = myLinks[i]
+          theLink = myLinks[i];
           theValue = fileTypes[k];
           theTarget = myLinks[i].target;
           theType = "Download";
@@ -162,11 +171,11 @@ function loadtracking() {
 
       if(download == false){
         if(myLinks[i].href.indexOf("mailto:") > -1){
-          theLink = myLinks[i]
+          theLink = myLinks[i];
           theTarget = null;
           theValue = myLinks[i].href.slice(7);
           theType = "Email";
-          var g = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget); return false;};}(theType, theLink, theValue, theTarget)
+          var g = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget); return false;};}(theType, theLink, theValue, theTarget);
           myLinks[i].onclick = g;
         }//close ifmyLinks Mail
         else {
@@ -199,21 +208,21 @@ function loadtracking() {
               break;
             }	// if myLinks crossDomains
           }	// for crossDomains
-  				//External
-  				if((crossDomain == false) && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)){
-  					theLink = myLinks[i]
-  					theTarget = myLinks[i].target;
-  					theValue = "Link Click";
-  					theType = "External";
-  					var h = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget);  return false;};}(theType, theLink, theValue, theTarget)
-  					myLinks[i].onclick = h;
-  				} //close elseExternalLink
+          //External
+          if((crossDomain == false) && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)){
+            theLink = myLinks[i];
+            theTarget = myLinks[i].target;
+            theValue = "Link Click";
+            theType = "External";
+            var h = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget);  return false;};}(theType, theLink, theValue, theTarget);
+            myLinks[i].onclick = h;
+          } //close elseExternalLink
         } // close if else crossDomain
       }  //close if download false
     } //close myLinks for Loop
   } //close trackDownloads
 
-  addEvent(window, 'load', trackDownloads);
+  unobtrusiveAddEvent(window, 'onload', trackDownloads);
   /* END Google Analytics Download */
 } // loadtracking
 
@@ -224,7 +233,7 @@ loadtracking();
 // EPA core stuff below
 jQuery(document).ready(function() {
 
-  //Load Notice Script
+//Load Notice Script
   var ns = document.createElement('script');
   ns.async;
   ns.src = 'http://www.epa.gov/epahome/notice.js';
@@ -239,8 +248,8 @@ jQuery(document).ready(function() {
   s.parentNode.insertBefore(fs, s);
 
   //Search Autosuggest
-	var sb = jQuery("#searchbox");
-	if (sb[0]) {
+  var sb = jQuery("#searchbox");
+  if (sb[0]) {
     sb.autocomplete("/autocomplete",{minChars:2,delay:200,matchSubset:false,selectFirst:false}).result(function (event, data, formatted) {
       jQuery('#EPAsearch').submit();
     });
@@ -263,16 +272,16 @@ jQuery(document).ready(function() {
   f.appendChild(page_URL);
 
   //NEW! icon
-	var x = new Date(); var today = new Date(x.toGMTString());
-	var now = (Date.UTC(epaCore.takeYear(today),today.getMonth(),today.getDate(),0,0,0))/86400000;
-	$("ins").each(function(i) {
-    var a = $(this).attr('datetime'); var b = a.split('-');
-    var posted = (Date.UTC(b[0],b[1],b[2],0,0,0))/86400000;
-    var time_left = posted - (now + 1);
-    if (time_left < 31  &&  time_left > 0) {
-      $(this).prepend("<img src='http://www.epa.gov/epafiles/images/new-en.gif' alt='New!' width='34' height='16'/>");
-    }
-  });
+  var x = new Date(); var today = new Date(x.toGMTString());
+  var now = (Date.UTC(epaCore.takeYear(today),today.getMonth(),today.getDate(),0,0,0))/86400000;
+  $("ins").each(function(i) {
+  var a = $(this).attr('datetime'); var b = a.split('-');
+  var posted = (Date.UTC(b[0],b[1],b[2],0,0,0))/86400000;
+  var time_left = posted - (now + 1);
+  if (time_left < 31  &&  time_left > 0) {
+    $(this).prepend("<img src='http://www.epa.gov/epafiles/images/new-en.gif' alt='New!' width='34' height='16'/>");
+  }
+});
 
   // Share Bookmarklet
   jQuery('#content').append('<ul id="share"><li><a href="#area">Share</a></li></ul>');
@@ -289,6 +298,6 @@ jQuery(document).ready(function() {
       case "twitter": _gaq.push(['_trackSocial', 'twitter', 'share click', popURL]); epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
       case "whatisthis": setTimeout('window.location = "http://www.epa.gov/epahome/bookmarks.html"', 150); _gaq.push(['_trackSocial', 'what is this', 'what is this click', popURL]); break;
     }
-	});
+  });
 
 }); //jQuery
