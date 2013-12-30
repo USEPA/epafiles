@@ -2,7 +2,7 @@
  * 20 June 2012: Added Google Analytics
  * 30 Sep 2013: Adjusted EPA Twitter handle
  * 17 Dec 2013: Added dmg files to tracked file extensions
- * 30 Dec 2013: Added missing semicolons
+ * 30 Dec 2013: Added missing semicolons and replace GA portion with code from v4
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -214,17 +214,16 @@ function loadtracking() {
 
   /* Get GA Visitor Cookie */
   function getCookie(c_name) {
-  var i,x,y,ARRcookies=document.cookie.split(";");
-  for (i=0;i<ARRcookies.length;i++) {
-    x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-    y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-    x=x.replace(/^\s+|\s+$/g,"");
-    if (x==c_name)
-      {
-      return unescape(y);
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0;i<ARRcookies.length;i++) {
+      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x==c_name) {
+        return unescape(y);
       }
-    }
-  } // for ARRcookies loop
+    } // for ARRcookies loop
+  }
   var cookieX=getCookie("__utma");
   if (cookieX!=null && cookieX!="") {
     var split = cookieX.split(".");
@@ -290,6 +289,15 @@ function loadtracking() {
    */
 
   //Helper function to safely attach to a link
+  var unobtrusiveAddEvent = function (element, event, fn) { 
+	try { 
+		var old = element[event] ? element[event] : function () {}; 
+		element[event] = function () {fn.call(this);return old.call(this);}; 
+	} 
+	catch (err) { 
+	} 
+  };
+
   function trackDownloads() {
     var myLinks = document.links;
 
@@ -401,9 +409,9 @@ function loadtracking() {
     } //close myLinks for Loop
   } //close trackDownloads
 
-  addEvent(window, 'load', trackDownloads);
+  unobtrusiveAddEvent(window, 'onload', trackDownloads);
   /* END Google Analytics Download */
 } // loadtracking
 
-addEvent(window, 'load', loadtracking);
+loadtracking();
 // End Google Analytics
