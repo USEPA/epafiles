@@ -1,7 +1,8 @@
 /* EPA's Core JS file, vOneEPA Web
  * 20 June 2012: Added Google Analytics
  * 30 Sep 2013: Adjusted EPA Twitter handle
- * 17 Dec 2013: Added dmg files to tracked file extensions 
+ * 17 Dec 2013: Added dmg files to tracked file extensions
+ * 30 Dec 2013: Added missing semicolons
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -335,7 +336,7 @@ function loadtracking() {
       var download = false;
       for(var k=0;k < fileTypes.length; k++) {
         if(myLinks[i].href.indexOf("." + fileTypes[k]) > -1){
-          theLink = myLinks[i]
+          theLink = myLinks[i];
           theValue = fileTypes[k];
           theTarget = myLinks[i].target;
           theType = "Download";
@@ -349,11 +350,11 @@ function loadtracking() {
 
       if(download == false){
         if(myLinks[i].href.indexOf("mailto:") > -1){
-          theLink = myLinks[i]
+          theLink = myLinks[i];
           theTarget = null;
           theValue = myLinks[i].href.slice(7);
           theType = "Email";
-          var g = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget); return false;};}(theType, theLink, theValue, theTarget)
+          var g = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget); return false;};}(theType, theLink, theValue, theTarget);
           myLinks[i].onclick = g;
         }//close ifmyLinks Mail
         else {
@@ -388,11 +389,11 @@ function loadtracking() {
           } // for crossDomains
           //External
           if((crossDomain == false) && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)){
-            theLink = myLinks[i]
+            theLink = myLinks[i];
             theTarget = myLinks[i].target;
             theValue = "Link Click";
             theType = "External";
-            var h = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget);  return false;};}(theType, theLink, theValue, theTarget)
+            var h = function(theType, theLink, theValue, theTarget){return function(){track(theType, theLink, theValue, theTarget);  return false;};}(theType, theLink, theValue, theTarget);
             myLinks[i].onclick = h;
           } //close elseExternalLink
         } // close if else crossDomain
