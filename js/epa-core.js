@@ -289,20 +289,20 @@ function loadtracking() {
    */
 
   //Helper function to safely attach to a link
-  var unobtrusiveAddEvent = function (element, event, fn) { 
-	try { 
-		var old = element[event] ? element[event] : function () {}; 
-		element[event] = function () {fn.call(this);return old.call(this);}; 
-	} 
-	catch (err) { 
-	} 
+  var unobtrusiveAddEvent = function (element, event, fn) {
+    try {
+      var old = element[event] ? element[event] : function () {};
+      element[event] = function () {fn.call(this);return old.call(this);};
+    }
+    catch (err) {
+    }
   };
 
   function trackDownloads() {
     var myLinks = document.links;
 
     //Specify Filetypes Tracked
-    var fileTypes = ['zip','exe','pdf','doc','xls','ppt','mp3','csv','docx','xlsx','pptx','dmg'];
+    var fileTypes = ['csv','dmg','doc','docx','exe','gif','jpg','mp3','pdf','png','ppt','pptx','xls','xlsx','zip'];
 
     //Specify Cross Domains Tracked
     var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
