@@ -19,7 +19,7 @@ var _gaq = _gaq || [];
 function loadtracking() {
 
   /* Get Root Domain- Used for Google Analytics
-   * _setDomainName & _addIgnoredRef 
+   * _setDomainName & _addIgnoredRef
    */
   var epaGA_hostName= window.location.hostname;
   var epaGA_hostArray= epaGA_hostName.split('.').slice(-2);
@@ -115,7 +115,7 @@ function loadtracking() {
     var myLinks = document.links;
 
     //Specify Filetypes Tracked
-    var fileTypes = ['csv','dmg','doc','docx','exe','gif','jpg','mp3','pdf','png','ppt','pptx','xls','xlsx','zip'];
+    var fileTypes = ['csv','dmg','doc','docx','exe','mp3','pdf','ppt','pptx','xls','xlsx','zip'];
 
     //Specify Cross Domains Tracked
     var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
