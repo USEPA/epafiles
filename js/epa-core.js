@@ -116,14 +116,19 @@ var epaCore = {
      _gaq.push(['_trackSocial', 'facebook', 'share click', popUrl]);
      break;
 
-     case "reddit":
-     epaCore.postPopUp("http://www.reddit.com/submit?url=" + popUrl, "reddit", "height=450,width=650,scrollbars=yes,resizable=yes");
-     _gaq.push(['_trackSocial', 'reddit', 'share click', popUrl]);
-     break;
-
      case "twitter":
      epaCore.postPopUp("https://twitter.com/share?text=" + title + "&url=" + popUrl + "&via=EPA&count=none&lang=en", "twitter", "height=375,width=550,scrollbars=yes,resizable=yes");
      _gaq.push(['_trackSocial', 'twitter', 'share click', popUrl]);
+     break;
+
+     case "gplus":
+     epaCore.postPopUp("https://plus.google.com/share?url=" + popUrl, "gplus", "height=375,width=550,scrollbars=yes,resizable=yes");
+     _gaq.push(['_trackSocial', 'gplus', 'share click', popUrl]);
+     break;
+
+     case "pin":
+     epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
+     _gaq.push(['_trackSocial', 'pin', 'share click', popUrl]);
      break;
 
      case "whatisthis":
@@ -177,7 +182,8 @@ var epaCore = {
 		else return false;
 
     epaCore.addPostItem(sList, "facebook", "javascript:epaCore.articleShare('facebook');", "Facebook");
-    epaCore.addPostItem(sList, "reddit", "javascript:epaCore.articleShare('reddit');", "reddit");
+    epaCore.addPostItem(sList, "gplus", "javascript:epaCore.articleShare('gplus');", "Google+");
+    epaCore.addPostItem(sList, "pin", "javascript:epaCore.articleShare('pin');", "Pinterest");
     epaCore.addPostItem(sList, "twitter", "javascript:epaCore.articleShare('twitter');", "Twitter");
     epaCore.addPostItem(sList, "whatisthis", "javascript:epaCore.articleShare('whatisthis');", "What is this?");
 	} //addPosts
