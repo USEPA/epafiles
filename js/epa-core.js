@@ -4,7 +4,6 @@
  * 17 Dec 2013: Added dmg files to tracked file extensions
  * 30 Dec 2013: Added missing semicolons and replace GA portion with code from v4
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
- * 25 Feb 2014: Tracking images
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -310,7 +309,7 @@ function loadtracking() {
     var myLinks = document.links;
 
     //Specify Filetypes Tracked
-    var fileTypes = ['ai','csv','dmg','doc','docx','eps','exe','gif','ico','jpeg','jpg','json','kml','mp3','msi','pdf','png','ppt','pptx','psd','rar','smi','swf','tif','txt','xls','xlsm','xlsx','xml','xsd','zip'];
+    var fileTypes = ['csv','dmg','doc','docx','exe','mp3','pdf','ppt','pptx','xls','xlsx','zip'];
 
     //Specify Cross Domains Tracked
     var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
@@ -322,34 +321,28 @@ function loadtracking() {
     var theTarget = '';
 
     function track(type, theLink, val1, target){
-      var cbox_check1 = "colorbox";
-      var cbox_check2  = "cbox";
-
-      if (cbox_check1.indexOf(theLink.className) != -1 || cbox_check2.indexOf(theLink.className) != -1) {
-
-        if(target == ""){
-          target = "_self";
+      if(target == ""){
+        target = "_self";
+      }
+      try{
+        if(type == "Email"){
+          setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+          _gaq.push(['_trackEvent', type, "Link Click", val1]);
         }
-        try{
-          if(type == "Email"){
-            setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
-            _gaq.push(['_trackEvent', type, "Link Click", val1]);
-          }
-          else if(type == "Download"){
-            setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
-            _gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
-          }
-          else if(type == "External" && document.location.hostname != theLink.hostname){
-            setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
-            _gaq.push(['_trackEvent', type, val1, theLink.href]);
-          }//close firstIf
-          else {
-            window.open(theLink.href, target);
-          }
-        } // close try
-        catch(e){}
-      }//close colorbox
-    }; //close track()
+        else if(type == "Download"){
+          setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+          _gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
+        }
+        else if(type == "External" && document.location.hostname != theLink.hostname){
+          setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+          _gaq.push(['_trackEvent', type, val1, theLink.href]);
+        }//close firstIf
+        else {
+          window.open(theLink.href, target);
+        }
+      } // close try
+      catch(e){}
+    };//close track()
 
     for(var i=0;i < myLinks.length;i++) {
       if(myLinks[i].onclick != null || myLinks[i].href.indexOf("javascript:") > -1) {
