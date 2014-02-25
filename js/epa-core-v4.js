@@ -1,9 +1,9 @@
 /* EPA's Core JS file, vOneEPA Web
  * 20 June 2012: Added Google Analytics
  * 30 Sep 2013: Adjusted Twitter handle for EPA
- * 17 Dec 2013: Removed JQuery dependencies for GA
- ** and added .dmg as trackable file extension
+ * 17 Dec 2013: Removed JQuery dependencies for GA, added .dmg as trackable file extension
  * 27 Dec 2013: Added unobtrusiveAddEvent (from GTM) and use it to call trackDownloads
+ * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {

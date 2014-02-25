@@ -3,6 +3,7 @@
  * 30 Sep 2013: Adjusted EPA Twitter handle
  * 17 Dec 2013: Added dmg files to tracked file extensions
  * 30 Dec 2013: Added missing semicolons and replace GA portion with code from v4
+ * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
