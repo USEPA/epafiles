@@ -4,6 +4,7 @@
  * 17 Dec 2013: Added dmg files to tracked file extensions
  * 30 Dec 2013: Added missing semicolons and replace GA portion with code from v4
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
+ * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -135,7 +136,7 @@ var epaCore = {
      case "whatisthis":
      setTimeout('window.location = "http://www.epa.gov/epahome/bookmarks.html"', 150);
      _gaq.push(['_trackSocial', 'what is this', 'what is this click', popUrl]);
-     break
+     break;
    }
  }, //articleShare
 
@@ -176,31 +177,32 @@ var epaCore = {
     f.appendChild(parentElement);
   }, //writePost
 
-	addPosts : function(shareList) {
-		var sList;
-		if(typeof(shareList)=='string') { sList = document.getElementById(shareList); }
-		else if(typeof(shareList)=='object') { sList = shareList; }
-		else return false;
+  addPosts : function(shareList) {
+    var sList;
+    if(typeof(shareList)=='string') { sList = document.getElementById(shareList); }
+    else if(typeof(shareList)=='object') { sList = shareList; }
+    else return false;
 
     epaCore.addPostItem(sList, "facebook", "javascript:epaCore.articleShare('facebook');", "Facebook");
     epaCore.addPostItem(sList, "gplus", "javascript:epaCore.articleShare('gplus');", "Google+");
     epaCore.addPostItem(sList, "pin", "javascript:epaCore.articleShare('pin');", "Pinterest");
     epaCore.addPostItem(sList, "twitter", "javascript:epaCore.articleShare('twitter');", "Twitter");
     epaCore.addPostItem(sList, "whatisthis", "javascript:epaCore.articleShare('whatisthis');", "What is this?");
-	} //addPosts
+  } //addPosts
 
 }; // end epaCore
 
 function addEvent( obj, type, fn ) {
-	if (document.getElementById && document.createTextNode) {
-		if (obj.addEventListener)
-			obj.addEventListener( type, fn, false );
-		else if (obj.attachEvent) {
-			obj['e'+type+fn] = fn;
-			obj[type+fn] = function() { obj['e'+type+fn]( window.event ); }
-			obj.attachEvent( 'on'+type, obj[type+fn] );
-		}
-	}
+  if (document.getElementById && document.createTextNode) {
+    if (obj.addEventListener) {
+      obj.addEventListener( type, fn, false );
+    }
+    else if (obj.attachEvent) {
+      obj['e'+type+fn] = fn;
+      obj[type+fn] = function() { obj['e'+type+fn]( window.event ); }
+      obj.attachEvent( 'on'+type, obj[type+fn] );
+    }
+  }
 } //addEvent()
 addEvent(window, 'load', epaCore.printAsIs_Date_URL); addEvent(window, 'load', epaCore.newIcon);
 addEvent(window, 'load', epaCore.notice); addEvent(window, 'load', epaCore.stripeTables);
@@ -309,7 +311,7 @@ function loadtracking() {
     var myLinks = document.links;
 
     //Specify Filetypes Tracked
-    var fileTypes = ['csv','dmg','doc','docx','exe','mp3','pdf','ppt','pptx','xls','xlsx','zip'];
+    var fileTypes = ['ai','csv','dmg','doc','docx','eps','exe','gif','ico','jpeg','jpg','json','kml','mp3','msi','pdf','png','ppt','pptx','psd','rar','smi','swf','tif','txt','xls','xlsm','xlsx','xml','xsd','zip'];
 
     //Specify Cross Domains Tracked
     var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
@@ -320,7 +322,11 @@ function loadtracking() {
     var theType = '';
     var theTarget = '';
 
-    function track(type, theLink, val1, target){
+    function track(type, theLink, val1, target) {
+
+      var cbox_check1 = "colorbox";
+      var cbox_check2  = "cbox";
+
       if(target == ""){
         target = "_self";
       }
@@ -328,21 +334,26 @@ function loadtracking() {
         if(type == "Email"){
           setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
           _gaq.push(['_trackEvent', type, "Link Click", val1]);
+          _gaq.push(['GSA._trackEvent', type, "Link Click", val1]);
         }
         else if(type == "Download"){
-          setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+          if(theLink.className.indexOf(cbox_check1) == -1 || theLink.className.indexOf(cbox_check2) == -1) {
+            setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+          }
           _gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
+          _gaq.push(['GSA._trackEvent', type, val1 + ' Click', theLink.href]);
         }
         else if(type == "External" && document.location.hostname != theLink.hostname){
           setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
           _gaq.push(['_trackEvent', type, val1, theLink.href]);
+          _gaq.push(['GSA._trackEvent', type, val1, theLink.href]);
         }//close firstIf
         else {
           window.open(theLink.href, target);
         }
       } // close try
       catch(e){}
-    };//close track()
+    }; //close track()
 
     for(var i=0;i < myLinks.length;i++) {
       if(myLinks[i].onclick != null || myLinks[i].href.indexOf("javascript:") > -1) {
@@ -387,10 +398,12 @@ function loadtracking() {
                     }
                     setTimeout("window.open('"+this.href+"','"+ target+"')", 150);
                     _gaq.push(['_trackEvent', 'External', 'Link Click', this.href]);
+                    _gaq.push(['GSA._trackEvent', 'External', 'Link Click', this.href]);
                     return false;
                   }// if crossDomainExclude
                 }//for CrossDomainExclude
                 _gaq.push(['_trackEvent', 'crossDomain', 'Link Click', this.href]);
+                _gaq.push(['GSA._trackEvent', 'crossDomain', 'Link Click', this.href]);
                 if (this.target == '_self' || this.target == '') {
                   _gaq.push(['_link', this.href]);
                 } else {

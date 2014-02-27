@@ -4,6 +4,7 @@
  * 17 Dec 2013: Removed JQuery dependencies for GA, added .dmg as trackable file extension
  * 27 Dec 2013: Added unobtrusiveAddEvent (from GTM) and use it to call trackDownloads
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
+ * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -47,7 +48,7 @@ function loadtracking() {
     passToGA = "one and done visitor";
   }
 
-	/* START For Cross Domain Tracking Use Visitor ID
+  /* START For Cross Domain Tracking Use Visitor ID
    * from __utma query param instead of cookie
    */
   function getQuerystring(key, default_) {
@@ -115,7 +116,7 @@ function loadtracking() {
     var myLinks = document.links;
 
     //Specify Filetypes Tracked
-    var fileTypes = ['csv','dmg','doc','docx','exe','mp3','pdf','ppt','pptx','xls','xlsx','zip'];
+    var fileTypes = ['ai','csv','dmg','doc','docx','eps','exe','gif','ico','jpeg','jpg','json','kml','mp3','msi','pdf','png','ppt','pptx','psd','rar','smi','swf','tif','txt','xls','xlsm','xlsx','xml','xsd','zip'];
 
     //Specify Cross Domains Tracked
     var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
@@ -127,6 +128,10 @@ function loadtracking() {
     var theTarget = '';
 
     function track(type, theLink, val1, target){
+
+      var cbox_check1 = "colorbox";
+      var cbox_check2  = "cbox";
+
       if(target == ""){
         target = "_self";
       }
@@ -134,14 +139,19 @@ function loadtracking() {
         if(type == "Email"){
           setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
           _gaq.push(['_trackEvent', type, "Link Click", val1]);
+          _gaq.push(['GSA._trackEvent', type, "Link Click", val1]);
         }
-        else if(type == "Download"){
-          setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+        else if(type == "Download") {
+          if(theLink.className.indexOf(cbox_check1) == -1 || theLink.className.indexOf(cbox_check2) == -1) {
+            setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
+          }
           _gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
+          _gaq.push(['GSA._trackEvent', type, val1 + ' Click', theLink.href]);
         }
         else if(type == "External" && document.location.hostname != theLink.hostname){
           setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
           _gaq.push(['_trackEvent', type, val1, theLink.href]);
+          _gaq.push(['GSA._trackEvent', type, val1, theLink.href]);
         }//close firstIf
         else {
           window.open(theLink.href, target);
@@ -193,10 +203,12 @@ function loadtracking() {
                     }
                     setTimeout("window.open('"+this.href+"','"+ target+"')", 150);
                     _gaq.push(['_trackEvent', 'External', 'Link Click', this.href]);
+                    _gaq.push(['GSA._trackEvent', 'External', 'Link Click', this.href]);
                     return false;
                   }// if crossDomainExclude
                 }//for CrossDomainExclude
                 _gaq.push(['_trackEvent', 'crossDomain', 'Link Click', this.href]);
+                _gaq.push(['GSA._trackEvent', 'crossDomain', 'Link Click', this.href]);
                 if (this.target == '_self' || this.target == '') {
                   _gaq.push(['_link', this.href]);
                 } else {
