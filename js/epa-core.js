@@ -133,10 +133,6 @@ var epaCore = {
      _gaq.push(['_trackSocial', 'pin', 'share click', popUrl]);
      break;
 
-     case "whatisthis":
-     setTimeout('window.location = "http://www.epa.gov/epahome/bookmarks.html"', 150);
-     _gaq.push(['_trackSocial', 'what is this', 'what is this click', popUrl]);
-     break;
    }
  }, //articleShare
 
@@ -187,7 +183,6 @@ var epaCore = {
     epaCore.addPostItem(sList, "gplus", "javascript:epaCore.articleShare('gplus');", "Google+");
     epaCore.addPostItem(sList, "pin", "javascript:epaCore.articleShare('pin');", "Pinterest");
     epaCore.addPostItem(sList, "twitter", "javascript:epaCore.articleShare('twitter');", "Twitter");
-    epaCore.addPostItem(sList, "whatisthis", "javascript:epaCore.articleShare('whatisthis');", "What is this?");
   } //addPosts
 
 }; // end epaCore
