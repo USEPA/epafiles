@@ -142,7 +142,7 @@ function loadtracking() {
           _gaq.push(['GSA._trackEvent', type, "Link Click", val1]);
         }
         else if(type == "Download") {
-          if(theLink.className.indexOf(cbox_check1) == -1 || theLink.className.indexOf(cbox_check2) == -1) {
+          if(theLink.className.indexOf(cbox_check1) == -1 && theLink.className.indexOf(cbox_check2) == -1) {
             setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
           }
           _gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
