@@ -6,9 +6,9 @@
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
  * 06 Aug 2014: Mailto and Colorbox fixes
- * 22 Aug 2014 Rewritten to add code for Universal Analytics (UA)
- *             to run in parallel with Classic GA for a test period
- *             after which time the Classic GA code will be removed
+ * 22 Aug 2014: Rewritten to add code for Universal Analytics (UA)
+ *              to run in parallel with Classic GA for a test period
+ * 30 Oct 2014: Classic GA code removed -- tracking with Universal Analytics only
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -147,31 +147,23 @@ var epaCore = {
 		switch (site) {
 			case "facebook":
 				epaCore.postPopUp("http://www.facebook.com/sharer.php?u=" + popUrl + "&t=" + title, "facebook", "height=436,width=646,scrollbars=yes,resizable=yes");
-				_gaq.push(['_trackSocial', 'facebook', 'share click', popUrl]);
-				_gaq.push(['_trackEvent', 'Share', 'facebook', popUrl]);
-				ga('send', 'social', 'facebook', 'share click', popUrl);
-				ga('send', 'event', 'Share', 'facebook', popUrl);				
+				ga('EPA.send', 'social', 'facebook', 'share click', popUrl);
+				ga('EPA.send', 'event', 'Share', 'facebook', popUrl);				
 				break;
 			case "twitter":
 				epaCore.postPopUp("https://twitter.com/share?text=" + title + "&url=" + popUrl + "&via=EPA&count=none&lang=en", "twitter", "height=375,width=550,scrollbars=yes,resizable=yes");
-				_gaq.push(['_trackSocial', 'twitter', 'share click', popUrl]);
-				_gaq.push(['_trackEvent', 'Share', 'twitter', popUrl]);
-				ga('send', 'social', 'twitter', 'share click', popUrl);
-				ga('send', 'event', 'Share', 'twitter', popUrl);				
+				ga('EPA.send', 'social', 'twitter', 'share click', popUrl);
+				ga('EPA.send', 'event', 'Share', 'twitter', popUrl);				
 				break;
 			case "gplus":
 				epaCore.postPopUp("https://plus.google.com/share?url=" + popUrl, "gplus", "height=375,width=550,scrollbars=yes,resizable=yes");
-				_gaq.push(['_trackSocial', 'gplus', 'share click', popUrl]);
-				_gaq.push(['_trackEvent', 'Share', 'gplus', popUrl]);
-				ga('send', 'social', 'gplus', 'share click', popUrl);
-				ga('send', 'event', 'Share', 'gplus', popUrl);				
+				ga('EPA.send', 'social', 'gplus', 'share click', popUrl);
+				ga('EPA.send', 'event', 'Share', 'gplus', popUrl);				
 				break;
 			case "pin":
 				epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
-				_gaq.push(['_trackSocial', 'pin', 'share click', popUrl]);
-				_gaq.push(['_trackEvent', 'Share', 'pin', popUrl]);
-				ga('send', 'social', 'pin', 'share click', popUrl);
-				ga('send', 'event', 'Share', 'pin', popUrl);				
+				ga('EPA.send', 'social', 'pin', 'share click', popUrl);
+				ga('EPA.send', 'event', 'Share', 'pin', popUrl);				
 				break;
 		}
 	},
@@ -259,8 +251,6 @@ addEvent(window, 'load', epaCore.stripeTables);
 addEvent(window, 'load', epaCore.writePost);
 
 /* Start Google Analytics */
-// Classic GA: initialize the _gaq object
-var _gaq = _gaq || [];
 
 // UA: Call the Universal Analytics script from a Google server
 /* begin script call */
@@ -281,7 +271,7 @@ var _gaq = _gaq || [];
 function loadtracking() {
 
 	/* Get Root Domain- Used for Google Analytics
-	 * _setDomainName & _addIgnoredRef
+	 * _setDomainName & Cross-Domain Checking & GSA CustomDim2
 	 */
 	var epaGA_hostName = window.location.hostname;
 	var epaGA_hostArray = epaGA_hostName.split('.').slice(-2);
@@ -299,20 +289,9 @@ function loadtracking() {
 			}
 		} // for ARRcookies loop
 	}
+	
+	// passToUA
   
-	// Classic GA: var passToGA
-	var cookieX=getCookie("__utma");
-	if (cookieX!=null && cookieX!="") {
-		var split = cookieX.split(".");
-		var gaVisitorID = (split[1]);
-		var passToGA = gaVisitorID;
-	} else {
-		passToGA = "one and done visitor";
-	}
-
-	// UA: var passToUA
-	// changed __utma to _ga 
-	// and changed split[1] to split[2]
 	var cookieX=getCookie("_ga");
 	if (cookieX!=null && cookieX!="") {
 		var split = cookieX.split(".");
@@ -337,17 +316,8 @@ function loadtracking() {
 		}
 	} // getQuerystring
 	
-	/* Classic GA: var passToGA
-	 */
-	if(window.location.href.indexOf('__utma') > 1) {
-		passToGA = getQuerystring('__utma').split('.')[1];
-	} else {
-		//nothing
-	}
-
-	/* UA: var passToUA
-	 * UA: changed __utma to _ga and split[1] to split[2]
-	 */
+	// passToUA
+	
 	if(window.location.href.indexOf('_ga') > 1) {
 		passToUA = getQuerystring('_ga').split('.')[2];
 	} else {
@@ -356,77 +326,41 @@ function loadtracking() {
 	/* END For Cross Domain Tracking Use Visitor ID */
 
 // Page Level Google Analytics Code
-	// Classic GA: create tracker object
-	window._gaq.push(['_setAccount', 'UA-32633028-1']);
-	window._gaq.push(['_setDomainName', epaGA_hostDomain]);
-	window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
-	window._gaq.push(['_setAllowLinker', true]);
 
-	// UA: create tracker object for EPA Universal TEST property
-	// UA: ignored referrers must be configured in GA interface 
+
+	// UA: create tracker object for EPA Universal property
 	ga('create', {
-		'trackingId': 'UA-32633028-6',
+		'trackingId': 'UA-32633028-1',
 		'cookieDomain': epaGA_hostDomain,
+		'name': 'EPA',
 		'allowLinker': true
 	});
 
-	// Classic GA: track page view and send custom variable
-	window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
-	window._gaq.push(['_trackPageview']);
 
 	// UA: track page view and send custom dimension
-	// UA: Custom Dimensions must be configured in the GA interface
-	// Set the custom dimension in slot #1 as follows:
-	//		Dimension name = visitor id
-	//		Dimension scope = user 
-	ga('send', 'pageview', {
+	ga('EPA.send', 'pageview', {
 		'dimension1': passToUA
 	});
 
+	// // removed lines for _gaq.push
+
 	// Parallel tracking to GSA
-	// Classic GA: create tracker object for GSA
-	_gaq.push(['GSA._setAccount', 'UA-33523145-1']);
-	_gaq.push(['GSA._setDomainName', epaGA_hostDomain]);
-	_gaq.push(['GSA._addIgnoredRef', epaGA_hostDomain]);
-	_gaq.push(['GSA._setAllowLinker', true]);
-   
-	// UA: create tracker object for EPA GSA Universal TEST property
-	// UA: ignored referrers must be configured in GA interface
-	// TEST - USE WITH OUR EPA UA# for GSA UNIVERSAL TEST
-	// EVENTUALLY USE ACTUAL GSA UA# UA-33523145-1 WHEN GSA IS READY
 	ga('create', {  
-		'trackingId': 'UA-32633028-7',
+		'trackingId': 'UA-33523145-1',
 		'cookieDomain': epaGA_hostDomain,
 		'name': 'GSA',
 		'allowLinker': true
 	});
 
-	// Classic GA: track page view and send custom dimensions to GSA
-	// Page level variables sent only to GSA account
-	_gaq.push(['GSA._setCustomVar', 3, 'Agency', 'EPA', 3]);
-	_gaq.push(['GSA._setCustomVar', 4, 'Sub-Agency', 'EPA - ' + epaGA_hostName, 3]);
-	_gaq.push(['GSA._setCustomVar', 5, 'Code Ver', 'EPA 1.0 121211', 3]);
-	_gaq.push(['GSA._trackPageview']);
-	
+
 	// UA: track page view and send custom dimensions to GSA
-	// UA: Custom Dimensions must be configured in the GA interface for GSA property
-	//     Dimension numbers may differ from those here if not configured same as before
 	ga('GSA.set', {
-		'dimension3': 'EPA',
-		'dimension4': 'EPA - ' + epaGA_hostName,
-		'dimension5': 'EPA 1.0 121211'
+		'dimension1': 'EPA',
+		'dimension2': 'EPA - ' + epaGA_hostName,
+		'dimension3': 'EPA 2.0 141101'
 	});
 	ga('GSA.send', 'pageview');
-
-	// Classic GA: call analytics script from Google server
-	(function() {
-		var ga = document.createElement('script');
-		ga.type = 'text/javascript';
-		ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0];
-		s.parentNode.insertBefore(ga, s);
-	})();
+	
 
 	/* Google Analytics Download and
 	 * External Link & Mailto & Cross Domain Tracking
@@ -468,27 +402,21 @@ function loadtracking() {
 			try {
 				if(type == "Email"){
 					setTimeout("window.open('" + theLink.href + "','_self')", 150);
-					_gaq.push(['_trackEvent', type, "Link Click", val1]);
-					_gaq.push(['GSA._trackEvent', type, "Link Click", val1]);
-					ga('send', 'event', type, 'Link Click', val1);
+					ga('EPA.send', 'event', type, 'Link Click', val1);
 					ga('GSA.send', 'event', type, 'Link Click', val1);
 				}
 				else if(type == "Download") {
 					if (theLink.className.indexOf(cbox_check1) == -1 && theLink.className.indexOf(cbox_check2) == -1) {
 						setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
 					}
-					_gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
-					_gaq.push(['GSA._trackEvent', type, val1 + ' Click', theLink.href]);
-					ga('send', 'event', type, val1 + ' Click', theLink.href);
+					ga('EPA.send', 'event', type, val1 + ' Click', theLink.href);
 					ga('GSA.send', 'event', type, val1 + ' Click', theLink.href);
 				}
 				else if(type == "External" && document.location.hostname != theLink.hostname) {
 					if (theLink.className.indexOf(cbox_check1) == -1 && theLink.className.indexOf(cbox_check2) == -1) {		
 						setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
 					}
-					_gaq.push(['_trackEvent', type, val1, theLink.href]);
-					_gaq.push(['GSA._trackEvent', type, val1, theLink.href]);
-					ga('send', 'event', type, val1, theLink.href);
+					ga('EPA.send', 'event', type, val1, theLink.href);
 					ga('GSA.send', 'event', type, val1, theLink.href);
 				}
 				else {
@@ -541,9 +469,6 @@ function loadtracking() {
 					var crossDomain = false;
 					for(c=0;c < crossDomains.length; c++) {
 						if((myLinks[i].href.indexOf(crossDomains[c]) > -1) && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)) {
-						// UA: Universal uses allowLinker earlier in this script
-						// so UA does not need an equivalent line to the following line
-							_gaq.push(['_setAllowLinker', true]);
 							myLinks[i].onclick = function() {
 								for(b=0;b < crossDomainExclude.length; b++) {
 									if(this.href.indexOf(crossDomainExclude[b]) > -1) {
@@ -552,18 +477,12 @@ function loadtracking() {
 											target = "_self";
 										}
 										setTimeout("window.open('"+this.href+"','"+ target+"')", 150);
-										_gaq.push(['_trackEvent', 'External', 'Link Click', this.href]);
-										_gaq.push(['GSA._trackEvent', 'External', 'Link Click', this.href]);
-										// UA: new lines rewrite _gaq.push as ga(send)
-										ga('send', 'event', 'External', 'Link Click', this.href);
+										ga('EPA.send', 'event', 'External', 'Link Click', this.href);
 										ga('GSA.send', 'event', 'External', 'Link Click', this.href);
 										return false;
 									} // if crossDomainExclude
 								} //for CrossDomainExclude
-								_gaq.push(['_trackEvent', 'crossDomain', 'Link Click', this.href]);
-								_gaq.push(['GSA._trackEvent', 'crossDomain', 'Link Click', this.href]);
-								// UA: new lines rewrite _gaq.push as ga(send)
-								ga('send', 'event', 'crossDomain', 'Link Click', this.href);
+								ga('EPA.send', 'event', 'crossDomain', 'Link Click', this.href);
 								ga('GSA.send', 'event', 'crossDomain', 'Link Click', this.href);
 
 								// UA: decorate the destination URL
@@ -573,17 +492,9 @@ function loadtracking() {
 
 								// follow the link in the same window or a new window
 								if (this.target == '_self' || this.target == '') {
-									// Classic GA decorates the link and opens same window with the _link method
-									_gaq.push(['_link', this.href]);
-									// UA: decorates the link earlier and then opens same window in a separate action
-									// temporarily disabled while we are still running Classic GA code
-									//window.location=destinationUrl;
+									window.location=destinationUrl;
 								} else {
-									// Classic GA opens new window and decorates link with _getLinkerUrl
-									window.open(_gat._getTrackers()[0]._getLinkerUrl(this.href), this.target);
-									// UA: decorates the link earlier and then opens new window in separate action
-									// temporarily disabled while we are still running Classic GA code
-									//window.open(destinationUrl, this.target);
+									window.open(destinationUrl, this.target);
 								}
 								return false;
 							}; //myLinks onClick function
