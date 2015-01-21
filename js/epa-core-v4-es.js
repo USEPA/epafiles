@@ -1,10 +1,8 @@
 /* EPA's Core Spanish JS file, vOneEPA Web
  * 20 June 2012: Added Google Analytics
- * 30 Sep 2013: Adjusted Twitter handle for EPA
- * 17 Dec 2013: Removed JQuery dependencies for GA, added .dmg as trackable file extension
- * 27 Dec 2013: Added unobtrusiveAddEvent (from GTM) and use it to call trackDownloads
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
+  * 21 Jan 2015: Added "media" parameter to PinIt share button
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -304,10 +302,11 @@ jQuery(document).ready(function() {
     var site = jQuery(this).attr('title');
     var popURL = encodeURIComponent(window.location.href);
     var title = encodeURIComponent(document.title);
+    var pin_media = encodeURIComponent('http://www2.epa.gov/sites/all/themes/epa/img/epa-seal.png');
     switch (site) {
       case "facebook": _gaq.push(['_trackSocial', 'facebook', 'share click', popURL]); epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
       case "gplus": _gaq.push(['_trackSocial', 'gplus', 'share click', popURL]); epaCore.postPopUp('https://plus.google.com/share?url='+popURL, 'gplus', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
-      case "pin": _gaq.push(['_trackSocial', 'pin', 'share click', popURL]); epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+      case "pin": _gaq.push(['_trackSocial', 'pin', 'share click', popURL]); epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
       case "twitter": _gaq.push(['_trackSocial', 'twitter', 'share click', popURL]); epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
     }
   });

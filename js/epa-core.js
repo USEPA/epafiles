@@ -1,14 +1,12 @@
 /* EPA's Core JS file, vOneEPA Web
  * 20 June 2012: Added Google Analytics
- * 30 Sep 2013: Adjusted EPA Twitter handle
- * 17 Dec 2013: Added dmg files to tracked file extensions
- * 30 Dec 2013: Added missing semicolons and replace GA portion with code from v4
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
  * 06 Aug 2014: Mailto and Colorbox fixes
  * 22 Aug 2014: Rewritten to add code for Universal Analytics (UA)
  *              to run in parallel with Classic GA for a test period
  * 30 Oct 2014: Classic GA code removed -- tracking with Universal Analytics only
+ * 21 Jan 2015: Added "media" parameter to PinIt share button
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -27,7 +25,7 @@ var epaCore = {
 		p_func.appendChild(document.createTextNode('Print As-Is'));
 		p_text.appendChild(p_func);
 		f.appendChild(p_text);
-		
+
 		var page_URL = document.createElement('p');
 		page_URL.id = 'url';
 		page_URL.appendChild(document.createTextNode(window.location.href));
@@ -127,7 +125,7 @@ var epaCore = {
 			}
 		}
 	},
-	//stripeTables	
+	//stripeTables
 	showHideSwap: function(id1, id2) {
 		var id1c = document.getElementById(id1);
 		var id2c = document.getElementById(id2);
@@ -139,31 +137,32 @@ var epaCore = {
 			id2c.className = 'post';
 		}
 	},
-	//showHideSwap	
+	//showHideSwap
 	articleShare: function(site) {
 		var popUrl = encodeURIComponent(window.location.href);
 		var title = encodeURIComponent(document.title);
+    var pin_media = encodeURIComponent('http://www2.epa.gov/sites/all/themes/epa/img/epa-seal.png');
 		var description = '';
 		switch (site) {
 			case "facebook":
 				epaCore.postPopUp("http://www.facebook.com/sharer.php?u=" + popUrl + "&t=" + title, "facebook", "height=436,width=646,scrollbars=yes,resizable=yes");
 				ga('EPA.send', 'social', 'facebook', 'share click', popUrl);
-				ga('EPA.send', 'event', 'Share', 'facebook', popUrl);				
+				ga('EPA.send', 'event', 'Share', 'facebook', popUrl);
 				break;
 			case "twitter":
 				epaCore.postPopUp("https://twitter.com/share?text=" + title + "&url=" + popUrl + "&via=EPA&count=none&lang=en", "twitter", "height=375,width=550,scrollbars=yes,resizable=yes");
 				ga('EPA.send', 'social', 'twitter', 'share click', popUrl);
-				ga('EPA.send', 'event', 'Share', 'twitter', popUrl);				
+				ga('EPA.send', 'event', 'Share', 'twitter', popUrl);
 				break;
 			case "gplus":
 				epaCore.postPopUp("https://plus.google.com/share?url=" + popUrl, "gplus", "height=375,width=550,scrollbars=yes,resizable=yes");
 				ga('EPA.send', 'social', 'gplus', 'share click', popUrl);
-				ga('EPA.send', 'event', 'Share', 'gplus', popUrl);				
+				ga('EPA.send', 'event', 'Share', 'gplus', popUrl);
 				break;
 			case "pin":
-				epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
+				epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title+'media='+pin_media, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
 				ga('EPA.send', 'social', 'pin', 'share click', popUrl);
-				ga('EPA.send', 'event', 'Share', 'pin', popUrl);				
+				ga('EPA.send', 'event', 'Share', 'pin', popUrl);
 				break;
 		}
 	},
@@ -181,7 +180,7 @@ var epaCore = {
 		postItem.appendChild(itemLink);
 		parentElement.appendChild(postItem);
 	},
-	//addPostItem	
+	//addPostItem
 	writePost: function() {
 		if (!document.getElementById('footer')) return;
 		if (document.getElementById('aara')) return;
@@ -210,12 +209,12 @@ var epaCore = {
 
 		//add post links
 		epaCore.addPosts(postList);
-		
+
 		postElement.appendChild(postList);
 		parentElement.appendChild(postElement);
 		f.appendChild(parentElement);
 	},
-	//writePost	
+	//writePost
 	addPosts: function(shareList) {
 		var sList;
 		if (typeof(shareList) == 'string') {
@@ -223,7 +222,7 @@ var epaCore = {
 		} else if (typeof(shareList) == 'object') {
 			sList = shareList;
 		} else return false;
-		
+
 		epaCore.addPostItem(sList, "facebook", "javascript:epaCore.articleShare('facebook');", "Facebook");
 		epaCore.addPostItem(sList, "gplus", "javascript:epaCore.articleShare('gplus');", "Google+");
 		epaCore.addPostItem(sList, "pin", "javascript:epaCore.articleShare('pin');", "Pinterest");
@@ -289,9 +288,9 @@ function loadtracking() {
 			}
 		} // for ARRcookies loop
 	}
-	
+
 	// passToUA
-  
+
 	var cookieX=getCookie("_ga");
 	if (cookieX!=null && cookieX!="") {
 		var split = cookieX.split(".");
@@ -315,9 +314,9 @@ function loadtracking() {
 			return qs[1];
 		}
 	} // getQuerystring
-	
+
 	// passToUA
-	
+
 	if(window.location.href.indexOf('_ga') > 1) {
 		passToUA = getQuerystring('_ga').split('.')[2];
 	} else {
@@ -345,7 +344,7 @@ function loadtracking() {
 	// // removed lines for _gaq.push
 
 	// Parallel tracking to GSA
-	ga('create', {  
+	ga('create', {
 		'trackingId': 'UA-33523145-1',
 		'cookieDomain': epaGA_hostDomain,
 		'name': 'GSA',
@@ -360,18 +359,18 @@ function loadtracking() {
 		'dimension3': 'EPA 2.0 141101'
 	});
 	ga('GSA.send', 'pageview');
-	
+
 
 	/* Google Analytics Download and
 	 * External Link & Mailto & Cross Domain Tracking
 	 */
 
 	//Helper function to safely attach to a link
-	var unobtrusiveAddEvent = function (element, event, fn) { 
-		try { 
-			var old = element[event] ? element[event] : function () {}; 
-			element[event] = function () {fn.call(this);return old.call(this);}; 
-		} catch (err) { } 
+	var unobtrusiveAddEvent = function (element, event, fn) {
+		try {
+			var old = element[event] ? element[event] : function () {};
+			element[event] = function () {fn.call(this);return old.call(this);};
+		} catch (err) { }
 	};
 
 	function trackDownloads() {
@@ -382,7 +381,7 @@ function loadtracking() {
 
 		//Specify Cross Domains Tracked
 		var crossDomains = ['epa.gov','epa-otis.gov','epa-echo.gov','echo.epa.gov','energystar.gov','enviroflash.info','airnow.gov','urbanwaters.gov','relocatefeds.gov','lab21century.gov','supportportal.com'];
- 
+
 		var crossDomainExclude = ['http://oaspub.epa.gov/enviro/fii_query_dtl.disp_program_facility','http://iaspub.epa.gov/enviro/tsca.get_chem_info','http://iaspub.epa.gov/enviro/ICIS_DETAIL_REPORTS_NPDESID.icis_tst','http://oaspub.epa.gov/enviro/tris_control.tris_print', 'http://www.epa.gov/myenv/myenview2.html','http://www.epa.gov/emefdata/em4ef.html','http://nepassisttool.epa.gov/nepassist/nepamap.aspx','http://nepassist.epa.gov/nepave/nepamap.aspx','cfpub.epa.gov','yosemite.epa.gov','iaspub.epa.gov','oaspub.epa.gov','ofmpub.epa.gov','watersgeo.epa.gov','cfpub2.epa.gov','cumulis.epa.gov','cfpub1.epa.gov','actor.epa.gov','nepis.epa.gov','yosemite1.epa.gov','ofmext.epa.gov','epamap32.epa.gov','gispub2.epa.gov','gispub6.epa.gov','epamap10.epa.gov','epamap21.epa.gov','maps6.epa.gov','http://ghgdata.epa.gov/ghgp/main.do'];
 
 		var theLink ='';
@@ -413,7 +412,7 @@ function loadtracking() {
 					ga('GSA.send', 'event', type, val1 + ' Click', theLink.href);
 				}
 				else if(type == "External" && document.location.hostname != theLink.hostname) {
-					if (theLink.className.indexOf(cbox_check1) == -1 && theLink.className.indexOf(cbox_check2) == -1) {		
+					if (theLink.className.indexOf(cbox_check1) == -1 && theLink.className.indexOf(cbox_check2) == -1) {
 						setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
 					}
 					ga('EPA.send', 'event', type, val1, theLink.href);

@@ -1,10 +1,8 @@
 /* EPA's Core Spanish JS file, vOneEPA Web
  * 20 June 2012: Added Google Analytics
- * 30 Sep 2013: Adjusted EPA Twitter handle
- * 17 Dec 2013: Added dmg files to tracked file extensions
- * 30 Dec 2013: Added missing semicolons and replace GA portion with code from v4
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
+ * 21 Jan 2015: Added "media" parameter to PinIt share button
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -111,6 +109,7 @@ var epaCore = {
   articleShare : function(site) {
     var popUrl = encodeURIComponent(window.location.href);
     var title = encodeURIComponent(document.title);
+    var pin_media = encodeURIComponent('http://www2.epa.gov/sites/all/themes/epa/img/epa-seal.png');
     var description = '';
     switch (site) {
      case "facebook":
@@ -129,7 +128,7 @@ var epaCore = {
      break;
 
      case "pin":
-     epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
+     epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title+'media='+pin_media, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
      _gaq.push(['_trackSocial', 'pin', 'share click', popUrl]);
      break;
 
