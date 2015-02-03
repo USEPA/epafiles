@@ -1,9 +1,9 @@
 ErrorDocument 404 /adminweb/epafiles/auxfiles/error404.htm
-RedirectMatch 301 /epafiles/exit.html http://www2.epa.gov/webguide/exit-epa
+RedirectMatch 301 /epafiles/exit.html http://www2.epa.gov/home/exit-epa
 RedirectMatch 301 /epafiles/exemptions.html http://www2.epa.gov/webguide/procedure-complying-epagov-look-and-feel#exemptions
-RedirectMatch 301 /epafiles/searchcode.html http://origin-www2.epa.gov/webguide/search-epa
-RedirectMatch 301 /epafiles/usenotice.htm http://www2.epa.gov/webguide/privacy-and-security-notice
-RedirectMatch 301 /epafiles/v4/js.html /epafiles/templates/js.html
+RedirectMatch 301 /epafiles/searchcode.html http://www2.epa.gov/webguide/search-epa
+RedirectMatch 301 /epafiles/usenotice.htm http://www2.epa.gov/home/privacy-and-security-notice
+RedirectMatch 301 /epafiles/templates/js.html http://www2.epa.gov/webguide/web-standard-javascript
 RedirectMatch 301 /epafiles/v4/$ /epafiles/templates/
 
 # gzip compression.
