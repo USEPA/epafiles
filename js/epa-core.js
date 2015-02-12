@@ -160,7 +160,7 @@ var epaCore = {
 				ga('EPA.send', 'event', 'Share', 'gplus', popUrl);
 				break;
 			case "pin":
-				epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title+'media='+pin_media, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
+				epaCore.postPopUp("http://pinterest.com/pin/create/button/?url=" + popUrl + "&description=" + title+'&media='+pin_media, "pin", "height=375,width=550,scrollbars=yes,resizable=yes");
 				ga('EPA.send', 'social', 'pin', 'share click', popUrl);
 				ga('EPA.send', 'event', 'Share', 'pin', popUrl);
 				break;

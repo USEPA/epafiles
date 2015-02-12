@@ -371,7 +371,7 @@ jQuery(document).ready(function() {
 			case "pin":
 				ga('EPA.send', 'social', 'pin', 'share click', popURL);
 				ga('EPA.send', 'event', 'Share', 'pin', popURL);
-				epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes');
+				epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'&media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes');
 				break;
 			case "twitter":
 				ga('EPA.send', 'social', 'twitter', 'share click', popURL);

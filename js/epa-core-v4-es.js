@@ -306,7 +306,7 @@ jQuery(document).ready(function() {
     switch (site) {
       case "facebook": _gaq.push(['_trackSocial', 'facebook', 'share click', popURL]); epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
       case "gplus": _gaq.push(['_trackSocial', 'gplus', 'share click', popURL]); epaCore.postPopUp('https://plus.google.com/share?url='+popURL, 'gplus', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
-      case "pin": _gaq.push(['_trackSocial', 'pin', 'share click', popURL]); epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+      case "pin": _gaq.push(['_trackSocial', 'pin', 'share click', popURL]); epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'&media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
       case "twitter": _gaq.push(['_trackSocial', 'twitter', 'share click', popURL]); epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
     }
   });
