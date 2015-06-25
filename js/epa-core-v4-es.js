@@ -2,7 +2,10 @@
  * 20 June 2012: Added Google Analytics
  * 25 Feb 2014: Share dropdown: added Pinterest and Google+, removed reddit
  * 25 Feb 2014: GA Link Tracking: Added GSA code, colorbox fix, and extended file types tracked
-  * 21 Jan 2015: Added "media" parameter to PinIt share button
+ * 21 Jan 2015: Added "media" parameter to PinIt share button
+ * 02 Mar 2015: Different Foresee code
+ * 25 Jun 2015: Convert to Universal Analytics
+ * NOTE: jQuery NOT translated to JavaScript in this version
  * Questions? hessling.michael@epa.gov
  */
 var epaCore = {
@@ -13,7 +16,22 @@ var epaCore = {
 };
 
 /* Start Google Analytics */
-var _gaq = _gaq || [];
+/* begin script call */
+
+(function(i,s,o,g,r,a,m){
+  i['GoogleAnalyticsObject']=r;
+  i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)
+  },
+  i[r].l=1*new Date();
+  a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];
+  a.async=1;
+  a.src=g;
+  m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+/* end script call */
 
 function loadtracking() {
 
@@ -36,14 +54,15 @@ function loadtracking() {
       }
     }
   } // for ARRcookies loop
-  var cookieX=getCookie("__utma");
+
+  var cookieX=getCookie("_ga");
   if (cookieX!=null && cookieX!="") {
     var split = cookieX.split(".");
-    var gaVisitorID = (split[1]);
-    var passToGA = gaVisitorID;
+    var gaVisitorID = (split[2]);
+    var passToUA = gaVisitorID;
   }
   else {
-    passToGA = "one and done visitor";
+    passToUA = "one and done visitor";
   }
 
   /* START For Cross Domain Tracking Use Visitor ID
@@ -62,39 +81,57 @@ function loadtracking() {
     }
   } // getQuerystring
 
-  if(window.location.href.indexOf('__utma') > 1) {
-    passToGA = getQuerystring('__utma').split('.')[1];
+  if(window.location.href.indexOf('_ga') > 1) {
+    passToUA = getQuerystring('_ga').split('.')[2];
   }
   else{
     //nothing
   }
   /* END For Cross Domain Tracking Use Visitor ID */
 
-  // Page Level Google Analytics Code
-  window._gaq.push(['_setAccount', 'UA-32633028-1']);
-  window._gaq.push(['_setDomainName', epaGA_hostDomain]);
-  window._gaq.push(['_addIgnoredRef', epaGA_hostDomain]);
-  window._gaq.push(['_setAllowLinker', true]);
-  window._gaq.push(['_setCustomVar',1,'visitor id',passToGA,1]);
-  window._gaq.push(['_trackPageview']);
+  // Page Level Google/Universal Analytics Code
+  // UA: create tracker object
+  ga('create', {
+    'trackingId': 'UA-32633028-1',
+    'cookieDomain': 'auto',
+    'name': 'EPA',
+    'allowLinker': true
+  });
+
+  // Code to mimic referral exclusion list - NEW as of 6/17/2015
+  if ( /(epa(-(otis|echo))?|energystar|airnow|urbanwaters|relocatefeds|lab21century)\.gov|supportportal\.com|enviroflash\.info/.test(document.referrer) ) {
+      ga('EPA.set','referrer','');
+  }
+
+  // UA: track page view and send custom dimension
+  ga('EPA.set', {
+    'dimension1': passToUA,
+    'dimension18': 'EPA 2.0 150618',
+          'dimension19': 'epa-core-v4-es.js'
+  });
+  ga('EPA.send', 'pageview');
+
 
   // Parallel tracking to GSA
-  _gaq.push(['GSA._setAccount', 'UA-33523145-1']);
-  _gaq.push(['GSA._setDomainName', epaGA_hostDomain]);
-  _gaq.push(['GSA._addIgnoredRef', epaGA_hostDomain]);
-  _gaq.push(['GSA._setAllowLinker', true]);  // use referring site's cookies sent in URL
-  // Page level variables sent only to GSA account
-  _gaq.push(['GSA._setCustomVar', 3, 'Agency', 'EPA', 3]);
-  _gaq.push(['GSA._setCustomVar', 4, 'Sub-Agency', 'EPA - ' + epaGA_hostName, 3]);
-  _gaq.push(['GSA._setCustomVar', 5, 'Code Ver', 'EPA 1.0 121211', 3]);
+  ga('create', {
+    'trackingId': 'UA-33523145-1',
+    'cookieDomain': 'auto',
+    'name': 'GSA',
+    'allowLinker': true
+  });
 
-  _gaq.push(['GSA._trackPageview']);
+  // Code to mimic referral exclusion list - NEW as of 6/17/2015
+  if ( /(epa(-(otis|echo))?|energystar|airnow|urbanwaters|relocatefeds|lab21century)\.gov|supportportal\.com|enviroflash\.info/.test(document.referrer) ) {
+      ga('GSA.set','referrer','');
+  }
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+  // UA: track page view and send custom dimensions to GSA
+  ga('GSA.set', {
+    'dimension1': 'EPA',
+    'dimension2': 'EPA - ' + epaGA_hostName,
+    'dimension3': 'EPA 2.0 150618'
+  });
+  ga('GSA.send', 'pageview');
 
   /* Google Analytics Download and
    * External Link & Mailto & Cross Domain Tracking
@@ -136,20 +173,23 @@ function loadtracking() {
       try{
         if(type == "Email"){
           setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
-          _gaq.push(['_trackEvent', type, "Link Click", val1]);
-          _gaq.push(['GSA._trackEvent', type, "Link Click", val1]);
+          ga('EPA.send', 'event', type, 'Link Click', val1);
+          ga('GSA.send', 'event', type, 'Link Click', val1);
+
         }
         else if(type == "Download") {
           if(theLink.className.indexOf(cbox_check1) == -1 && theLink.className.indexOf(cbox_check2) == -1) {
             setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
           }
-          _gaq.push(['_trackEvent', type, val1 + ' Click', theLink.href]);
-          _gaq.push(['GSA._trackEvent', type, val1 + ' Click', theLink.href]);
+          ga('EPA.send', 'event', type, val1 + ' Click', theLink.href);
+          ga('GSA.send', 'event', type, val1 + ' Click', theLink.href);
+
         }
         else if(type == "External" && document.location.hostname != theLink.hostname){
           setTimeout("window.open('"+theLink.href+"','"+ target+"')", 150);
-          _gaq.push(['_trackEvent', type, val1, theLink.href]);
-          _gaq.push(['GSA._trackEvent', type, val1, theLink.href]);
+          ga('EPA.send', 'event', type, val1, theLink.href);
+          ga('GSA.send', 'event', type, val1, theLink.href);
+
         }//close firstIf
         else {
           window.open(theLink.href, target);
@@ -191,7 +231,6 @@ function loadtracking() {
           var crossDomain = false;
           for(c=0;c < crossDomains.length; c++){
             if((myLinks[i].href.indexOf(crossDomains[c]) > -1) && (myLinks[i].href.indexOf(epaGA_hostDomain) == -1)){
-              _gaq.push(['_setAllowLinker', true]);
               myLinks[i].onclick = function(){
                 for(b=0;b < crossDomainExclude.length; b++){
                   if(this.href.indexOf(crossDomainExclude[b]) > -1){
@@ -200,17 +239,24 @@ function loadtracking() {
                       target = "_self";
                     }
                     setTimeout("window.open('"+this.href+"','"+ target+"')", 150);
-                    _gaq.push(['_trackEvent', 'External', 'Link Click', this.href]);
-                    _gaq.push(['GSA._trackEvent', 'External', 'Link Click', this.href]);
+                    ga('EPA.send', 'event', 'External', 'Link Click', this.href);
+                    ga('GSA.send', 'event', 'External', 'Link Click', this.href);
+
                     return false;
                   }// if crossDomainExclude
                 }//for CrossDomainExclude
-                _gaq.push(['_trackEvent', 'crossDomain', 'Link Click', this.href]);
-                _gaq.push(['GSA._trackEvent', 'crossDomain', 'Link Click', this.href]);
+
+                ga('EPA.send', 'event', 'crossDomain', 'Link Click', this.href);
+                ga('GSA.send', 'event', 'crossDomain', 'Link Click', this.href);
+
+                var trackers = ga.getAll();
+                var linker = new window.gaplugins.Linker(trackers[0]);
+                var destinationUrl = linker.decorate(this.href);
+
                 if (this.target == '_self' || this.target == '') {
-                  _gaq.push(['_link', this.href]);
+                  window.location=destinationUrl;
                 } else {
-                  window.open(_gat._getTrackers()[0]._getLinkerUrl(this.href), this.target);
+                  window.open(destinationUrl, this.target);
                 }
                 return false;
               }; //myLinks onClick function
@@ -241,6 +287,24 @@ loadtracking();
 
 // Use jQuery no conflict
 // EPA core stuff below
+
+// Answers (ForeSee) Services Embed Script v1.02
+// DO NOT MODIFY BELOW THIS LINE *****************************************
+;(function (g) {
+    var d = document, i, am = d.createElement('script'), h = d.head || d.getElementsByTagName("head")[0],
+        aex = {
+            "src": "//gateway.answerscloud.com/epa-gov/production/gateway.min.js",
+            "type": "text/javascript",
+            "async": "true",
+            "data-vendor": "acs",
+            "data-role": "gateway"
+        };
+    for (var attr in aex) { am.setAttribute(attr,aex[attr]); }
+    h.appendChild(am);
+    g['acsReady'] = function () {var aT = '__acsReady__', args = Array.prototype.slice.call(arguments, 0),k = setInterval(function () {if (typeof g[aT] === 'function') {clearInterval(k);for (i = 0; i < args.length; i++) {g[aT].call(g, function(fn) { return function() { setTimeout(fn, 1) };}(args[i]));}}}, 50);};
+})(window);
+// DO NOT MODIFY ABOVE THIS LINE *****************************************
+
 jQuery(document).ready(function() {
 
 //Load Notice Script
@@ -249,13 +313,6 @@ jQuery(document).ready(function() {
   ns.src = 'http://www.epa.gov/epahome/notice.js';
   var s = document.getElementsByTagName('script')[0];
   s.parentNode.insertBefore(ns, s);
-
-  //Load the ForeSee ACSI Survey code
-  var fs = document.createElement('script');
-  fs.async;
-  fs.src = 'http://www.epa.gov/epafiles/js/third-party/foresee/foresee-trigger.js';
-  //fs.src = 'http://www.epa.gov/epafiles/js/third-party/foresee/foresee-alive.js';
-  s.parentNode.insertBefore(fs, s);
 
   //Search Autosuggest
   var sb = jQuery("#searchbox");
@@ -304,10 +361,27 @@ jQuery(document).ready(function() {
     var title = encodeURIComponent(document.title);
     var pin_media = encodeURIComponent('http://www2.epa.gov/sites/all/themes/epa/img/epa-seal.png');
     switch (site) {
-      case "facebook": _gaq.push(['_trackSocial', 'facebook', 'share click', popURL]); epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
-      case "gplus": _gaq.push(['_trackSocial', 'gplus', 'share click', popURL]); epaCore.postPopUp('https://plus.google.com/share?url='+popURL, 'gplus', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
-      case "pin": _gaq.push(['_trackSocial', 'pin', 'share click', popURL]); epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'&media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
-      case "twitter": _gaq.push(['_trackSocial', 'twitter', 'share click', popURL]); epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+
+      case "facebook":
+      ga('EPA.send', 'social', 'facebook', 'share click', popUrl);
+      ga('EPA.send', 'event', 'Share', 'facebook', popUrl);
+
+      epaCore.postPopUp('http://www.facebook.com/sharer.php?u='+popURL+'&t='+title, 'facebook', 'height=436,width=646,scrollbars=yes,resizable=yes'); break;
+
+      case "gplus":
+      ga('EPA.send', 'social', 'gplus', 'share click', popUrl);
+      ga('EPA.send', 'event', 'Share', 'gplus', popUrl);
+      epaCore.postPopUp('https://plus.google.com/share?url='+popURL, 'gplus', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+
+      case "pin":
+      ga('EPA.send', 'social', 'pin', 'share click', popUrl);
+      ga('EPA.send', 'event', 'Share', 'pin', popUrl);
+      epaCore.postPopUp('http://pinterest.com/pin/create/button/?url='+popURL+'&description='+title+'&media='+pin_media, 'pin', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
+
+      case "twitter":
+      ga('EPA.send', 'social', 'twitter', 'share click', popUrl);
+      ga('EPA.send', 'event', 'Share', 'twitter', popUrl);
+      epaCore.postPopUp('https://twitter.com/share?text='+title+'&url='+popURL+'&via=EPA&count=none&lang=en', 'twitter', 'height=375,width=550,scrollbars=yes,resizable=yes'); break;
     }
   });
 
